@@ -2,6 +2,7 @@
 
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
@@ -19,4 +20,5 @@
 
     </script>
 </head>
+@include('navbar')
 @yield ('content')

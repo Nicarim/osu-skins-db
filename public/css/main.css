@@ -1,0 +1,9 @@
+.green-highlight:hover>b{
+    color: #68d000;
+}
+.red-highlight:hover>b{
+    color:red;
+}
+.blue-higlight:hover>b{
+    color:deepskyblue;
+}
