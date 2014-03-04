@@ -8,7 +8,13 @@
                 <img data-src="holder.js/300x200" alt="...">
                 <div class="caption">
                     <h3>Nightcore skin</h3>
+                    <p class="text-center"><b class="taiko"></b><b class="osu"></b></p>
                     <p>...</p>
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+                            40%
+                        </div>
+                    </div>
                     <p>
                         <a href="#" class="btn btn-primary" style="width:100%;" role="button">
                             <b class="glyphicon glyphicon-search pull-left"></b>
