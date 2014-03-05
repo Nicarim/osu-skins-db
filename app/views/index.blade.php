@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <p>
-                        <a href="#" class="btn btn-primary" style="width:100%;" role="button">
+                        <a href="/view" class="btn btn-primary" style="width:100%;" role="button">
                             <b class="glyphicon glyphicon-search pull-left"></b>
                         View Skin</a>
                     </p>

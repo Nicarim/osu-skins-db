@@ -15,3 +15,6 @@ Route::get('/', function()
 {
     return View::make('index');
 });
+Route::get('/view', function(){
+    return View::make('view-skin');
+});
