@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_05_172650_create_skins_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_05_173400_create_elements_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_05_173713_create_groups_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/sidebar-skin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/view-skin.blade.php" afterPath="$PROJECT_DIR$/app/views/view-skin.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Element.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Group.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Skin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -32,15 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="view-skin.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="9" selection-start="67" selection-end="67" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="578">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sidebar-skin.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/sidebar-skin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,37 +75,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2014_03_05_173713_create_groups_table.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="2014_03_05_173713_create_groups_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_05_173713_create_groups_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="37" selection-start="320" selection-end="320" vertical-scroll-proportion="0.27901524" vertical-offset="0" max-vertical-offset="853">
+            <state line="20" column="0" selection-start="413" selection-end="413" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="646">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <file leaf-file-name="Element.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/Element.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="3" selection-start="2343" selection-end="2343" vertical-scroll-proportion="0.0" vertical-offset="1767" max-vertical-offset="2720">
+            <state line="10" column="33" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0996483" vertical-offset="0" max-vertical-offset="853">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".htaccess" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/.htaccess">
+      <file leaf-file-name="Group.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Group.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="357">
+            <state line="10" column="33" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
+      <file leaf-file-name="Skin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="1165" selection-end="1165" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="510">
+            <state line="10" column="4" selection-start="154" selection-end="183" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="204">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="-8.615385" vertical-offset="99" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
@@ -152,6 +148,9 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_05_172650_create_skins_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_05_173400_create_elements_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_05_173713_create_groups_table.php" />
+        <option value="$PROJECT_DIR$/app/models/Skin.php" />
+        <option value="$PROJECT_DIR$/app/models/Group.php" />
+        <option value="$PROJECT_DIR$/app/models/Element.php" />
       </list>
     </option>
   </component>
@@ -321,6 +320,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkinsDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkinsDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -457,12 +474,16 @@
       <created>1394039859463</created>
       <updated>1394039859463</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added migrations&#10;Moved sidebar to separate file">
+      <created>1394041124029</created>
+      <updated>1394041124029</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -470,7 +491,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28434506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28434506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -505,43 +526,13 @@
     <MESSAGE value="Added left-side menu." />
     <MESSAGE value="Added dropzone js for uploading file elements." />
     <MESSAGE value="Formatted dropzone, so it can be used for uploading, and doesn't break things :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formatted dropzone, so it can be used for uploading, and doesn't break things :(" />
+    <MESSAGE value="Added migrations&#10;Moved sidebar to separate file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added migrations&#10;Moved sidebar to separate file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="3" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="18" selection-start="1241" selection-end="1241" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/jquery.fancybox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34425">
-          <folding>
-            <marker date="1394013116717" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1394013116717" expanded="false" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/jquery.fancybox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="4743">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="38" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="629">
@@ -877,7 +868,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_05_173713_create_groups_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="37" selection-start="320" selection-end="320" vertical-scroll-proportion="0.27901524" vertical-offset="0" max-vertical-offset="853">
+        <state line="20" column="0" selection-start="413" selection-end="413" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="-8.615385" vertical-offset="99" max-vertical-offset="952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="154" selection-end="183" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="204">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="33" selection-start="185" selection-end="185" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Element.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="33" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0996483" vertical-offset="0" max-vertical-offset="853">
           <folding />
         </state>
       </provider>
