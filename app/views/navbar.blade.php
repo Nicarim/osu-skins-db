@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
     <div class="navbar-header">
         <a class="navbar-brand" href="/">Skins Database</a>

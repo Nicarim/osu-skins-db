@@ -2,9 +2,9 @@
 
     <link rel="stylesheet" href="/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/dropzone/css/dropzone.css" />
+    <link rel="stylesheet" href="/dropzone/basic.css" />
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/main.css" />
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/dropzone/dropzone.js"></script>
@@ -25,4 +25,6 @@
     </script>
 </head>
 @include('navbar')
+<body style="padding-top: 70px;">
 @yield ('content')
+</body>
