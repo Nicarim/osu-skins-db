@@ -3,9 +3,9 @@
 <div class="container">
     <div class="row">
         @foreach ($skins as $skin)
-        <div class="col-sm-8 col-md-3">
+        <div class="col-sm-5 col-md-3">
             <div class="thumbnail">
-                <img data-src="holder.js/300x200" alt="...">
+                <img src="/1389588-min.jpg" alt="...">
                 <div class="caption">
                     <h3>{{$skin->name}}</h3>
                     <p class="text-center"><b class="taiko"></b><b class="osu"></b></p>
