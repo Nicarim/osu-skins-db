@@ -24,13 +24,15 @@
                     <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
                 </div><div class="col-xs-6 col-md-3">
                     <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
-                </div><div class="col-xs-6 col-md-3">
-                    <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
-                </div><div class="col-xs-6 col-md-3">
-                    <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
-                </div><div class="col-xs-6 col-md-3">
-                    <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
                 </div>
+                <div class="col-xs-6 col-md-3">
+
+                </div>
+                <form action="/file-upload" class="dropzone dz-clickable" id="my-awesome-dropzone">
+                    <div class="dz-default dz-message">
+                    </div>
+                </form>
+
             </div>
 
 
