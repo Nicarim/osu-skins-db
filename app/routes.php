@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function()
-{
-    return View::make('index');
-});
-Route::get('/view', function(){
+Route::get('/',array(
+      "uses" => "SkinsController@index",
+      "as" => "Home"
+    ));
+Route::get('/skins/list/{sorting?}', array(
+    "uses" => "SkinsController@listOfSkins",
+    "as" => "SkinListing"
+));
+Route::get('/skins/view/{id}/{section?}', array(
+    "uses" => "SkinsController@viewSkin",
+    "as" => "SkinIndex"
+));
+Route::get('/skins/create', function(){
     return View::make('view-skin');
 });
