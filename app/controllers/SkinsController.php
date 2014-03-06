@@ -66,17 +66,19 @@ class SkinsController extends BaseController{
         $skin = Skin::find($id);
         $data = Input::all();
         $rules = array(
-            "file" => "image"
+            'file' => 'mimes:jpeg,bmp,png,mp3,wav,ogg'
         );
         $validation = Validator::make($data, $rules);
 
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
+
         $filename = $data['file']->getClientOriginalName();
-        $element = new SkinElement;
-        $element->skin_id = $skin->id;
+        $element = SkinElement::firstOrCreate(array(
+            "skin_id" => $skin->id,
+            "filename" => $filename
+        ));
         $element->element_id = -1;
-        $element->filename = $filename;
         $element->size = $data['file']->getSize();
         $element->save();
 
@@ -84,5 +86,17 @@ class SkinsController extends BaseController{
         return View::make('skin-sections/table-row')->with(array(
             'element' => $element
         ));
+    }
+    function deleteElement($id){
+        $element = Element::find($id);
+        if (isset($element))
+        {
+            File::delete(public_path().$element->skin->id."/".$element->filename);
+            $element->delete();
+            return Redirect::back();
+        }
+        else
+            return Redirect::back();
+
     }
 } 

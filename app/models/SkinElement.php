@@ -8,6 +8,7 @@
 
 class SkinElement extends Eloquent {
     protected $table = "skins_elements";
+    protected $guarded = array();
     public function skin(){
         return $this->belongsTo("Skin");
     }

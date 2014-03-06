@@ -36,3 +36,6 @@ Route::post('/skins/create', array(
 Route::post('/file-upload/{id}', array(
    "uses" => "SkinsController@saveElement"
 ));
+Route::get('/file-delete/{id}', array(
+   "uses" => "SkinsController@deleteElement"
+));

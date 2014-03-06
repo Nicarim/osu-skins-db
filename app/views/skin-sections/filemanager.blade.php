@@ -11,7 +11,8 @@
 <table class="table table-bordered" id="fileslist">
     <tr>
         <th>Element Name</th>
-        <th>Ext.</th>
+        <th>Type</th>
+        <th>Size</th>
         <th>Options</th>
     </tr>
     @foreach($skin->SkinElement as $element)
