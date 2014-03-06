@@ -73,7 +73,16 @@ class SkinsController extends BaseController{
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
         $filename = $data['file']->getClientOriginalName();
+        $element = new SkinElement;
+        $element->skin_id = $skin->id;
+        $element->element_id = -1;
+        $element->filename = $filename;
+        $element->size = $data['file']->getSize();
+        $element->save();
+
         $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
-        return Response::json('success', 200);
+        return View::make('skin-sections/table-row')->with(array(
+            'element' => $element
+        ));
     }
 } 

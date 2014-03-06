@@ -9,4 +9,7 @@
 class Skin extends Eloquent {
     protected $table = 'skins';
     protected $guarded = array();
+    public function SkinElement(){
+        return $this->hasMany("SkinElement")->orderBy('filename','asc');
+    }
 } 

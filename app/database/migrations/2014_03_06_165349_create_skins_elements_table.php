@@ -15,8 +15,10 @@ class CreateSkinsElementsTable extends Migration {
         Schema::create('skins_elements', function(Blueprint $table) {
             $table->increments('id');
             $table->integer("element_id");
+            $table->integer("skin_id");
             $table->string("filename");
-            $table->float("size");
+            $table->integer("size");
+            $table->timestamps();
         });
 	}
 
