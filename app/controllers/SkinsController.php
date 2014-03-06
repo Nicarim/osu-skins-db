@@ -18,13 +18,13 @@ class SkinsController extends BaseController{
     }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
-        if ($skin->exists){
+        if (isset($skin)){
             return View::make('view-skin')->with(array(
                     "skin" => $skin
                 ));
         }
         else
-            Redirect::route('Home');
+            return Redirect::route('Home');
     }
     function editSettings($id, $section){
         $data = Input::all();
@@ -63,6 +63,17 @@ class SkinsController extends BaseController{
         return Redirect::to('/skins/view/'.$skin->id);
     }
     function saveElement($id){
+        $skin = Skin::find($id);
+        $data = Input::all();
+        $rules = array(
+            "file" => "image"
+        );
+        $validation = Validator::make($data, $rules);
 
+        if ($validation->fails())
+            return Response::make($validation->errors->first(), 400);
+        $filename = $data['file']->getClientOriginalName();
+        $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
+        return Response::json('success', 200);
     }
 } 

@@ -33,3 +33,6 @@ Route::get('/skins/create', function(){
 Route::post('/skins/create', array(
         "uses" => "SkinsController@createSkin"
     ));
+Route::post('/file-upload/{id}', array(
+   "uses" => "SkinsController@saveElement"
+));
