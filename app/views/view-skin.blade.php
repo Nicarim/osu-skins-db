@@ -15,7 +15,7 @@
             @include('skin-sections/overview')
         </div>
         <div class="tab-pane fade" id="filesmanager">
-            asd
+            @include('skin-sections/filemanager')
         </div>
         <div class="tab-pane fade" id="settings">
             @include('skin-sections/settings')

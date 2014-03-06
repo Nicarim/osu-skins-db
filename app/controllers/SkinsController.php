@@ -59,6 +59,10 @@ class SkinsController extends BaseController{
         $skin->description = $data['description'];
         $skin->name = $data['title'];
         $skin->save();
+        mkdir('skins-content/'.$skin->id.'/');
         return Redirect::to('/skins/view/'.$skin->id);
+    }
+    function saveElement($id){
+
     }
 } 
