@@ -16,6 +16,8 @@ class CreateSkinsTable extends Migration {
                 $table->increments('id');
                 $table->integer('user_id');
                 $table->integer('gamemodes');
+                $table->integer('hdsupport');
+                $table->integer('nsfw');
                 $table->string("name");
                 $table->text("description");
                 $table->timestamps();

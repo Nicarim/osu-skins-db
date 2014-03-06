@@ -1,10 +1,16 @@
-<h2>{{$skin->name}}</h2>
+
+<h2>{{$skin->name}}
+@if ($skin->hdsupport == 1) <span class="label label-default">HD</span> @endif
+</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">Creator's words</div>
     <div class="panel-body">
-        <p>Description blablabla</p>
-        <p>Will support markdown</p>
-        <h2><b class="glyphicon glyphicon-arrow-up"></b> Actually, at the top</h2>
+        @if ($skin->nsfw == 1)
+        <div class="alert alert-danger">
+            <p><b class="glyphicon glyphicon-flag"></b> This skin contains <b>not safe for work</b> content</p>
+        </div>
+        @endif
+        {{$skin->description}}
     </div>
 </div>
 

@@ -28,5 +28,8 @@ Route::post('/skins/settings/{id}/{section}', array(
         "as" => "SkinSettings"
     ));
 Route::get('/skins/create', function(){
-    return View::make('view-skin');
+    return View::make('create');
 });
+Route::post('/skins/create', array(
+        "uses" => "SkinsController@createSkin"
+    ));

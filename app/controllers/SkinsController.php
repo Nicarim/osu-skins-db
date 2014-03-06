@@ -26,4 +26,39 @@ class SkinsController extends BaseController{
         else
             Redirect::route('Home');
     }
+    function editSettings($id, $section){
+        $data = Input::all();
+        $skin = Skin::find($id);
+        $skin->description = $data['description'];
+
+        if (isset($data['warnnsfw']))
+            $skin->nsfw = 1;
+        else
+            $skin->nsfw = 0;
+
+        if (isset($data['hdsupport']))
+            $skin->hdsupport = 1;
+        else
+            $skin->hdsupport = 0;
+
+        $skin->save();
+        return Redirect::back();
+    }
+    function createSkin(){
+        $skin = new Skin;
+        $data = Input::all();
+        if (isset($data['warnnsfw']))
+            $skin->nsfw = 1;
+        else
+            $skin->nsfw = 0;
+
+        if (isset($data['hdsupport']))
+            $skin->hdsupport = 1;
+        else
+            $skin->hdsupport = 0;
+        $skin->description = $data['description'];
+        $skin->name = $data['title'];
+        $skin->save();
+        return Redirect::to('/skins/view/'.$skin->id);
+    }
 } 
