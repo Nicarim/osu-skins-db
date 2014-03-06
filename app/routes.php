@@ -12,17 +12,21 @@
 */
 
 Route::get('/',array(
-      "uses" => "SkinsController@index",
-      "as" => "Home"
+        "uses" => "SkinsController@index",
+        "as" => "Home"
     ));
 Route::get('/skins/list/{sorting?}', array(
-    "uses" => "SkinsController@listOfSkins",
-    "as" => "SkinListing"
-));
+        "uses" => "SkinsController@listOfSkins",
+        "as" => "SkinListing"
+    ));
 Route::get('/skins/view/{id}/{section?}', array(
-    "uses" => "SkinsController@viewSkin",
-    "as" => "SkinIndex"
-));
+        "uses" => "SkinsController@viewSkin",
+        "as" => "SkinIndex"
+    ));
+Route::post('/skins/settings/{id}/{section}', array(
+        "uses" => "SkinsController@editSettings",
+        "as" => "SkinSettings"
+    ));
 Route::get('/skins/create', function(){
     return View::make('view-skin');
 });

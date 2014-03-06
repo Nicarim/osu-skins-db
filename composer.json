@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"way/generators": "v2.0"
+		"way/generators": "v2.0",
+        "intervention/image": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
