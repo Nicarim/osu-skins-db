@@ -19,24 +19,7 @@
         ga('create', 'UA-21965013-5', 'hiroto.eu');
         ga('send', 'pageview');
     </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $(".fancybox").fancybox();
-        });
-    </script>
-    <script>
-        $(function(){
-            var hash = window.location.hash;
-            hash && $('ul.nav a[href="' + hash + '"]').tab('show');
-
-            $('.nav-tabs a').click(function (e) {
-                $(this).tab('show');
-                var scrollmem = $('body').scrollTop();
-                window.location.hash = this.hash;
-                $('html,body').scrollTop(scrollmem);
-            });
-        });
-    </script>
+    <script src="/js/main.js"></script>
 </head>
 @include('navbar')
 <body style="padding-top: 70px;">

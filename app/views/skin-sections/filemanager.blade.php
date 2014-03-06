@@ -1,10 +1,4 @@
-<script>
-    Dropzone.options.myAwesomeDropzone = {
-        success: function(file,response){
-            $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
-        }
-    }
-</script>
+
 <form action="/file-upload/{{$skin->id}}" class="dropzone dz-clickable dropzone-custom" id="my-awesome-dropzone">
     <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
 </form>

@@ -88,15 +88,15 @@ class SkinsController extends BaseController{
         ));
     }
     function deleteElement($id){
-        $element = Element::find($id);
+        $element = SkinElement::find($id);
         if (isset($element))
         {
             File::delete(public_path().$element->skin->id."/".$element->filename);
             $element->delete();
-            return Redirect::back();
+            return Response::json('success');
         }
         else
-            return Redirect::back();
+            return Response::json('fail');
 
     }
 } 
