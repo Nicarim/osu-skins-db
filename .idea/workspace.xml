@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -44,6 +46,15 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="overview.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="14" selection-start="420" selection-end="420" vertical-scroll-proportion="0.20214032" vertical-offset="0" max-vertical-offset="841">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="PreviewScreenshot.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/PreviewScreenshot.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -76,16 +87,16 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="3" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+            <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table-row.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="table-row.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="92" selection-start="448" selection-end="448" vertical-scroll-proportion="0.15925059" vertical-offset="0" max-vertical-offset="854">
+            <state line="3" column="124" selection-start="122" selection-end="139" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
@@ -95,15 +106,6 @@
         <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="7" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -159,7 +161,6 @@
         <option value="$PROJECT_DIR$/app/models/Skin.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/app/routes.php" />
-        <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
@@ -167,13 +168,14 @@
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshotElement.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
         <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="41" />
+    <option name="y" value="34" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -585,11 +587,15 @@
       <created>1394221470528</created>
       <updated>1394221470528</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Removed rename button (maybe reimplemented in future)">
+      <created>1394222652360</created>
+      <updated>1394222652360</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="41" y="34" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -651,7 +657,8 @@
     <MESSAGE value="Included template preview.jpg" />
     <MESSAGE value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
     <MESSAGE value="Fixed duplication of rows in file manager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed duplication of rows in file manager." />
+    <MESSAGE value="Removed rename button (maybe reimplemented in future)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed rename button (maybe reimplemented in future)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -888,13 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="185" selection-start="606" selection-end="779" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="104" column="44" selection-start="3082" selection-end="3082" vertical-scroll-proportion="0.22285715" vertical-offset="1488" max-vertical-offset="2363">
@@ -939,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="3" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
@@ -953,9 +946,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="92" selection-start="448" selection-end="448" vertical-scroll-proportion="0.15925059" vertical-offset="0" max-vertical-offset="854">
+        <state line="3" column="124" selection-start="122" selection-end="139" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="14" selection-start="420" selection-end="420" vertical-scroll-proportion="0.20214032" vertical-offset="0" max-vertical-offset="841">
           <folding />
         </state>
       </provider>

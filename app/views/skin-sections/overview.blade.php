@@ -19,7 +19,7 @@
 
     <div class="row">
         <div class="col-xs-6 col-md-3">
-            <a class="fancybox thumbnail" rel="group" href="/previews-content/{{$skin->id}}/countdown.jpg"><img src="/previews-content/{{$skin->id}}/countdown-preview.jpg" alt="" /></a>
+            <a class="fancybox thumbnail" rel="group" href="/previews-content/{{$skin->id}}/countdown.jpg?cache={{time()}}"><img src="/previews-content/{{$skin->id}}/countdown-preview.jpg" alt="" /></a>
         </div>
         <div class="col-xs-6 col-md-3">
             <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>

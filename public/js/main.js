@@ -25,7 +25,10 @@ $(function(){
     });
 });
 $(document).ready(function() {
-    $(".fancybox").fancybox();
+    $(".fancybox").fancybox({
+        ajax : {cache: false},
+        preload : 0
+    });
 });
 function deleteRow (item, id){
     $.get(("/file-delete/"+id),function(data){
