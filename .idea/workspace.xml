@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/PreviewScreenshot.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/PreviewScreenshotElement.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -80,7 +76,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="102" selection-start="233" selection-end="233" vertical-scroll-proportion="0.057954546" vertical-offset="0" max-vertical-offset="880">
+            <state line="17" column="59" selection-start="678" selection-end="678" vertical-scroll-proportion="0.3284091" vertical-offset="0" max-vertical-offset="880">
               <folding />
             </state>
           </provider>
@@ -581,7 +577,11 @@
       <created>1394216464245</created>
       <updated>1394216464245</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload">
+      <created>1394219041175</created>
+      <updated>1394219041175</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -645,7 +645,8 @@
     <MESSAGE value="Experimental image generation (needs aloooot work)" />
     <MESSAGE value="Added experimental dynamic countdown preview" />
     <MESSAGE value="Included template preview.jpg" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included template preview.jpg" />
+    <MESSAGE value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -949,7 +950,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="102" selection-start="233" selection-end="233" vertical-scroll-proportion="0.057954546" vertical-offset="0" max-vertical-offset="880">
+        <state line="17" column="59" selection-start="678" selection-end="678" vertical-scroll-proportion="0.3284091" vertical-offset="0" max-vertical-offset="880">
           <folding />
         </state>
       </provider>

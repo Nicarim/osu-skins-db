@@ -1,10 +1,14 @@
 Dropzone.options.myAwesomeDropzone = {
     success: function(file,response){
-        $("#fileslist > tbody > tr").each(function(){
-            if (this.innerText == $(response).find("tr:first > td:first > a:nth-child(2)").innerText){
-                this.hide();
-            }
+        var $jQueryObject = $($.parseHTML(response));
+        var filename = $jQueryObject.find("td:first > a:nth-child(2)").text();
 
+        $("#fileslist > tbody > tr").each(function(){
+            var $localDom = $(this);;
+            var rowname = $localDom.find("td:first > a:nth-child(2)").text();
+            if (rowname == filename){
+                $(this).hide();
+            }
         });
         $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
     }
