@@ -1,5 +1,11 @@
 Dropzone.options.myAwesomeDropzone = {
     success: function(file,response){
+        $("#fileslist > tbody > tr").each(function(){
+            if (this.innerText == $(response).find("tr:first > td:first > a:nth-child(2)").innerText){
+                this.hide();
+            }
+
+        });
         $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
     }
 }
