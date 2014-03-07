@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -73,19 +73,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="59" selection-start="678" selection-end="678" vertical-scroll-proportion="0.3284091" vertical-offset="0" max-vertical-offset="880">
+            <state line="25" column="3" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="table-row.blade.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="table-row.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="5" selection-start="482" selection-end="482" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+            <state line="8" column="92" selection-start="448" selection-end="448" vertical-scroll-proportion="0.15925059" vertical-offset="0" max-vertical-offset="854">
               <folding />
             </state>
           </provider>
@@ -161,12 +161,12 @@
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
-        <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshot.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshotElement.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
+        <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
       </list>
     </option>
   </component>
@@ -581,7 +581,11 @@
       <created>1394219041175</created>
       <updated>1394219041175</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Fixed duplication of rows in file manager.">
+      <created>1394221470528</created>
+      <updated>1394221470528</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -646,7 +650,8 @@
     <MESSAGE value="Added experimental dynamic countdown preview" />
     <MESSAGE value="Included template preview.jpg" />
     <MESSAGE value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
+    <MESSAGE value="Fixed duplication of rows in file manager." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed duplication of rows in file manager." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -883,13 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="185" selection-start="606" selection-end="779" vertical-scroll-proportion="-13.730769" vertical-offset="0" max-vertical-offset="663">
@@ -941,16 +939,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="482" selection-end="482" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+        <state line="25" column="3" selection-start="896" selection-end="896" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
+    <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="59" selection-start="678" selection-end="678" vertical-scroll-proportion="0.3284091" vertical-offset="0" max-vertical-offset="880">
+        <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="92" selection-start="448" selection-end="448" vertical-scroll-proportion="0.15925059" vertical-offset="0" max-vertical-offset="854">
           <folding />
         </state>
       </provider>
