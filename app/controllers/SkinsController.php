@@ -99,4 +99,20 @@ class SkinsController extends BaseController{
             return Response::json('fail');
 
     }
+    function generateImage(){
+        $image = Image::make(public_path().'/preview.jpg');
+        $goimg = SkinElement::where('filename','=','go.png')->first();
+        $pathgoimg = public_path().'/skins-content/'.$goimg->id.'/'.$goimg->filename;
+        $pathcount1 = public_path().'/skins-content/1/count1.png';
+        $pathcount2 = public_path().'/skins-content/1/count2.png';
+        $pathcount3 = public_path().'/skins-content/1/count3.png';
+        $image->insert($pathgoimg,0,0,'bottom');
+        $image->insert($pathcount1,0,0,'middle-left');
+        $image->insert($pathcount2,0,0,'top');
+        $image->insert($pathcount3,0,0,'middle-right');
+        return Response::make($image, 200, array('Content-Type' => 'image/jpeg'));
+    }
+    function generatePreview(){
+
+    }
 } 
