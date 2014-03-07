@@ -83,6 +83,8 @@ class SkinsController extends BaseController{
         $element->save();
 
         $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
+        if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png")
+            $this->generateImage();
         return View::make('skin-sections/table-row')->with(array(
             'element' => $element
         ));
@@ -101,15 +103,34 @@ class SkinsController extends BaseController{
     }
     function generateImage(){
         $image = Image::make(public_path().'/preview.jpg');
+        $image->colorize(-100,-100,-100);
         $goimg = SkinElement::where('filename','=','go.png')->first();
-        $pathgoimg = public_path().'/skins-content/'.$goimg->id.'/'.$goimg->filename;
+        $pathgoimg = public_path().'/skins-content/'.$goimg->skin->id.'/'.$goimg->filename;
         $pathcount1 = public_path().'/skins-content/1/count1.png';
         $pathcount2 = public_path().'/skins-content/1/count2.png';
         $pathcount3 = public_path().'/skins-content/1/count3.png';
-        $image->insert($pathgoimg,0,0,'bottom');
         $image->insert($pathcount1,0,0,'middle-left');
         $image->insert($pathcount2,0,0,'top');
         $image->insert($pathcount3,0,0,'middle-right');
+        $image->insert($pathgoimg,0,0,'bottom');
+        try
+        {
+            $image->save(public_path().'/previews-content/'.$goimg->skin->id.'/countdown.jpg');
+        }
+        catch (Intervention\Image\Exception\ImageNotWritableException $e)
+        {
+            try
+            {
+                mkdir("previews-content/".$goimg->skin->id.'/');
+            }
+            catch(Exception $e2)
+            {
+
+            }
+            $image->save(public_path().'/previews-content/'.$goimg->skin->id.'/countdown.jpg');
+        }
+        $image->resize(340,null,true);
+        $image->save(public_path().'/previews-content/'.$goimg->skin->id.'/countdown-preview.jpg');
         return Response::make($image, 200, array('Content-Type' => 'image/jpeg'));
     }
     function generatePreview(){
