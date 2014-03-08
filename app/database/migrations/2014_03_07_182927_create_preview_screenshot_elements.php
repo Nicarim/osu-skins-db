@@ -19,6 +19,7 @@ class CreatePreviewScreenshotElements extends Migration {
             $table->string('position');
             $table->integer('xoffset');
             $table->integer('yoffset');
+            $table->timestamps();
         });
 	}
 

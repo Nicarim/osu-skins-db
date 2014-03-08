@@ -22,8 +22,9 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools & Creation <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="/skins/create">Create Skin</a></li>
-                        <li><a href="#">Add Group</a></li>
-                        <li><a href="#">Add Element</a></li>
+                        <!--<li><a href="#">Add Group</a></li>
+                        <li><a href="#">Add Element</a></li>-->
+                        <li><a href="{{URL::route('PreviewsManage')}}">Add&Manage Previews</a></li>
                     </ul>
                 </li>
             </ul>

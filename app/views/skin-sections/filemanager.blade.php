@@ -5,9 +5,9 @@
 <table class="table table-bordered" id="fileslist">
     <tr>
         <th>Element Name</th>
-        <th>Type</th>
-        <th>Size</th>
-        <th>Options</th>
+        <th style="width:10%;">Type</th>
+        <th style="width:10%;">Size</th>
+        <th style="width:10%;">Options</th>
     </tr>
     @foreach($skin->SkinElement as $element)
         @include('/skin-sections/table-row', array('element' => $element))

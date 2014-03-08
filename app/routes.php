@@ -28,17 +28,25 @@ Route::post('/skins/settings/{id}/{section}', array(
         "as" => "SkinSettings"
     ));
 Route::get('/skins/create', function(){
-    return View::make('create');
+        return View::make('create');
 });
 Route::post('/skins/create', array(
         "uses" => "SkinsController@createSkin"
     ));
 Route::post('/file-upload/{id}', array(
-   "uses" => "SkinsController@saveElement"
-));
+        "uses" => "SkinsController@saveElement"
+    ));
 Route::get('/file-delete/{id}', array(
-   "uses" => "SkinsController@deleteElement"
-));
+        "uses" => "SkinsController@deleteElement"
+    ));
 Route::get('/image', array(
-   "uses" => "SkinsController@generateImage",
+         "uses" => "SkinsController@generateImage",
+    ));
+Route::get('/previews/manage', array(
+         "uses" => "PreviewsController@viewSettings",
+         "as" => "PreviewsManage"
+    ));
+Route::post('/previews/create',array(
+       "uses" => "PreviewsController@createPreview",
+       "as" => "CreatePreview"
     ));

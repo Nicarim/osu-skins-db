@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/PreviewsController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/previews-manage.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/navbar.blade.php" afterPath="$PROJECT_DIR$/app/views/navbar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -28,47 +33,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="2014_03_07_182819_create_preview_screenshots.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="43" selection-start="252" selection-end="271" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="629">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_03_07_182927_create_preview_screenshot_elements.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="51" selection-start="259" selection-end="286" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="overview.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="overview.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="14" selection-start="420" selection-end="420" vertical-scroll-proportion="0.20214032" vertical-offset="0" max-vertical-offset="841">
+            <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewScreenshot.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/PreviewScreenshot.php">
+      <file leaf-file-name="filemanager.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="4" selection-start="181" selection-end="210" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PreviewScreenshotElement.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/PreviewScreenshotElement.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="2" selection-start="328" selection-end="328" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-              <folding />
+            <state line="8" column="40" selection-start="379" selection-end="379" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+              <folding>
+                <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,9 +59,7 @@
         <entry file="file://$PROJECT_DIR$/public/js/jquery.fancybox.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34425">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,7 +67,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+            <state line="32" column="30" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="748">
               <folding />
             </state>
           </provider>
@@ -96,25 +76,52 @@
       <file leaf-file-name="table-row.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="124" selection-start="122" selection-end="139" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
+            <state line="6" column="19" selection-start="309" selection-end="309" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view-skin.blade.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
+      <file leaf-file-name="previews-manage.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/previews-manage.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
+            <state line="8" column="43" selection-start="295" selection-end="295" vertical-scroll-proportion="1.3461539" vertical-offset="171" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <file leaf-file-name="2014_03_07_182819_create_preview_screenshots.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="2737">
+            <state line="17" column="12" selection-start="389" selection-end="410" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="646">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_03_07_182927_create_preview_screenshot_elements.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="39" selection-start="528" selection-end="528" vertical-scroll-proportion="0.5862069" vertical-offset="0" max-vertical-offset="714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PreviewsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/PreviewsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="36" selection-start="376" selection-end="376" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="408">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/skin-sections/settings.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="4" selection-start="29" selection-end="76" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="561">
               <folding />
             </state>
           </provider>
@@ -144,7 +151,6 @@
         <option value="$PROJECT_DIR$/app/models/Element.php" />
         <option value="$PROJECT_DIR$/app/controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/views/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/views/listing.blade.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
@@ -156,28 +162,31 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_06_165349_create_skins_elements_table.php" />
         <option value="$PROJECT_DIR$/public/fancybox/jquery.fancybox.css" />
         <option value="$PROJECT_DIR$/app/models/SkinElement.php" />
-        <option value="$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php" />
         <option value="$PROJECT_DIR$/app/views/master.blade.php" />
         <option value="$PROJECT_DIR$/app/models/Skin.php" />
         <option value="$PROJECT_DIR$/public/css/main.css" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshot.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshotElement.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
         <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/navbar.blade.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/PreviewsController.php" />
+        <option value="$PROJECT_DIR$/app/views/previews-manage.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="34" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -591,20 +600,23 @@
       <created>1394222652360</created>
       <updated>1394222652360</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fixed caching issue.">
+      <created>1394226428296</created>
+      <updated>1394226428296</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="34" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18985976" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29818955" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3028701" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -615,6 +627,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -633,7 +646,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added bootstrap, master template and icons." />
     <MESSAGE value="Created templates for both navbar and skin panel for results." />
     <MESSAGE value="Added progress bar" />
     <MESSAGE value="Added left-side menu." />
@@ -658,19 +670,13 @@
     <MESSAGE value="Added models for upcoming dynamic screenshots generation&#10;&#10;Attempt to fix duplicates upon file upload" />
     <MESSAGE value="Fixed duplication of rows in file manager." />
     <MESSAGE value="Removed rename button (maybe reimplemented in future)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed rename button (maybe reimplemented in future)" />
+    <MESSAGE value="Fixed caching issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed caching issue." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="2" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.0" vertical-offset="1139" max-vertical-offset="1156">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="6" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="731" />
@@ -803,11 +809,6 @@
         <state line="20" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="969" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="70" selection-start="570" selection-end="570" vertical-scroll-proportion="0.1992966" vertical-offset="0" max-vertical-offset="853" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="6" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="748" />
@@ -857,28 +858,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Group.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/settings.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="49" selection-start="563" selection-end="563" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="544" />
+        <state line="14" column="2" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/main.css">
@@ -888,81 +873,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="7" selection-start="1318" selection-end="1318" vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="44" selection-start="3082" selection-end="3082" vertical-scroll-proportion="0.22285715" vertical-offset="1488" max-vertical-offset="2363">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="51" selection-start="259" selection-end="286" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="43" selection-start="252" selection-end="271" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/PreviewScreenshot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="181" selection-end="210" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/PreviewScreenshotElement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="328" selection-end="328" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jquery.fancybox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34425">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="544">
+        <state line="17" column="49" selection-start="653" selection-end="653" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="41" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="124" selection-start="122" selection-end="139" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="255">
+        <state line="32" column="30" selection-start="1051" selection-end="1051" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="14" selection-start="420" selection-end="420" vertical-scroll-proportion="0.20214032" vertical-offset="0" max-vertical-offset="841">
+        <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="44" selection-start="88" selection-end="132" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="2363">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="49" selection-start="563" selection-end="563" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="19" selection-start="309" selection-end="309" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="49" selection-start="1250" selection-end="1250" vertical-scroll-proportion="-9.769231" vertical-offset="256" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/settings.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="4" selection-start="29" selection-end="76" vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="40" selection-start="379" selection-end="379" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+          <folding>
+            <element signature="n#style#0;n#th#1;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#2;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#3;n#tr#0;n#table#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="48" selection-start="1566" selection-end="1566" vertical-scroll-proportion="-11.576923" vertical-offset="107" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PreviewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="36" selection-start="376" selection-end="376" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/previews-manage.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="43" selection-start="295" selection-end="295" vertical-scroll-proportion="1.3461539" vertical-offset="171" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="12" selection-start="389" selection-end="410" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="646">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="39" selection-start="528" selection-end="528" vertical-scroll-proportion="0.5862069" vertical-offset="0" max-vertical-offset="714">
           <folding />
         </state>
       </provider>

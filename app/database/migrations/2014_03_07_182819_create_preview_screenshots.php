@@ -15,6 +15,7 @@ class CreatePreviewScreenshots extends Migration {
         Schema::create('preview_screenshots', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->timestamps();
         });
 	}
 
