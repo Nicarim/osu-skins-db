@@ -14,7 +14,7 @@ class CreatePreviewScreenshotElements extends Migration {
 	{
         Schema::create('preview_screenshot_elements', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('previewscreenshot_id');
+            $table->integer('preview_screenshot_id');
             $table->string('filename');
             $table->string('position');
             $table->integer('xoffset');

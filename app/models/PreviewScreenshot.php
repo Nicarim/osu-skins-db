@@ -9,5 +9,7 @@
 class PreviewScreenshot extends Eloquent {
     protected $table = "preview_screenshots";
     protected $guarded = array();
-
+    public function previewscreenshotelements(){
+        return $this->hasMany('PreviewScreenshotElement');
+    }
 } 
