@@ -157,3 +157,16 @@ b.mania{
 .container{
 
 }*/
+.col-md-5{
+    border: solid 1px #000000;
+    height: 100%;
+}
+.skin-panel{
+
+    background-image: url(/skins-content/1/playfield.png);
+    background-size: 3000px;
+    background-position: center center;
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    height: 150px;
+}
