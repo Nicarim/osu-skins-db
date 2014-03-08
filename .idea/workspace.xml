@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/preview-kinetic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/listing.blade.php" afterPath="$PROJECT_DIR$/app/views/listing.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/master.blade.php" afterPath="$PROJECT_DIR$/app/views/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/previews-manage.blade.php" afterPath="$PROJECT_DIR$/app/views/previews-manage.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/preview-kinetic.js" afterPath="$PROJECT_DIR$/public/js/preview-kinetic.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -79,8 +74,17 @@
       <file leaf-file-name="preview-kinetic.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/preview-kinetic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="25" selection-start="3299" selection-end="3299" vertical-scroll-proportion="2.028409" vertical-offset="0" max-vertical-offset="2329">
-              <folding />
+            <state line="90" column="32" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.15" vertical-offset="871" max-vertical-offset="1802">
+              <folding>
+                <element signature="e#672#916#0" expanded="false" />
+                <element signature="e#720#847#0" expanded="false" />
+                <element signature="e#1081#1188#0" expanded="false" />
+                <element signature="e#1227#1523#0" expanded="false" />
+                <element signature="e#1249#1434#0" expanded="false" />
+                <element signature="e#1291#1337#0" expanded="false" />
+                <element signature="e#1459#1516#0" expanded="false" />
+                <element signature="e#1642#1788#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -661,12 +665,16 @@
       <created>1394302544777</created>
       <updated>1394302544777</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fully working dynamic preview creator (ok, missing database logic)">
+      <created>1394309512161</created>
+      <updated>1394309512161</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -674,7 +682,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30617678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30617678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -703,7 +711,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added dropzone js for uploading file elements." />
     <MESSAGE value="Formatted dropzone, so it can be used for uploading, and doesn't break things :(" />
     <MESSAGE value="Added migrations&#10;Moved sidebar to separate file" />
     <MESSAGE value="Added models for each migration" />
@@ -728,7 +735,8 @@
     <MESSAGE value="Added experimental previews creation from admin panel" />
     <MESSAGE value="Added dynamic preview... preview D:" />
     <MESSAGE value="Added missing kinetic js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added missing kinetic js" />
+    <MESSAGE value="Fully working dynamic preview creator (ok, missing database logic)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fully working dynamic preview creator (ok, missing database logic)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1022,8 +1030,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/preview-kinetic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="25" selection-start="3299" selection-end="3299" vertical-scroll-proportion="2.028409" vertical-offset="0" max-vertical-offset="2329">
-          <folding />
+        <state line="90" column="32" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.15" vertical-offset="871" max-vertical-offset="1802">
+          <folding>
+            <element signature="e#672#916#0" expanded="false" />
+            <element signature="e#720#847#0" expanded="false" />
+            <element signature="e#1081#1188#0" expanded="false" />
+            <element signature="e#1227#1523#0" expanded="false" />
+            <element signature="e#1249#1434#0" expanded="false" />
+            <element signature="e#1291#1337#0" expanded="false" />
+            <element signature="e#1459#1516#0" expanded="false" />
+            <element signature="e#1642#1788#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

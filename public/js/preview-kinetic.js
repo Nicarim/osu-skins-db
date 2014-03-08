@@ -70,14 +70,14 @@ $(document).ready(function(){
         startY = PositionFromAnchor($(input).val(), 1366, 768, elementa.naturalHeight, elementa.naturalWidth).yValue;
     }
     $("#offsetx").change(function(){
-        overlayLayer.offsetX(parseInt($(this).val()));
+        overlayLayer.offsetX(-(parseInt($(this).val())));
         stage.clear();
         stage.add(layer);
         stage.add(overlayLayer);
     });
     $("#offsety").change(function(){
 
-        overlayLayer.offsetY(parseInt($(this).val()));
+        overlayLayer.offsetY(-(parseInt($(this).val())));
         stage.clear();
         stage.add(layer);
         stage.add(overlayLayer);
