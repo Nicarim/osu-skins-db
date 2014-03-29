@@ -63,6 +63,7 @@ class SkinsController extends BaseController{
         return Redirect::to('/skins/view/'.$skin->id);
     }
     function saveElement($id){
+        $uploadedElements = array();
         $skin = Skin::find($id);
         $data = Input::all();
         $rules = array(
@@ -74,19 +75,38 @@ class SkinsController extends BaseController{
             return Response::make($validation->errors->first(), 400);
 
         $filename = $data['file']->getClientOriginalName();
-        $element = SkinElement::firstOrCreate(array(
-            "skin_id" => $skin->id,
-            "filename" => $filename
-        ));
-        $element->element_id = -1;
-        $element->size = $data['file']->getSize();
-        $element->save();
+        if ($skin->hdsupport == 1)
+        {
+            $hdfilename = explode(",",$filename)[0]."@2.".$data['file']->getClientOriginalExtension();
+            $uploadedElements[] = SkinElement::firstOrCreate(array(
+                "skin_id" => $skin->id,
+                "filename" => $hdfilename,
+                "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "size" => $data['file']->getSize()
+            ));
+            $uploadedElements[] = SkinElement::firstOrCreate(array( //non HD element
+                "skin_id" => $skin->id,
+                "filename" => $filename,
+                "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "size" => $data['file']->getSize()
+            ));
+        }
+        else
+        {
+            $uploadedElements[] = SkinElement::firstOrCreate(array(
+                "skin_id" => $skin->id,
+                "filename" => $filename,
+                "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "size" => $data['file']->getSize()
+            ));
+        }
+
 
         $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
-        if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png")
+        if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();
         return View::make('skin-sections/table-row')->with(array(
-            'element' => $element
+            'elements' => $uploadedElements
         ));
     }
     function deleteElement($id){

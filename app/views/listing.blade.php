@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="row">
+<!--<div class="row">
     <div class="skin-panel">
         <div class="col-md-5">
             <h1> My awesome skin </h1>
@@ -13,7 +13,8 @@
             <a href="#">Button4</a>
         </div>
     </div>
-</div>
+</div>-->
+
 <div class="container">
     <div class="row">
         @foreach ($skins as $skin)

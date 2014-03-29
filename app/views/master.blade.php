@@ -24,6 +24,6 @@
     <script src="/js/main.js"></script>
 </head>
 @include('navbar')
-<body style="padding-top: 50px;">
+<body style="padding-top: 80px;">
 @yield ('content')
 </body>
