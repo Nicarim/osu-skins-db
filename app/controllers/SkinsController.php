@@ -81,7 +81,7 @@ class SkinsController extends BaseController{
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $hdfilename,
-                "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "element_id" => -2, //-2 is supposed to mean that it should be skipped from checking (hd elements)
                 "size" => $data['file']->getSize()
             ));
             $uploadedElements[] = SkinElement::firstOrCreate(array( //non HD element
@@ -155,8 +155,5 @@ class SkinsController extends BaseController{
         $image->resize(340,null,true);
         $image->save(public_path().'/previews-content/'.$goimg->skin->id.'/countdown-preview.jpg');
         return Response::make($image, 200, array('Content-Type' => 'image/jpeg'));
-    }
-    function generatePreview(){
-
     }
 } 
