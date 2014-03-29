@@ -81,13 +81,17 @@ class SkinsController extends BaseController{
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $hdfilename,
+                "extension" => $data['file']->getOriginalExtensuion(),
                 "element_id" => -2, //-2 is supposed to mean that it should be skipped from checking (hd elements)
+                "highdef" => 1,
                 "size" => $data['file']->getSize()
             ));
             $uploadedElements[] = SkinElement::firstOrCreate(array( //non HD element
                 "skin_id" => $skin->id,
                 "filename" => $filename,
+                "extension" => $data['file']->getOriginalExtensuion(),
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "highdef" => 0,
                 "size" => $data['file']->getSize()
             ));
             $data['file']->move(public_path()."/skins-content/".$skin->id, $hdfilename);
@@ -100,7 +104,9 @@ class SkinsController extends BaseController{
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $filename,
+                "extension" => $data['file']->getOriginalExtensuion(),
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
+                "highdef" => 0,
                 "size" => $data['file']->getSize()
             ));
             $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);

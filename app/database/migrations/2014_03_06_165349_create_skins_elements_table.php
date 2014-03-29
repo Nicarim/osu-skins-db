@@ -17,6 +17,8 @@ class CreateSkinsElementsTable extends Migration {
             $table->integer("element_id");
             $table->integer("skin_id");
             $table->string("filename");
+            $table->string("extension");
+            $table->integer("highdef");
             $table->integer("size");
             $table->timestamps();
         });
