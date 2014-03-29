@@ -77,7 +77,7 @@ class SkinsController extends BaseController{
         $filename = $data['file']->getClientOriginalName();
         if ($skin->hdsupport == 1)
         {
-            $hdfilename = explode(",",$filename)[0]."@2.".$data['file']->getClientOriginalExtension();
+            $hdfilename = explode(".",$filename)[0]."@2.".$data['file']->getClientOriginalExtension();
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $hdfilename,
@@ -90,6 +90,10 @@ class SkinsController extends BaseController{
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
                 "size" => $data['file']->getSize()
             ));
+            $data['file']->move(public_path()."/skins-content/".$skin->id, $hdfilename);
+            $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdfilename);
+            $imageToResize->resize($imageToResize->width / 2, null, true);
+            $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename);
         }
         else
         {
@@ -99,10 +103,9 @@ class SkinsController extends BaseController{
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
                 "size" => $data['file']->getSize()
             ));
+            $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
         }
 
-
-        $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
         if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();
         return View::make('skin-sections/table-row')->with(array(
