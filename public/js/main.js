@@ -1,11 +1,11 @@
 Dropzone.options.myAwesomeDropzone = {
     success: function(file,response){
         var $jQueryObject = $($.parseHTML(response));
-        var filename = $jQueryObject.find("td:first > a:nth-child(2)").text();
+        var filename = $jQueryObject.find(".element-filename").text();
 
         $("#fileslist > tbody > tr").each(function(){
             var $localDom = $(this);;
-            var rowname = $localDom.find("td:first > a:nth-child(2)").text();
+            var rowname = $localDom.find(".element-filename").text();
             if (rowname == filename){
                 $(this).hide();
             }

@@ -81,17 +81,19 @@ class SkinsController extends BaseController{
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $hdfilename,
-                "extension" => $data['file']->getOriginalExtensuion(),
+                "extension" => $data['file']->getClientOriginalExtension(),
                 "element_id" => -2, //-2 is supposed to mean that it should be skipped from checking (hd elements)
                 "highdef" => 1,
+                "hashd" => 1,
                 "size" => $data['file']->getSize()
             ));
             $uploadedElements[] = SkinElement::firstOrCreate(array( //non HD element
                 "skin_id" => $skin->id,
                 "filename" => $filename,
-                "extension" => $data['file']->getOriginalExtensuion(),
+                "extension" => $data['file']->getClientOriginalExtension(),
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
                 "highdef" => 0,
+                "hashd" => 1,
                 "size" => $data['file']->getSize()
             ));
             $data['file']->move(public_path()."/skins-content/".$skin->id, $hdfilename);
@@ -104,9 +106,10 @@ class SkinsController extends BaseController{
             $uploadedElements[] = SkinElement::firstOrCreate(array(
                 "skin_id" => $skin->id,
                 "filename" => $filename,
-                "extension" => $data['file']->getOriginalExtensuion(),
+                "extension" => $data['file']->getClientOriginalExtension(),
                 "element_id" => -1, //TODO: make this check for existence in database of default skin
                 "highdef" => 0,
+                "hashd" => 0,
                 "size" => $data['file']->getSize()
             ));
             $data['file']->move(public_path()."/skins-content/".$skin->id, $filename);
@@ -122,7 +125,7 @@ class SkinsController extends BaseController{
         $element = SkinElement::find($id);
         if (isset($element))
         {
-            File::delete(public_path().$element->skin->id."/".$element->filename);
+            File::delete(public_path()."/skins-content/".$element->skin->id."/".$element->filename);
             $element->delete();
             return Response::json('success');
         }

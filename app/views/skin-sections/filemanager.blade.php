@@ -9,7 +9,5 @@
         <th style="width:10%;">Size</th>
         <th style="width:10%;">Options</th>
     </tr>
-    @foreach($skin->SkinElement as $element)
-        @include('/skin-sections/table-row', array('element' => $element))
-    @endforeach
+    @include('/skin-sections/table-row', array('elements' => $skin->SkinElement))
 </table>
