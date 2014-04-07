@@ -8,7 +8,7 @@
 
 class SkinsController extends BaseController{
     function index(){
-        return View::make('index');
+        return View::make('index')->with("google", json_decode(OAuth::consumer("google")->request("https://www.googleapis.com/oauth2/v1/userinfo"), true));
     }
     function listOfSkins($sorting=null){
         $skins = Skin::all();

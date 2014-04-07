@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
+    <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="Remove obsolete intval on google id&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SkinsController.php" afterPath="$PROJECT_DIR$/app/controllers/SkinsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.blade.php" afterPath="$PROJECT_DIR$/app/views/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -26,6 +27,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="SkinsController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="153" selection-start="309" selection-end="309" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2856">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OAuth.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuth.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,28 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="composer.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="595">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="session.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/testing/session.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OAuthServiceProvider.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuthServiceProvider.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="29" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1088">
               <folding />
             </state>
           </provider>
@@ -74,10 +66,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="25" selection-start="110" selection-end="110" vertical-scroll-proportion="0.14529915" vertical-offset="0" max-vertical-offset="468">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="19" selection-start="577" selection-end="577" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="697">
+            <state line="15" column="12" selection-start="347" selection-end="444" vertical-scroll-proportion="-2.6153846" vertical-offset="102" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -168,14 +169,14 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php" />
-        <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
         <option value="$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuth.php" />
-        <option value="$PROJECT_DIR$/app/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
         <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
+        <option value="$PROJECT_DIR$/app/views/index.blade.php" />
       </list>
     </option>
   </component>
@@ -661,7 +662,11 @@
       <created>1396891281166</created>
       <updated>1396891281166</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Remove obsolete intval on google id">
+      <created>1396891392031</created>
+      <updated>1396891392031</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -725,7 +730,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Made jquery depend on response from addElement() (easy management in future)" />
     <MESSAGE value="Added possibility to delete skin files." />
     <MESSAGE value="Allow deletion of files through jquery" />
     <MESSAGE value="Added example screenshots" />
@@ -750,7 +754,8 @@
     <MESSAGE value="Add OAuth authorization of google account." />
     <MESSAGE value="Add user log on and log out." />
     <MESSAGE value="Attempt to fix user log in." />
-    <option name="LAST_COMMIT_MESSAGE" value="Attempt to fix user log in." />
+    <MESSAGE value="Remove obsolete intval on google id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove obsolete intval on google id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -949,13 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="49" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2941">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="29" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1088">
@@ -973,13 +971,6 @@
     <entry file="file://$PROJECT_DIR$/app/config/testing/session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="579">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="16" selection-start="79" selection-end="79" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="187">
           <folding />
         </state>
       </provider>
@@ -1045,7 +1036,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="577" selection-end="577" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="697">
+        <state line="15" column="12" selection-start="347" selection-end="444" vertical-scroll-proportion="-2.6153846" vertical-offset="102" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="153" selection-start="309" selection-end="309" vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2856">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="25" selection-start="110" selection-end="110" vertical-scroll-proportion="0.14529915" vertical-offset="0" max-vertical-offset="468">
           <folding />
         </state>
       </provider>
