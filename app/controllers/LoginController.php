@@ -16,7 +16,7 @@ class LoginController extends BaseController{
             $userdata = json_decode($google->request("https://www.googleapis.com/oauth2/v1/userinfo"), true);
             $user = User::firstOrNew(
                 array(
-                    "google_id" => intval($userdata['id']),
+                    "google_id" => $userdata['id'],
                 ));
             $user->name = $userdata['name'];
             $user->email = $userdata['email'];

@@ -77,7 +77,7 @@
       <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="36" selection-start="481" selection-end="481" vertical-scroll-proportion="0.39957264" vertical-offset="0" max-vertical-offset="697">
+            <state line="19" column="19" selection-start="577" selection-end="577" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
@@ -657,7 +657,11 @@
       <created>1396889358325</created>
       <updated>1396889358325</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Attempt to fix user log in.">
+      <created>1396891281166</created>
+      <updated>1396891281166</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -721,7 +725,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Made dropzone save files in destination folder (skins-content)" />
     <MESSAGE value="Made jquery depend on response from addElement() (easy management in future)" />
     <MESSAGE value="Added possibility to delete skin files." />
     <MESSAGE value="Allow deletion of files through jquery" />
@@ -746,7 +749,8 @@
     <MESSAGE value="Add displaying of HD elements&#10;&#10;Fix elements not being deleted properly." />
     <MESSAGE value="Add OAuth authorization of google account." />
     <MESSAGE value="Add user log on and log out." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user log on and log out." />
+    <MESSAGE value="Attempt to fix user log in." />
+    <option name="LAST_COMMIT_MESSAGE" value="Attempt to fix user log in." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1041,7 +1045,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="36" selection-start="481" selection-end="481" vertical-scroll-proportion="0.39957264" vertical-offset="0" max-vertical-offset="697">
+        <state line="19" column="19" selection-start="577" selection-end="577" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
