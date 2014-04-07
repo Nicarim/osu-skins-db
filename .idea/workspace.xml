@@ -68,7 +68,7 @@
       <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="21" selection-start="84" selection-end="84" vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="468">
+            <state line="3" column="128" selection-start="191" selection-end="191" vertical-scroll-proportion="0.11208791" vertical-offset="0" max-vertical-offset="455">
               <folding />
             </state>
           </provider>
@@ -673,7 +673,11 @@
       <created>1396892094678</created>
       <updated>1396892094678</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Remove var dump from debug value.">
+      <created>1396892140194</created>
+      <updated>1396892140194</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -737,7 +741,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added example screenshots" />
     <MESSAGE value="Attempt to fix striped gradient on dropzone" />
     <MESSAGE value="Experimental image generation (needs aloooot work)" />
     <MESSAGE value="Added experimental dynamic countdown preview" />
@@ -762,7 +765,8 @@
     <MESSAGE value="Remove obsolete intval on google id" />
     <MESSAGE value="debug data on index." />
     <MESSAGE value="Fix overflow of google id (change to varchar instead &lt;omg&gt;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix overflow of google id (change to varchar instead &lt;omg&gt;)" />
+    <MESSAGE value="Remove var dump from debug value." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove var dump from debug value." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1057,7 +1061,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="84" selection-end="84" vertical-scroll-proportion="0.10897436" vertical-offset="0" max-vertical-offset="468">
+        <state line="3" column="128" selection-start="191" selection-end="191" vertical-scroll-proportion="0.11208791" vertical-offset="0" max-vertical-offset="455">
           <folding />
         </state>
       </provider>
