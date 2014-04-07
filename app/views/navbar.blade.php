@@ -28,6 +28,14 @@
                     </ul>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                @if (Auth::check())
+                <li><a>{{Auth::user()->email}} (google)</a></li>
+                @else
+                <a class="btn btn-default navbar-btn" role="button" href="/login">Sign in (Google)</a>
+                @endif
+            </ul>
         </div>
+
     </div>
 </nav>

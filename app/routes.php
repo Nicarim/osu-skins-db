@@ -15,38 +15,39 @@ Route::get('/',array(
         "uses" => "SkinsController@index",
         "as" => "Home"
     ));
-Route::get('/skins/list/{sorting?}', array(
-        "uses" => "SkinsController@listOfSkins",
-        "as" => "SkinListing"
-    ));
-Route::get('/skins/view/{id}/{section?}', array(
-        "uses" => "SkinsController@viewSkin",
-        "as" => "SkinIndex"
-    ));
-Route::post('/skins/settings/{id}/{section}', array(
-        "uses" => "SkinsController@editSettings",
-        "as" => "SkinSettings"
-    ));
-Route::get('/skins/create', function(){
-        return View::make('create');
-});
-Route::post('/skins/create', array(
-        "uses" => "SkinsController@createSkin"
-    ));
-Route::post('/file-upload/{id}', array(
-        "uses" => "SkinsController@saveElement"
-    ));
-Route::get('/file-delete/{id}', array(
-        "uses" => "SkinsController@deleteElement"
-    ));
-Route::get('/image', array(
-         "uses" => "SkinsController@generateImage",
-    ));
-Route::get('/previews/manage', array(
-         "uses" => "PreviewsController@viewSettings",
-         "as" => "PreviewsManage"
-    ));
-Route::post('/previews/create',array(
-       "uses" => "PreviewsController@createPreview",
-       "as" => "CreatePreview"
-    ));
+Route::group(array("prefix" => "skins"), function(){
+        Route::get('/list/{sorting?}', array(
+                "uses" => "SkinsController@listOfSkins",
+                "as" => "SkinListing"
+            ));
+        Route::get('/view/{id}/{section?}', array(
+                "uses" => "SkinsController@viewSkin",
+                "as" => "SkinIndex"
+            ));
+        Route::post('/settings/{id}/{section}', array(
+                "uses" => "SkinsController@editSettings",
+                "as" => "SkinSettings"
+            ));
+        Route::get('/create', function(){
+                return View::make('create');
+            });
+        Route::post('/create', array(
+                "uses" => "SkinsController@createSkin"
+            ));
+    });
+
+Route::group(array("prefix" => "previews"), function(){
+        Route::get('/manage', array(
+                "uses" => "PreviewsController@viewSettings",
+                "as" => "PreviewsManage"
+            ));
+        Route::post('/create',array(
+                "uses" => "PreviewsController@createPreview",
+                "as" => "CreatePreview"
+            ));
+    });
+
+Route::get("/login", array(
+   "uses" => "LoginController@loginOAuth",
+   "as" => "signin"
+));
