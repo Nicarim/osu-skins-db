@@ -14,7 +14,7 @@ class LoginController extends BaseController{
 
             $token = $google->requestAccessToken($code);
             $userdata = json_decode($google->request("https://www.googleapis.com/oauth2/v1/userinfo"), true);
-            $user = User::firstOrCreate(
+            $user = User::firstOrNew(
                 array(
                     "google_id" => intval($userdata['id']),
                 ));
