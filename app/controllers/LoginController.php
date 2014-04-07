@@ -14,7 +14,10 @@ class LoginController extends BaseController{
 
             $token = $google->requestAccessToken($code);
             $userdata = json_decode($google->request("https://www.googleapis.com/oauth2/v1/userinfo"), true);
-            $user = User::firstOrNew(array("google_id" => $userdata['id']));
+            $user = User::firstOrCreate(
+                array(
+                    "google_id" => intval($userdata['id']),
+                ));
             $user->name = $userdata['name'];
             $user->email = $userdata['email'];
             $user->refresh_token = $code;
@@ -29,6 +32,10 @@ class LoginController extends BaseController{
             $url = $google->getAuthorizationUri();
             return Redirect::to((string) $url);
         }
+    }
+    public function logoutOAuth(){
+        Auth::logout();
+        return Redirect::route("Home");
     }
 
 } 

@@ -30,9 +30,17 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if (Auth::check())
-                <li><a>{{Auth::user()->email}} (google)</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::user()->email}} (Google)<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">My Skins</a></li>
+                        <li><a href="#">Users List</a></li>
+                        <div class="divider"></div>
+                        <li><a href="{{URL::route('logout')}}">Log Out</a></li>
+                    </ul>
+                </li>
                 @else
-                <a class="btn btn-default navbar-btn" role="button" href="/login">Sign in (Google)</a>
+                    <a class="btn btn-default navbar-btn" role="button" href="{{URL::route('login')}}">Sign in (Google)</a>
                 @endif
             </ul>
         </div>

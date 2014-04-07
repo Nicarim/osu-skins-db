@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="Add displaying of HD elements&#10;&#10;Fix elements not being deleted properly.&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="$PROJECT_DIR$/app/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="$PROJECT_DIR$/app/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+    <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" afterPath="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/LoginController.php" afterPath="$PROJECT_DIR$/app/controllers/LoginController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/navbar.blade.php" afterPath="$PROJECT_DIR$/app/views/navbar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -80,19 +77,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="LoginController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="41" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="578">
+            <state line="17" column="22" selection-start="508" selection-end="508" vertical-scroll-proportion="-0.053418804" vertical-offset="229" max-vertical-offset="697">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.blade.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="navbar.blade.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="2146" selection-end="2146" vertical-scroll-proportion="1.1962963" vertical-offset="0" max-vertical-offset="799">
+            <state line="35" column="54" selection-start="2176" selection-end="2176" vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="935">
               <folding />
             </state>
           </provider>
@@ -101,7 +98,7 @@
       <file leaf-file-name="2014_04_07_155704_create_users_table.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="7" selection-start="194" selection-end="194" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="714">
+            <state line="16" column="48" selection-start="371" selection-end="371" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="714">
               <folding />
             </state>
           </provider>
@@ -171,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/views/skin-sections/filemanager.blade.php" />
         <option value="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/app.php" />
         <option value="$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php" />
@@ -179,9 +175,10 @@
         <option value="$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuth.php" />
         <option value="$PROJECT_DIR$/app/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/models/User.php" />
-        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/navbar.blade.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
       </list>
     </option>
   </component>
@@ -585,13 +582,18 @@
       <created>1396126923080</created>
       <updated>1396126923080</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Add OAuth authorization of google account.">
+      <created>1396887742988</created>
+      <updated>1396887742988</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18985976" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -600,7 +602,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35045317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32937366" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13301282" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -608,7 +610,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -649,7 +650,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added possibility to upload skin" />
     <MESSAGE value="Added dropzone to filemanager page." />
     <MESSAGE value="Made dropzone save files in destination folder (skins-content)" />
     <MESSAGE value="Made jquery depend on response from addElement() (easy management in future)" />
@@ -674,7 +674,8 @@
     <MESSAGE value="Remove unnecessary function (how did that even get there)" />
     <MESSAGE value="Add fields for extension and element's HD state." />
     <MESSAGE value="Add displaying of HD elements&#10;&#10;Fix elements not being deleted properly." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add displaying of HD elements&#10;&#10;Fix elements not being deleted properly." />
+    <MESSAGE value="Add OAuth authorization of google account." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add OAuth authorization of google account." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -854,7 +855,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="48" selection-start="296" selection-end="296" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="765" />
+        <state line="9" column="48" selection-start="296" selection-end="296" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PreviewsController.php">
@@ -876,11 +879,6 @@
         <state line="14" column="49" selection-start="318" selection-end="318" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2941">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="15" selection-start="1127" selection-end="1127" vertical-scroll-proportion="-13.076923" vertical-offset="51" max-vertical-offset="850" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuthServiceProvider.php">
@@ -949,23 +947,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="7" selection-start="194" selection-end="194" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="41" selection-start="789" selection-end="789" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="578">
+        <state line="51" column="30" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.4551282" vertical-offset="501" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="2146" selection-end="2146" vertical-scroll-proportion="1.1962963" vertical-offset="0" max-vertical-offset="799">
+        <state line="35" column="54" selection-start="2176" selection-end="2176" vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="48" selection-start="371" selection-end="371" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="22" selection-start="508" selection-end="508" vertical-scroll-proportion="-0.053418804" vertical-offset="229" max-vertical-offset="697">
           <folding />
         </state>
       </provider>

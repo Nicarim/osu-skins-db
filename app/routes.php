@@ -46,8 +46,15 @@ Route::group(array("prefix" => "previews"), function(){
                 "as" => "CreatePreview"
             ));
     });
+Route::group(array("prefix" => "users"), function(){
+        Route::get("/login", array(
+                "uses" => "LoginController@loginOAuth",
+                "as" => "login"
+            ));
+        Route::get("/logout", array(
+                "uses" => "LoginController@logoutOAuth",
+                "as" => "logout"
+            ));
+    });
 
-Route::get("/login", array(
-   "uses" => "LoginController@loginOAuth",
-   "as" => "signin"
-));
+
