@@ -1,5 +1,5 @@
 
-<h2>{{$skin->name}}
+<h2>{{$skin->name}} created by {{$skin->user->name}}
 @if ($skin->hdsupport == 1) <span class="label label-default">HD</span> @endif
 </h2>
 <div class="panel panel-primary">

@@ -58,6 +58,7 @@ class SkinsController extends BaseController{
             $skin->hdsupport = 0;
         $skin->description = $data['description'];
         $skin->name = $data['title'];
+        $skin->user_id = Auth::user()->id;
         $skin->save();
         mkdir('skins-content/'.$skin->id.'/');
         return Redirect::to('/skins/view/'.$skin->id);

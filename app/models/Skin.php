@@ -12,4 +12,7 @@ class Skin extends Eloquent {
     public function SkinElement(){
         return $this->hasMany("SkinElement")->orderBy('filename','asc');
     }
+    public function User(){
+        return $this->belongsTo("User");
+    }
 } 

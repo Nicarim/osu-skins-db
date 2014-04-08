@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/index.blade.php" afterPath="$PROJECT_DIR$/app/views/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/Skin.php" afterPath="$PROJECT_DIR$/app/models/Skin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SkinsController.php" afterPath="$PROJECT_DIR$/app/controllers/SkinsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -29,73 +31,7 @@
       <file leaf-file-name="SkinsController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="32" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="2856">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OAuth.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuth.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="141" column="66" selection-start="3922" selection-end="3922" vertical-scroll-proportion="-10.307693" vertical-offset="2129" max-vertical-offset="2669">
-              <folding>
-                <element signature="e#6#177#0" expanded="true" />
-                <element signature="e#206#245#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="session.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/testing/session.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="442">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/config/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="203" selection-end="203" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="629">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="128" selection-start="191" selection-end="191" vertical-scroll-proportion="0.11208791" vertical-offset="0" max-vertical-offset="455">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="12" selection-start="347" selection-end="444" vertical-scroll-proportion="-2.6153846" vertical-offset="102" max-vertical-offset="697">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="38" selection-start="472" selection-end="472" vertical-scroll-proportion="-10.153846" vertical-offset="93" max-vertical-offset="561">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_04_07_155704_create_users_table.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="6" selection-start="171" selection-end="172" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="714">
+            <state line="60" column="42" selection-start="1557" selection-end="1557" vertical-scroll-proportion="-13.730769" vertical-offset="578" max-vertical-offset="2873">
               <folding />
             </state>
           </provider>
@@ -104,16 +40,52 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="49" selection-start="324" selection-end="324" vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="952">
+            <state line="15" column="49" selection-start="324" selection-end="324" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="952">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/BaseController.php">
+      <file leaf-file-name="view-skin.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="46" selection-start="534" selection-end="534" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overview.blade.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="21" selection-start="586" selection-end="586" vertical-scroll-proportion="0.6976242" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar-skin.blade.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/sidebar-skin.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="391">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Skin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="40" selection-start="366" selection-end="366" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_03_05_172650_create_skins_table.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_05_172650_create_skins_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="43" selection-start="366" selection-end="366" vertical-scroll-proportion="-5.8846154" vertical-offset="102" max-vertical-offset="731">
               <folding />
             </state>
           </provider>
@@ -149,9 +121,7 @@
         <option value="$PROJECT_DIR$/app/models/SkinElements.php" />
         <option value="$PROJECT_DIR$/public/fancybox/jquery.fancybox.css" />
         <option value="$PROJECT_DIR$/app/models/SkinElement.php" />
-        <option value="$PROJECT_DIR$/app/models/Skin.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshotElement.php" />
-        <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/PreviewsController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_03_07_182819_create_preview_screenshots.php" />
         <option value="$PROJECT_DIR$/app/models/PreviewScreenshot.php" />
@@ -174,8 +144,10 @@
         <option value="$PROJECT_DIR$/app/views/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/LoginController.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
         <option value="$PROJECT_DIR$/app/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/models/Skin.php" />
+        <option value="$PROJECT_DIR$/app/controllers/SkinsController.php" />
+        <option value="$PROJECT_DIR$/app/views/skin-sections/overview.blade.php" />
       </list>
     </option>
   </component>
@@ -282,6 +254,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkinsDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SkinsDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skin-sections" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -677,33 +671,37 @@
       <created>1396892140194</created>
       <updated>1396892140194</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Add nice welcoming message to index.">
+      <created>1396902524860</created>
+      <updated>1396902524860</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18985976" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35045317" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3557402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13301282" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12300319" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -723,9 +721,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.260574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -741,7 +739,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Attempt to fix striped gradient on dropzone" />
     <MESSAGE value="Experimental image generation (needs aloooot work)" />
     <MESSAGE value="Added experimental dynamic countdown preview" />
     <MESSAGE value="Included template preview.jpg" />
@@ -766,7 +763,8 @@
     <MESSAGE value="debug data on index." />
     <MESSAGE value="Fix overflow of google id (change to varchar instead &lt;omg&gt;)" />
     <MESSAGE value="Remove var dump from debug value." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove var dump from debug value." />
+    <MESSAGE value="Add nice welcoming message to index." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add nice welcoming message to index." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -774,16 +772,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="42" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="493" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="38" selection-start="825" selection-end="825" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="629" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="93" selection-start="997" selection-end="997" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="510" />
@@ -824,11 +812,6 @@
         <state line="57" column="33" selection-start="1767" selection-end="1767" vertical-scroll-proportion="-19.615385" vertical-offset="459" max-vertical-offset="2210" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sidebar-skin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/filters.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1292" />
@@ -844,24 +827,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2737" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Group.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="880" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="340" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jquery.fancybox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="34425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/skin-sections/settings.blade.php">
@@ -894,11 +862,6 @@
         <state line="29" column="23" selection-start="1054" selection-end="1054" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="884" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="799" selection-end="799" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="544" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_07_182927_create_preview_screenshot_elements.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="7" selection-start="625" selection-end="625" vertical-scroll-proportion="0.48021582" vertical-offset="175" max-vertical-offset="731" />
@@ -917,11 +880,6 @@
     <entry file="file://$PROJECT_DIR$/public/previews-content/1/countdown.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/SkinElement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="277" selection-end="277" vertical-scroll-proportion="0.4448598" vertical-offset="0" max-vertical-offset="535" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_06_165349_create_skins_elements_table.php">
@@ -946,37 +904,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="48" selection-start="296" selection-end="296" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="765">
-          <folding />
-        </state>
+        <state line="9" column="48" selection-start="296" selection-end="296" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="765" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PreviewsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493">
-          <folding />
-        </state>
+        <state line="16" column="29" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="493" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="50" selection-start="6596" selection-end="6596" vertical-scroll-proportion="0.0" vertical-offset="2873" max-vertical-offset="3230">
-          <folding />
-        </state>
+        <state line="169" column="50" selection-start="6596" selection-end="6596" vertical-scroll-proportion="0.0" vertical-offset="2873" max-vertical-offset="3230" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuthServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="29" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1088">
-          <folding />
-        </state>
+        <state line="19" column="29" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1088" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="595" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/testing/session.php">
@@ -988,11 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/Artdarek/OAuth/OAuth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="141" column="66" selection-start="3922" selection-end="3922" vertical-scroll-proportion="-10.307693" vertical-offset="2129" max-vertical-offset="2669">
-          <folding>
-            <element signature="e#6#177#0" expanded="true" />
-            <element signature="e#206#245#0" expanded="true" />
-          </folding>
+        <state line="141" column="66" selection-start="3922" selection-end="3922" vertical-scroll-proportion="0.0" vertical-offset="2129" max-vertical-offset="2669">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,63 +950,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="30" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.4551282" vertical-offset="501" max-vertical-offset="969">
-          <folding />
-        </state>
+        <state line="51" column="30" selection-start="1795" selection-end="1795" vertical-scroll-proportion="0.4551282" vertical-offset="501" max-vertical-offset="969" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/navbar.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="54" selection-start="2176" selection-end="2176" vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="935">
-          <folding />
-        </state>
+        <state line="35" column="54" selection-start="2176" selection-end="2176" vertical-scroll-proportion="-7.1923075" vertical-offset="408" max-vertical-offset="935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/artdarek/oauth-4-laravel/src/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="203" selection-end="203" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="629">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="472" selection-end="472" vertical-scroll-proportion="-10.153846" vertical-offset="93" max-vertical-offset="561">
+        <state line="9" column="0" selection-start="203" selection-end="203" vertical-scroll-proportion="-0.0" vertical-offset="153" max-vertical-offset="629">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="12" selection-start="347" selection-end="444" vertical-scroll-proportion="-2.6153846" vertical-offset="102" max-vertical-offset="697">
+        <state line="15" column="12" selection-start="347" selection-end="444" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="782">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_04_07_155704_create_users_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="6" selection-start="171" selection-end="172" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="49" selection-start="324" selection-end="324" vertical-scroll-proportion="-3.2692308" vertical-offset="153" max-vertical-offset="952">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="32" selection-start="450" selection-end="450" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="2856">
+        <state line="9" column="6" selection-start="171" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="731">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="128" selection-start="191" selection-end="191" vertical-scroll-proportion="0.11208791" vertical-offset="0" max-vertical-offset="455">
+        <state line="5" column="5" selection-start="213" selection-end="213" vertical-scroll-proportion="0.18599562" vertical-offset="0" max-vertical-offset="457">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/SkinElement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="2" selection-start="277" selection-end="277" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Group.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="2" selection-start="189" selection-end="189" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Element.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="2" selection-start="193" selection-end="193" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/packages/artdarek/oauth-4-laravel/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="38" selection-start="472" selection-end="472" vertical-scroll-proportion="0.5895372" vertical-offset="64" max-vertical-offset="561">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_03_05_172650_create_skins_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="43" selection-start="366" selection-end="366" vertical-scroll-proportion="-5.8846154" vertical-offset="102" max-vertical-offset="731">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="42" selection-start="1557" selection-end="1557" vertical-scroll-proportion="-13.730769" vertical-offset="578" max-vertical-offset="2873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Skin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="40" selection-start="366" selection-end="366" vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="49" selection-start="324" selection-end="324" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="952">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sidebar-skin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/view-skin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="534" selection-end="534" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/skin-sections/overview.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="21" selection-start="586" selection-end="586" vertical-scroll-proportion="0.6976242" vertical-offset="0" max-vertical-offset="663">
           <folding />
         </state>
       </provider>
