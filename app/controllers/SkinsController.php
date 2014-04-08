@@ -75,6 +75,24 @@ class SkinsController extends BaseController{
 
         return Redirect::to('/skins/view/'.$skin->id);
     }
+    function downloadSkin($id){
+        $skin = Skin::find($id);
+        $zip = new ZipArchive();
+        $zipname = public_path()."/".urlencode($skin->name).".osk";
+        $zip->open($zipname, ZipArchive::OVERWRITE);
+        $files = glob(public_path()."/skins-content/".$skin->id."/*");
+        foreach($files as $file){
+            $zip->addFile($file, basename($file));
+        }
+        $zip->close();
+
+
+        App::finish(function ($request, $response) use ($zipname){
+                unlink($zipname);
+            });
+        return Response::download($zipname);
+
+    }
     function saveElement($id){
         $uploadedElements = array();
         $skin = Skin::find($id);
