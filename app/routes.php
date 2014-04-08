@@ -16,6 +16,18 @@ Route::get('/',array(
         "as" => "Home"
     ));
 Route::group(array("prefix" => "skins"), function(){
+        Route::group(array("before" => "auth"), function(){
+                Route::post('/settings/{id}/{section}', array(
+                        "uses" => "SkinsController@editSettings",
+                        "as" => "SkinSettings"
+                    ));
+                Route::get('/create', function(){
+                        return View::make('create');
+                    });
+                Route::post('/create', array(
+                        "uses" => "SkinsController@createSkin"
+                    ));
+        });
         Route::get('/list/{sorting?}', array(
                 "uses" => "SkinsController@listOfSkins",
                 "as" => "SkinListing"
@@ -24,19 +36,13 @@ Route::group(array("prefix" => "skins"), function(){
                 "uses" => "SkinsController@viewSkin",
                 "as" => "SkinIndex"
             ));
-        Route::post('/settings/{id}/{section}', array(
-                "uses" => "SkinsController@editSettings",
-                "as" => "SkinSettings"
-            ));
-        Route::get('/create', function(){
-                return View::make('create');
-            });
-        Route::post('/create', array(
-                "uses" => "SkinsController@createSkin"
+        Route::get("/download/{id}", array(
+                "uses" => "SkinsController@downloadSkin",
+                "as" => "SkinDownload"
             ));
     });
 
-Route::group(array("prefix" => "previews"), function(){
+Route::group(array("prefix" => "previews", "before" => "auth"), function(){
         Route::get('/manage', array(
                 "uses" => "PreviewsController@viewSettings",
                 "as" => "PreviewsManage"
@@ -48,10 +54,12 @@ Route::group(array("prefix" => "previews"), function(){
     });
 Route::group(array("prefix" => "users"), function(){
         Route::get("/login", array(
+                "before" => "guest",
                 "uses" => "LoginController@loginOAuth",
                 "as" => "login"
             ));
         Route::get("/logout", array(
+                "before" => "auth",
                 "uses" => "LoginController@logoutOAuth",
                 "as" => "logout"
             ));
