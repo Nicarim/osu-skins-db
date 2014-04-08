@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d9295fe1-1c5a-4831-9a7f-cbae210e3394" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/SkinsController.php" afterPath="$PROJECT_DIR$/app/controllers/SkinsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" afterPath="$PROJECT_DIR$/app/views/skin-sections/table-row.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="SkinsDB.iws" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="SkinsController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="47" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.55748373" vertical-offset="1086" max-vertical-offset="3451">
+            <state line="82" column="59" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.5943601" vertical-offset="1035" max-vertical-offset="3451">
               <folding />
             </state>
           </provider>
@@ -755,7 +754,11 @@
       <created>1396955352229</created>
       <updated>1396955352229</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Add downloading of skin.">
+      <created>1396958945573</created>
+      <updated>1396958945573</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -819,7 +822,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed duplication of rows in file manager." />
     <MESSAGE value="Removed rename button (maybe reimplemented in future)" />
     <MESSAGE value="Fixed caching issue." />
     <MESSAGE value="Added experimental previews creation from admin panel" />
@@ -844,7 +846,8 @@
     <MESSAGE value="Remove all images from skin folder if skin existed in past." />
     <MESSAGE value="Add authentication and ownership checks where necessary" />
     <MESSAGE value="More ownership checks&#10;&#10;Fix missing route for element upload." />
-    <option name="LAST_COMMIT_MESSAGE" value="More ownership checks&#10;&#10;Fix missing route for element upload." />
+    <MESSAGE value="Add downloading of skin." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add downloading of skin." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1163,7 +1166,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/SkinsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="47" selection-start="2380" selection-end="2380" vertical-scroll-proportion="0.55748373" vertical-offset="1086" max-vertical-offset="3451">
+        <state line="82" column="59" selection-start="2276" selection-end="2276" vertical-scroll-proportion="0.5943601" vertical-offset="1035" max-vertical-offset="3451">
           <folding />
         </state>
       </provider>

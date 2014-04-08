@@ -78,7 +78,7 @@ class SkinsController extends BaseController{
     function downloadSkin($id){
         $skin = Skin::find($id);
         $zip = new ZipArchive();
-        $zipname = public_path()."/".urlencode($skin->name).".osk";
+        $zipname = public_path()."/".$skin->name.".osk";
         $zip->open($zipname, ZipArchive::OVERWRITE);
         $files = glob(public_path()."/skins-content/".$skin->id."/*");
         foreach($files as $file){
