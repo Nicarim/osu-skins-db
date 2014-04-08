@@ -60,7 +60,19 @@ class SkinsController extends BaseController{
         $skin->name = $data['title'];
         $skin->user_id = Auth::user()->id;
         $skin->save();
-        mkdir('skins-content/'.$skin->id.'/');
+        $skinRoot = 'skins-content/'.$skin->id.'/';
+        if (!is_dir($skinRoot))
+            mkdir($skinRoot);
+        else
+        {
+            $skinFiles = glob(public_path().'/skins-content/'.$skin->id.'/*');
+            foreach($skinFiles as $file)
+            {
+                if (is_file($file))
+                    unlink($file);
+            }
+        }
+
         return Redirect::to('/skins/view/'.$skin->id);
     }
     function saveElement($id){
