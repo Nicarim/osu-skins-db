@@ -40,6 +40,12 @@ Route::group(array("prefix" => "skins"), function(){
                 "uses" => "SkinsController@downloadSkin",
                 "as" => "SkinDownload"
             ));
+        Route::post('/upload-element/{id}', array(
+                "uses" => "SkinsController@saveElement"
+            ));
+        Route::get('/delete-element/{id}', array(
+                "uses" => "SkinsController@deleteElement"
+            ));
     });
 
 Route::group(array("prefix" => "previews", "before" => "auth"), function(){

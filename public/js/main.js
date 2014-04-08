@@ -31,7 +31,7 @@ $(document).ready(function() {
     });
 });
 function deleteRow (item, id){
-    $.get(("/file-delete/"+id),function(data){
+    $.get(("/skins/delete-element/"+id),function(data){
         if (data == "success")
             $(item).parent().parent().fadeOut();
     })

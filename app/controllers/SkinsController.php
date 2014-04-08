@@ -79,6 +79,8 @@ class SkinsController extends BaseController{
         $uploadedElements = array();
         $skin = Skin::find($id);
         $data = Input::all();
+        if ($skin->user_id != Auth::user()->id)
+            throw new AccessDeniedException;
         $rules = array(
             'file' => 'mimes:jpeg,bmp,png,mp3,wav,ogg'
         );
@@ -136,6 +138,8 @@ class SkinsController extends BaseController{
     }
     function deleteElement($id){
         $element = SkinElement::find($id);
+        if (Auth::user()->id != $element->skin->user_id)
+            throw new AccessDeniedException;
         if (isset($element))
         {
             File::delete(public_path()."/skins-content/".$element->skin->id."/".$element->filename);

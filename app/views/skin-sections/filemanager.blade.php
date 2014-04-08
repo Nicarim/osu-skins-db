@@ -1,5 +1,5 @@
 @if (Auth::check() && Auth::user()->id == $skin->user->id)
-    <form action="/file-upload/{{$skin->id}}" class="dropzone dz-clickable dropzone-custom" id="my-awesome-dropzone">
+    <form action="/skins/upload-element/{{$skin->id}}" class="dropzone dz-clickable dropzone-custom" id="my-awesome-dropzone">
         <div class="dz-default dz-message"><span>Drop files here to upload</span></div>
     </form>
 @endif
