@@ -106,10 +106,13 @@ class SkinsController extends BaseController{
 
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
-        $filename = array();
-        $filename['fullname'] = $data['file']->getClientOriginalName();
-        $filename['filename'] = rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),".");
-        $filename['extension'] = $data['file']->getClientOriginalExtension();
+
+        $filename = array(
+            "fullname" => $data['file']->getClientOriginalName(),
+            "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
+            "extension" => $data['file']->getClientOriginalExtension()
+        );
+
         if ($skin->hdsupport == 1)
         {
             $hdSkinElement = SkinElement::firstOrNew(array(
@@ -136,33 +139,6 @@ class SkinsController extends BaseController{
             $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
             $sdSkinElement->save();
             $uploadedElements[] = $sdSkinElement;
-            //$hdfilename = explode(".",$filename)[0]."@2.".$data['file']->getClientOriginalExtension();
-            /*
-            $uploadedElements[] = SkinElement::firstOrCreate(array(
-                "skin_id" => $skin->id,
-                "filename" => $hdfilename,
-                "extension" => $data['file']->getClientOriginalExtension(),
-                "element_id" => -2, //-2 is supposed to mean that it should be skipped from checking (hd elements)
-                "highdef" => 1,
-                "hashd" => 1
-                //"size" => $data['file']->getSize()
-            ));
-            end($uploadedElements)->size = $data['file']->getSize();
-            end($uploadedElements)->save();
-            $uploadedElements[] = SkinElement::firstOrCreate(array( //non HD element
-                "skin_id" => $skin->id,
-                "filename" => $filename,
-                "extension" => $data['file']->getClientOriginalExtension(),
-                "element_id" => -1, //TODO: make this check for existence in database of default skin
-                "highdef" => 0,
-                "hashd" => 1,
-            ));
-            end($uploadedElements)->size = $data['file']->getSize();
-            end($uploadedElements)->save();
-            $data['file']->move(public_path()."/skins-content/".$skin->id, $hdfilename);
-            $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdfilename);
-            $imageToResize->resize($imageToResize->width / 2, null, true);
-            $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename);*/
         }
         else
         {
@@ -176,15 +152,6 @@ class SkinsController extends BaseController{
             $SkinElement->size = $data['file']->getSize();
             $SkinElement->save();
             $uploadedElements[] = $SkinElement;
-            /*$uploadedElements[] = SkinElement::firstOrCreate(array(
-                "skin_id" => $skin->id,
-                "filename" => $filename,
-                "extension" => $data['file']->getClientOriginalExtension(),
-                "element_id" => -1, //TODO: make this check for existence in database of default skin
-                "highdef" => 0,
-                "hashd" => 0,
-            ));
-            end($uploadedElements)->size = $data['file']->getSize();*/
             $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullname']);
         }
 
