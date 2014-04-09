@@ -11,7 +11,7 @@
                 <span>Sound</span>
             @endif
         </td>
-        <td>{{round((float)($element->size / 1000000),2)}} MB</td>
+        <td>{{helpers::formatSizeUnits($element->size)}}</td>
         @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
             <td><a href="#" onclick="deleteRow(this,{{$element->id}})">Delete</a></td>
         @endif

@@ -187,6 +187,7 @@ class SkinsController extends BaseController{
             'elements' => $uploadedElements
         ));
     }
+
     function deleteElement($id){
         $element = SkinElement::find($id);
         if (Auth::user()->id != $element->skin->user_id)

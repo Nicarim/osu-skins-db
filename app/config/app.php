@@ -109,6 +109,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Artdarek\OAuth\OAuthServiceProvider',
+        'helpersServiceProvider'
 
 
 	),
