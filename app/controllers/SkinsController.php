@@ -110,12 +110,20 @@ class SkinsController extends BaseController{
         $filename = array(
             "fullname" => $data['file']->getClientOriginalName(),
             "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
-            "extension" => $data['file']->getClientOriginalExtension()
+            "extension" => $data['file']->getClientOriginalExtension(),
+            "ishd" => strpos($data['file']->getClientOriginalName(), "@x2") === false
         );
+
+        if ($filename['ishd'])
+        {
+            $filename['filename'] = substr($filename['filename'], 0, -3);
+            $filename['fullname'] = $filename['filename'].".".$filename['extension'];
+        }
         if (in_array($filename['extension'], array("jpg","jpeg","png")))
         {
             if ($skin->hdsupport == 1)
             {
+                $hdExtension = "@2x.";
                 $hdSkinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
@@ -124,9 +132,10 @@ class SkinsController extends BaseController{
                     ));
                 $hdSkinElement->element_id = -2;
                 $hdSkinElement->size = $data['file']->getSize();
-                $data['file']->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->filename."@2.".$hdSkinElement->extension);
+                $data['file']->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->filename.$hdExtension.$hdSkinElement->extension);
                 $hdSkinElement->save();
                 $uploadedElements[] = $hdSkinElement;
+
                 $sdSkinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
@@ -134,8 +143,9 @@ class SkinsController extends BaseController{
                         "ishd" => 0
                     ));
                 $sdSkinElement->element_id = -1;
-                $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->filename."@2.".$hdSkinElement->extension);
-                $imageToResize->resize($imageToResize->width / 2, null, true);
+
+                $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->filename.$hdExtension.$hdSkinElement->extension);
+                $imageToResize->resize(ceil(floatval($imageToResize->width / 2)), null, true);
                 $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
                 $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
                 $sdSkinElement->save();

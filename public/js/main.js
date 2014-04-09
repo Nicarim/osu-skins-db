@@ -1,16 +1,27 @@
 Dropzone.options.myAwesomeDropzone = {
     success: function(file,response){
         var $jQueryObject = $($.parseHTML(response));
-        var filename = $jQueryObject.find(".element-filename").text();
-
-        $("#fileslist > tbody > tr").each(function(){
-            var $localDom = $(this);;
-            var rowname = $localDom.find(".element-filename").text();
-            if (rowname == filename){
-                $(this).hide();
+        var arrayFiles = [];
+        $jQueryObject.find(".element-row").each(function(){
+            arrayFiles.push($.trim($(this).html()));
+            console.debug($.trim($(this).html()));
+        });
+        console.debug("---------search------------");
+        $("#fileslist > tbody > tr").each(function(index){
+            if (index != 0)
+            {
+                var $localDom = $(this);
+                var rowname = $.trim($localDom.find(".element-row").html());
+                console.debug(rowname);
+                if ($.inArray(rowname, arrayFiles) != -1){
+                    console.debug("----DELETED----");
+                    console.debug(rowname);
+                    $localDom.hide();
+                }
             }
         });
         $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
+        console.debug("---------endofsearch------------");
     }
 }
 $(function(){

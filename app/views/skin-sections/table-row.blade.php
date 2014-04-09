@@ -1,8 +1,8 @@
 @foreach ($elements as $element)
     <tr>
-        <td>
+        <td class="element-row">
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
-            <a href="/skins-content/{{$element->skin->id}}/{{$element->filename}}{{$element->ishd == 1 ? "@2" : ""}}.{{$element->extension}}" class="fancybox element-filename">{{$element->filename}}</a>
+            <a href="/skins-content/{{$element->skin->id}}/{{$element->filename}}{{$element->ishd == 1 ? "@2x" : ""}}.{{$element->extension}}" class="fancybox element-filename">{{$element->filename}}</a>
         </td>
         <td>
             @if(in_array($element->extension, array("jpg","jpeg","png")))
