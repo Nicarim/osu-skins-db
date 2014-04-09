@@ -7,7 +7,7 @@ class helpersServiceProvider extends ServiceProvider {
     public function register()
     {
         // Register 'underlyingclass' instance container to our UnderlyingClass object
-        $this->app['helpers'] = $this->app->share(function($app)
+        $this->app['Helpers'] = $this->app->share(function($app)
             {
                 return new facades\helpers\helpers;
             });
@@ -16,7 +16,7 @@ class helpersServiceProvider extends ServiceProvider {
         $this->app->booting(function()
             {
                 $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-                $loader->alias('helpers', 'facades\helpers\helpers');
+                $loader->alias('Helpers', 'facades\helpers\helpers');
             });
     }
 
