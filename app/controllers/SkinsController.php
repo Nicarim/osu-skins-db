@@ -111,7 +111,7 @@ class SkinsController extends BaseController{
             "fullname" => $data['file']->getClientOriginalName(),
             "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
             "extension" => $data['file']->getClientOriginalExtension(),
-            "ishd" => strpos($data['file']->getClientOriginalName(), "@x2") === false
+            "ishd" => strpos($data['file']->getClientOriginalName(), "@2x")
         );
 
         if ($filename['ishd'])
@@ -193,7 +193,9 @@ class SkinsController extends BaseController{
             throw new AccessDeniedException;
         if (isset($element))
         {
-            File::delete(public_path()."/skins-content/".$element->skin->id."/".$element->filename);
+            $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
+            $filename = $element->filename.$hdPrefix.$element->extension;
+            File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
             $element->delete();
             return Response::json('success');
         }

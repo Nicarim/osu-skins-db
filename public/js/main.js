@@ -43,6 +43,7 @@ $(document).ready(function() {
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id),function(data){
+        console.debug(data);
         if (data == "success")
             $(item).parent().parent().fadeOut();
     })
