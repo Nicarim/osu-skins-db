@@ -35,7 +35,7 @@
                 @if (Auth::check())
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::user()->email}} (Google)<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu fullsize-dropdown">
                             <li><a href="#">My Skins</a></li>
                             <li><a href="#">Users List</a></li>
                             <div class="divider"></div>

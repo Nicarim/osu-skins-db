@@ -12,4 +12,8 @@ class SkinElement extends Eloquent {
     public function skin(){
         return $this->belongsTo("Skin");
     }
+    public function getFullname(){
+        $ishd = $this->ishd == 1 ? "@2x." : ".";
+        return $this->filename.$ishd.$this->extension;
+    }
 } 

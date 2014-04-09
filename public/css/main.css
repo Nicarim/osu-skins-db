@@ -170,3 +170,7 @@ b.mania{
     background-repeat: no-repeat;
     height: 150px;
 }
+.fullsize-dropdown{
+    min-width: 0px;
+    width: 100%;
+}
