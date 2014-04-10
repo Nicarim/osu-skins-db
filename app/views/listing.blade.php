@@ -16,6 +16,9 @@
 </div>-->
 
 <div class="container">
-    @include('listing-skin-panel', array("skins" => $skins))
+    @if($private)
+        <h2>My skins</h2>
+    @endif
+    @include('listing-skin-panel', array("skins" => $skins, "private" => $private))
 </div>
 @stop

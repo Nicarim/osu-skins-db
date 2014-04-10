@@ -36,8 +36,9 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::user()->email}} (Google)<b class="caret"></b></a>
                         <ul class="dropdown-menu fullsize-dropdown">
-                            <li><a href="#">My Skins</a></li>
-                            <li><a href="#">Users List</a></li>
+                            <li><a href="/skins/create">Create Skin</a></li>
+                            <li><a href="{{URL::route('ownSkins')}}">My Skins</a></li>
+                            <!--<li><a href="#">Users List</a></li>-->
                             <div class="divider"></div>
                             <li><a href="{{URL::route('logout')}}">Log Out</a></li>
                         </ul>

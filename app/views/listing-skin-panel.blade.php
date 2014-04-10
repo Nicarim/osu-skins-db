@@ -5,7 +5,9 @@
             <img src="/1389588-min.jpg" alt="...">
             <div class="caption">
                 <h3>{{$skin->name}}</h3>
-                <h4>by {{$skin->user->name}}</h4>
+                @if (!$private)
+                    <h4>by {{$skin->user->name}}</h4>
+                @endif
                 <!--
                 <p class="text-center"><b class="taiko"></b><b class="osu"></b></p>
                 <div class="progress progress-striped">
@@ -19,11 +21,13 @@
                         <b class="glyphicon glyphicon-search pull-left"></b>
                         View Skin</a>
                 </p>
-                <p>
-                    <a href="/skins/download/{{$skin->id}}" class="btn btn-danger" style="width:100%;" role="button">
-                        <b class="glyphicon glyphicon-save pull-left"></b>
-                        Download</a>
-                </p>
+                @if (!$private)
+                    <p>
+                        <a href="/skins/download/{{$skin->id}}" class="btn btn-danger" style="width:100%;" role="button">
+                            <b class="glyphicon glyphicon-save pull-left"></b>
+                            Download</a>
+                    </p>
+                @endif
             </div>
         </div>
     </div>

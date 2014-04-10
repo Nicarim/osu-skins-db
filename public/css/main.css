@@ -177,3 +177,7 @@ b.mania{
 .label-evenmoresuccess{
     background-color: #7ad87a;
 }
+.label-margin{
+    margin-top: auto;
+    margin-bottom: auto;
+}

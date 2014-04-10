@@ -69,6 +69,11 @@ Route::group(array("prefix" => "users"), function(){
                 "uses" => "LoginController@logoutOAuth",
                 "as" => "logout"
             ));
+        Route::get('/own/skins', array(
+                "before" => "auth",
+                "uses" => "SkinsController@ownListOfSkins",
+                "as" => "ownSkins"
+            ));
     });
 
 

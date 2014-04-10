@@ -13,7 +13,15 @@ class SkinsController extends BaseController{
     function listOfSkins($sorting=null){
         $skins = Skin::all();
         return View::make('listing')->with(array(
-                "skins" => $skins
+                "skins" => $skins,
+                "private" => false
+            ));
+    }
+    function ownListOfSkins(){
+        $skins = Skin::where("user_id","=",Auth::user()->id)->get();
+        return View::make('listing')->with(array(
+               "skins" => $skins,
+               "private" => true
             ));
     }
     function viewSkin($id, $section=null){

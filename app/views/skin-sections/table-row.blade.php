@@ -6,9 +6,9 @@
         <td>
             <!-- attributions -->
             @if(in_array($element->extension, array("jpg","jpeg","png")))
-                <span class="label label-success">Sprite</span>
+                <span class="label label-success label-margin">Sprite</span>
             @elseif(in_array($element->extension, array("mp3","ogg","wav")))
-                <span class="label label-evenmoresuccess">Sound</span>
+                <span class="label label-evenmoresuccess label-margin">Sound</span>
             @endif
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
