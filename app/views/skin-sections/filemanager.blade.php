@@ -6,7 +6,7 @@
 <table class="table table-bordered" id="fileslist">
     <tr>
         <th>Element Name</th>
-        <th style="width:10%;">Type</th>
+        <th>Attributes</th>
         <th style="width:10%;">Size</th>
         <th style="width:10%;">Options</th>
     </tr>

@@ -111,13 +111,17 @@ class SkinsController extends BaseController{
             "fullname" => $data['file']->getClientOriginalName(),
             "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
             "extension" => $data['file']->getClientOriginalExtension(),
-            "ishd" => strpos($data['file']->getClientOriginalName(), "@2x")
+            "ishd" => strpos($data['file']->getClientOriginalName(), "@2x"),
+            "issequence" => preg_match("/-\d/",$data['file']->getClientOriginalName()) === 1,
         );
-
         if ($filename['ishd'])
         {
             $filename['filename'] = substr($filename['filename'], 0, -3);
             $filename['fullname'] = $filename['filename'].".".$filename['extension'];
+        }
+        if ($filename["issequence"])
+        {
+            $filename['frame'] = substr($filename['filename'], -1);
         }
         if (in_array($filename['extension'], array("jpg","jpeg","png")))
         {
@@ -132,6 +136,11 @@ class SkinsController extends BaseController{
                 $hdSkinElement->element_id = -2;
                 $hdSkinElement->size = $data['file']->getSize();
                 $data['file']->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->getFullname());
+                if ($filename['issequence'])
+                {
+                    $hdSkinElement->issequence = 1;
+                    $hdSkinElement->sequence_frame = $filename['frame'];
+                }
                 $hdSkinElement->save();
                 $uploadedElements[] = $hdSkinElement;
 
@@ -147,21 +156,31 @@ class SkinsController extends BaseController{
                 $imageToResize->resize(ceil(floatval($imageToResize->width / 2)), null, true);
                 $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
                 $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
+                if ($filename['issequence'])
+                {
+                    $sdSkinElement->issequence = 1;
+                    $sdSkinElement->sequence_frame = $filename['frame'];
+                }
                 $sdSkinElement->save();
                 $uploadedElements[] = $sdSkinElement;
             }
             else
             {
-                $SkinElement = SkinElement::firstOrNew(array(
+                $skinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => 0
                     ));
-                $SkinElement->element_id = -1;
-                $SkinElement->size = $data['file']->getSize();
-                $SkinElement->save();
-                $uploadedElements[] = $SkinElement;
+                $skinElement->element_id = -1;
+                $skinElement->size = $data['file']->getSize();
+                if ($filename['issequence'])
+                {
+                    $skinElement->issequence = 1;
+                    $skinElement->sequence_frame = $filename['frame'];
+                }
+                $skinElement->save();
+                $uploadedElements[] = $skinElement;
                 $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullname']);
             }
         }
@@ -171,7 +190,7 @@ class SkinsController extends BaseController{
                     "skin_id" => $skin->id,
                     "filename" => $filename['filename'],
                     "extension" => $filename['extension'],
-                    "ishd" => 0
+                    "ishd" => $filename['ishd'] ? 1 : 0
                 ));
             $SkinElement->element_id = -1;
             $SkinElement->size = $data['file']->getSize();
