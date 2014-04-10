@@ -17,7 +17,7 @@ Route::get('/',array(
     ));
 Route::group(array("prefix" => "skins"), function(){
         Route::group(array("before" => "auth"), function(){
-                Route::post('/settings/{id}/{section}', array(
+                Route::post('/settings/{id}/', array(
                         "uses" => "SkinsController@editSettings",
                         "as" => "SkinSettings"
                     ));
@@ -26,6 +26,9 @@ Route::group(array("prefix" => "skins"), function(){
                     });
                 Route::post('/create', array(
                         "uses" => "SkinsController@createSkin"
+                    ));
+                Route::get('/settings/{id}/markasdefault', array(
+                       "uses" => "SkinsController@markAsDefault"
                     ));
         });
         Route::get('/list/{sorting?}', array(

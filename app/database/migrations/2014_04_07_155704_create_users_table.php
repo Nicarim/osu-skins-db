@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration {
                 $table->string("google_id");
                 $table->string("email");
                 $table->string("name");
+                $table->integer("topaccess")->default(0);
                 $table->string("access_token");
                 $table->string("refresh_token");
                 $table->timestamps();

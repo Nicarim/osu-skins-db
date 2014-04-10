@@ -3,6 +3,7 @@
 <script>
 
 </script>
+<title>{{$skin->name}}</title>
 {{--@include('sidebar-skin')--}}
 <div class="container">
     <ul class="nav nav-tabs nav-justified">

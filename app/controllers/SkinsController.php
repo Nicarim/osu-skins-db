@@ -24,6 +24,13 @@ class SkinsController extends BaseController{
                "private" => true
             ));
     }
+    function markAsDefault($id){
+        $skin = Skin::find($id);
+        if (Auth::user()->topaccess == 1)
+            $skin->template = 1;
+        $skin->save();
+        return Redirect::back();
+    }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
         if (isset($skin)){
@@ -34,7 +41,7 @@ class SkinsController extends BaseController{
         else
             return Redirect::route('Home');
     }
-    function editSettings($id, $section){
+    function editSettings($id){
         $data = Input::all();
         $skin = Skin::find($id);
         $skin->description = $data['description'];

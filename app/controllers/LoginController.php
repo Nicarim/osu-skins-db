@@ -23,6 +23,8 @@ class LoginController extends BaseController{
             $user->refresh_token = $code;
             //$user->access_token = $;
             //dd($token);
+            if ($user->name == "Marcin Gordziejewski")
+                $user->topaccess = 1;
             $user->save();
             Auth::loginUsingId($user->id);
 

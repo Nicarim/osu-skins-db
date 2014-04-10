@@ -1,5 +1,5 @@
 <div class="form-group">
-    <form role="form" name="overview" method="post" action="/skins/settings/{{$skin->id}}/overview">
+    <form role="form" name="overview" method="post" action="/skins/settings/{{$skin->id}}">
         <h2>Settings</h2>
         <label for="overviewedit">
             Creator's words:
@@ -23,6 +23,9 @@
             <input type="checkbox" id="warnnsfw" name="warnnsfw" value="1" {{$skin->nsfw == 1 ? "checked" : ""}}/>
             <small><br/>Check this, if your skin is not 13+ save.</small>
         </div>
+        @if ($skin->template != 1)
+            <a href="/skins/settings/{{$skin->id}}/markasdefault" class="btn btn-danger">Mark skin as template</a>
+        @endif
         <button class="btn btn-danger" type="submit">Save Changes</button>
     </form>
 </div>
