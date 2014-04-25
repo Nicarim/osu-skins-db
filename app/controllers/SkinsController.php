@@ -124,7 +124,8 @@ class SkinsController extends BaseController{
             "fullnameUntouched" => $data['file']->getClientOriginalName(),
             "extension" => $data['file']->getClientOriginalExtension(),
             "ishd" => strpos($data['file']->getClientOriginalName(), "@2x"),
-            "shouldScaleDown" => true
+            "shouldScaleDown" => true,
+            "hashdcounterpart" => false
         );
         if ($filename['ishd'])
         {
@@ -147,10 +148,10 @@ class SkinsController extends BaseController{
             {
                 //if ($DBskinElement->ishd == 1 && !$filename['ishd'])
                 //    $filename['hashdelement'] = true;
-                if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 0)
-                    $filename['shouldScaleDown'] = true;
                 if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 1)
                     $filename['shouldScaleDown'] = false;
+                if ($DBskinElement->ishd == 1)
+                    $filename['hashdcountepart'] = true;
             }
         }
         /*
@@ -215,7 +216,7 @@ class SkinsController extends BaseController{
                     $skinElement->issequence = 1;
                     $skinElement->sequence_frame = $filename['frame'];
                 }
-                if ($skinElement->exists && $skinElement->ishd != 1)
+                if (($skinElement->exists || !$filename['hashdcounterpart']) && $skinElement->ishd != 1)
                     $skinElement->useroverriden = 1;
                 $skinElement->save();
                 $uploadedElements[] = $skinElement;
