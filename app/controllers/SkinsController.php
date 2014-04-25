@@ -98,6 +98,8 @@ class SkinsController extends BaseController{
         App::finish(function ($request, $response) use ($zipname){
                 unlink($zipname);
             });
+        $skin->download_count += 1;
+        $skin->save();
         return Response::download($zipname);
 
     }

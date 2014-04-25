@@ -5,9 +5,10 @@
     <div class="panel-body">
         <ul class="list-unstyled">
             <li>{{$skin->nsfw == 1 ? "<span style='color:red;'><b class='glyphicon glyphicon-flag'></b> NSFW</span>" : ""}}</li>
-            <li><b class="glyphicon glyphicon-download-alt"></b> {{Helpers::formatSizeUnits($skin->size)}}</li>
+            <li><b class="glyphicon glyphicon-cloud"></b> {{Helpers::formatSizeUnits($skin->size)}}</li>
             <li><b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}} elements </li>
             <li>{{$skin->template == 1 ? "<b class='glyphicon glyphicon glyphicon-camera'></b> Template Skin" : ""}}</li>
+            <li><b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}} times</li>
             <li><a href="/skins/download/{{$skin->id}}" role="button"><b class="glyphicon glyphicon-save"></b> Download</a></li>
         </ul>
     </div>

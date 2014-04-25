@@ -21,6 +21,7 @@ class CreateSkinsTable extends Migration {
                 $table->string("name");
                 $table->text("description");
                 $table->integer("size")->default(0);
+                $table->integer("download_count")->defalut(0);
                 $table->timestamps();
         });
 	}
