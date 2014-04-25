@@ -12,8 +12,9 @@
             @endif
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
-            {{$element->useroverriden == 1 ? "<span class='label label-info'>USEROVERRIDEN</span>" : ""}}
-
+            @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
+                {{$element->useroverriden == 1 ? "<span class='label label-danger'>User Overriden</span>" : ""}}
+            @endif
 
         </td>
         <td>{{Helpers::formatSizeUnits($element->size)}}</td>

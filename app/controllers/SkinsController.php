@@ -234,9 +234,12 @@ class SkinsController extends BaseController{
             $uploadedElements[] = $skinElement;
             $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
         }
-
+        //add skin size
+        foreach($uploadedElements as $elementSize)
+            $skin->size += $elementSize->size;
         /*if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();*/
+        $skin->save();
         return View::make('skin-sections/table-row')->with(array(
             'elements' => $uploadedElements
         ));
@@ -244,6 +247,7 @@ class SkinsController extends BaseController{
 
     function deleteElement($id){
         $element = SkinElement::find($id);
+        $skin = Skin::find($element->skin_id);
         if (Auth::user()->id != $element->skin->user_id)
             throw new AccessDeniedException;
         if (isset($element))
@@ -251,7 +255,9 @@ class SkinsController extends BaseController{
             $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
             $filename = $element->filename.$hdPrefix.$element->extension;
             File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
+            $skin->size -= $element->size;
             $element->delete();
+            $skin->save();
             return Response::json('success');
         }
         else

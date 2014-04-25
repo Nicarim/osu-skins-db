@@ -1,13 +1,20 @@
 
 <h2>{{$skin->name}} created by {{$skin->user->name}}</h2>
+<div class="panel panel-success">
+    <div class="panel-heading">Skin Informations</div>
+    <div class="panel-body">
+        <ul class="list-unstyled">
+            <li>{{$skin->nsfw == 1 ? "<span style='color:red;'><b class='glyphicon glyphicon-flag'></b> NSFW</span>" : ""}}</li>
+            <li><b class="glyphicon glyphicon-download-alt"></b> {{Helpers::formatSizeUnits($skin->size)}}</li>
+            <li><b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}} elements </li>
+            <li>{{$skin->template == 1 ? "<b class='glyphicon glyphicon glyphicon-camera'></b> Template Skin" : ""}}</li>
+            <li><a href="/skins/download/{{$skin->id}}" role="button"><b class="glyphicon glyphicon-save"></b> Download</a></li>
+        </ul>
+    </div>
+</div>
 <div class="panel panel-primary">
     <div class="panel-heading">Creator's words</div>
     <div class="panel-body">
-        @if ($skin->nsfw == 1)
-        <div class="alert alert-danger">
-            <p><b class="glyphicon glyphicon-flag"></b> This skin contains <b>not safe for work</b> content</p>
-        </div>
-        @endif
         {{$skin->description}}
     </div>
 </div>

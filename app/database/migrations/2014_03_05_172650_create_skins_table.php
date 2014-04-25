@@ -20,6 +20,7 @@ class CreateSkinsTable extends Migration {
                 $table->integer('template')->default(0);
                 $table->string("name");
                 $table->text("description");
+                $table->integer("size")->default(0);
                 $table->timestamps();
         });
 	}
