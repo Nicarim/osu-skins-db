@@ -1,7 +1,5 @@
 
-<h2>{{$skin->name}} created by {{$skin->user->name}}
-@if ($skin->hdsupport == 1) <span class="label label-default">HD</span> @endif
-</h2>
+<h2>{{$skin->name}} created by {{$skin->user->name}}</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">Creator's words</div>
     <div class="panel-body">

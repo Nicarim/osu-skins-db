@@ -51,11 +51,6 @@ class SkinsController extends BaseController{
         else
             $skin->nsfw = 0;
 
-        if (isset($data['hdsupport']))
-            $skin->hdsupport = 1;
-        else
-            $skin->hdsupport = 0;
-
         $skin->save();
         return Redirect::back();
     }
@@ -67,10 +62,6 @@ class SkinsController extends BaseController{
         else
             $skin->nsfw = 0;
 
-        if (isset($data['hdsupport']))
-            $skin->hdsupport = 1;
-        else
-            $skin->hdsupport = 0;
         $skin->description = $data['description'];
         $skin->name = $data['title'];
         $skin->user_id = Auth::user()->id;
@@ -92,6 +83,8 @@ class SkinsController extends BaseController{
     }
     function downloadSkin($id){
         $skin = Skin::find($id);
+        if ($skin->SkinElement->count() == 0)
+            return "Skin is empty, nothing to download";
         $zip = new ZipArchive();
         $zipname = public_path()."/".$skin->name.".osk";
         $zip->open($zipname, ZipArchive::OVERWRITE);
@@ -122,13 +115,14 @@ class SkinsController extends BaseController{
 
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
-
+        //processing of skin metadata
         $filename = array(
             "fullname" => $data['file']->getClientOriginalName(),
             "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
+            "fullnameUntouched" => $data['file']->getClientOriginalName(),
             "extension" => $data['file']->getClientOriginalExtension(),
             "ishd" => strpos($data['file']->getClientOriginalName(), "@2x"),
-             //check if its not score letter
+            "shouldScaleDown" => true
         );
         if ($filename['ishd'])
         {
@@ -137,16 +131,35 @@ class SkinsController extends BaseController{
         }
         //pretty complex check if animatable element fits few ... things!
         $filename['issequence'] = (preg_match("/-\d/", $filename['filename']) === 1 ||
-                (preg_match("/\d/", $filename['filename']) === 1 && preg_match("/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/", $filename['filename']) === 1))
-            && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1;
-
+                (preg_match("/\d/", $filename['filename']) === 1 && preg_match("/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/", $filename['filename']) === 1)) //check for old animatable format
+            && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1; // don't mark score digits as animatable elements - they are obviously not.
         if ($filename["issequence"])
         {
             $filename['frame'] = substr($filename['filename'], -1);
         }
+
+        $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->get();
+        if (isset($DBskinElements))
+        {
+            foreach($DBskinElements as $DBskinElement)
+            {
+                //if ($DBskinElement->ishd == 1 && !$filename['ishd'])
+                //    $filename['hashdelement'] = true;
+                if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 0)
+                    $filename['shouldScaleDown'] = true;
+                if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 1)
+                    $filename['shouldScaleDown'] = false;
+            }
+        }
+        /*
+        if (isset($DBskinElement) && $DBskinElement->useroverriden == 1)
+            $filename['shouldScaleDown'] = false;
+        else
+            $filename['shouldScaleDown'] = true;*/
+
         if (in_array($filename['extension'], array("jpg","jpeg","png")))
         {
-            if ($skin->hdsupport == 1)
+            if ($filename["ishd"] && $filename['shouldScaleDown'])
             {
                 $hdSkinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
@@ -191,7 +204,7 @@ class SkinsController extends BaseController{
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
-                        "ishd" => 0
+                        "ishd" => $filename['ishd'] ? 1 : 0
                     ));
                 $skinElement->element_id = -1;
                 $skinElement->size = $data['file']->getSize();
@@ -200,24 +213,26 @@ class SkinsController extends BaseController{
                     $skinElement->issequence = 1;
                     $skinElement->sequence_frame = $filename['frame'];
                 }
+                if ($skinElement->exists && $skinElement->ishd != 1)
+                    $skinElement->useroverriden = 1;
                 $skinElement->save();
                 $uploadedElements[] = $skinElement;
-                $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullname']);
+                $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
             }
         }
         else
         {
-            $SkinElement = SkinElement::firstOrNew(array(
+            $skinElement = SkinElement::firstOrNew(array(
                     "skin_id" => $skin->id,
                     "filename" => $filename['filename'],
                     "extension" => $filename['extension'],
                     "ishd" => $filename['ishd'] ? 1 : 0
                 ));
-            $SkinElement->element_id = -1;
-            $SkinElement->size = $data['file']->getSize();
-            $SkinElement->save();
-            $uploadedElements[] = $SkinElement;
-            $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullname']);
+            $skinElement->element_id = -1;
+            $skinElement->size = $data['file']->getSize();
+            $skinElement->save();
+            $uploadedElements[] = $skinElement;
+            $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
         }
 
         /*if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
