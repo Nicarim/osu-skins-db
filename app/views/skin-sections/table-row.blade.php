@@ -13,7 +13,11 @@
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
             @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
-                {{$element->useroverriden == 1 ? "<span class='label label-danger'>User Overriden</span>" : ""}}
+                @if ($element->useroverriden == 0 && $element->ishd == 0)
+                    <span class='label label-primary'>Auto Generated</span>
+                @elseif ($element->useroverriden == 1)
+                    <span class='label label-danger'>User Overriden</span>
+                @endif
             @endif
 
         </td>

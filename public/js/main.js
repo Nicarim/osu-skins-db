@@ -6,22 +6,22 @@ Dropzone.options.myAwesomeDropzone = {
             arrayFiles.push($.trim($(this).html()));
             console.debug($.trim($(this).html()));
         });
-        console.debug("---------search------------");
+        //console.debug("---------search------------");
         $("#fileslist > tbody > tr").each(function(index){
             if (index != 0)
             {
                 var $localDom = $(this);
                 var rowname = $.trim($localDom.find(".element-row").html());
-                console.debug(rowname);
+                //console.debug(rowname);
                 if ($.inArray(rowname, arrayFiles) != -1){
-                    console.debug("----DELETED----");
-                    console.debug(rowname);
+                    //console.debug("----DELETED----");
+                    //console.debug(rowname);
                     $localDom.hide();
                 }
             }
         });
         $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
-        console.debug("---------endofsearch------------");
+        //console.debug("---------endofsearch------------");
     }
 }
 $(function(){
