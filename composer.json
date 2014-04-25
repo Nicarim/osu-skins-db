@@ -7,7 +7,9 @@
 		"laravel/framework": "4.1.*",
 		"way/generators": "v2.0",
         "intervention/image": "dev-master",
-        "artdarek/oauth-4-laravel": "dev-master"
+        "artdarek/oauth-4-laravel": "dev-master",
+        "kzykhys/ciconia": "~1.0.0",
+    	"ezyang/htmlpurifier": "v4.6.0"
 	},
 	"autoload": {
 		"classmap": [

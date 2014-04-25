@@ -13,7 +13,7 @@
     </div>
 </div>
 <div class="panel panel-primary">
-    <div class="panel-heading">Creator's words</div>
+    <!--<div class="panel-heading">Creator's words</div>-->
     <div class="panel-body">
         {{$skin->description}}
     </div>
