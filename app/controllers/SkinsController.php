@@ -114,6 +114,7 @@ class SkinsController extends BaseController{
         $data = Input::all();
         if ($skin->user_id != Auth::user()->id)
             throw new AccessDeniedException;
+        //check for extension
         $rules = array(
             'file' => 'mimes:jpeg,png,mp3,wav,ogg'
         );
@@ -127,13 +128,18 @@ class SkinsController extends BaseController{
             "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
             "extension" => $data['file']->getClientOriginalExtension(),
             "ishd" => strpos($data['file']->getClientOriginalName(), "@2x"),
-            "issequence" => preg_match("/-\d/",$data['file']->getClientOriginalName()) === 1,
+             //check if its not score letter
         );
         if ($filename['ishd'])
         {
             $filename['filename'] = substr($filename['filename'], 0, -3);
             $filename['fullname'] = $filename['filename'].".".$filename['extension'];
         }
+        //pretty complex check if animatable element fits few ... things!
+        $filename['issequence'] = (preg_match("/-\d/", $filename['filename']) === 1 ||
+                (preg_match("/\d/", $filename['filename']) === 1 && preg_match("/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/", $filename['filename']) === 1))
+            && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1;
+
         if ($filename["issequence"])
         {
             $filename['frame'] = substr($filename['filename'], -1);
