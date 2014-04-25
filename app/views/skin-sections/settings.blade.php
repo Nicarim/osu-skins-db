@@ -7,6 +7,7 @@
         </label>
         <textarea name="description" id="overviewedit" class="form-control"
                   rows="20">{{$skin->description}}</textarea>
+        <a href="http://daringfireball.net/projects/markdown/basics">Description allows <b>markdown</b> usage! Check syntax here</a>
         <div class="checkbox">
             <label for="warnnsfw">
                 Mark as NSFW content

@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
                 $table->integer("topaccess")->default(0);
                 $table->string("access_token");
                 $table->string("refresh_token");
+                $table->string("remember_token");
                 $table->timestamps();
         });
 	}
