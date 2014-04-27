@@ -16,6 +16,7 @@ class CreateElementsTable extends Migration {
                 $table->increments('id');
                 $table->integer('group_id');
                 $table->integer('skinelement_id');
+                $table->string("element_name");
                 $table->timestamps();
         });
 	}
