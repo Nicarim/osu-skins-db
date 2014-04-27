@@ -66,4 +66,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     {
         return 'remember_token';
     }
+
+    public function isOwner($id)
+    {
+        return Auth::check() ? $this->id == $id : false;
+    }
 }

@@ -31,6 +31,14 @@ Route::group(array("prefix" => "skins"), function(){
                        "uses" => "SkinsController@markAsDefault"
                     ));
         });
+        Route::group(array("before" => "auth", "prefix" => "groups"), function(){
+                Route::post('/addto', array(
+                   "uses" => "SkinsController@addElementToGroup"
+                ));
+                Route::post('/add', array(
+                   "uses" => "SkinsController@addGroup"
+                ));
+            });
         Route::get('/list/{sorting?}', array(
                 "uses" => "SkinsController@listOfSkins",
                 "as" => "SkinListing"

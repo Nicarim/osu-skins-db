@@ -9,5 +9,10 @@
 class Element extends Eloquent {
     protected $table = 'elements';
     protected $guarded = array();
-
+    public function Group(){
+        return $this->belongsTo("Group");
+    }
+    public function SkinElement(){
+        return $this->hasOne("SkinElement");
+    }
 } 

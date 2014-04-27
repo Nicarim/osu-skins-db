@@ -1,7 +1,10 @@
 @foreach ($elements as $element)
     <tr>
+        {{$element->skin->template == 1 ? "<td>
+            <input class='markedItems' type='checkbox' name='selectedItems[]' value='$element->id' form='submit-form'/>
+        </td>" : ""}}
         <td class="element-row">
-            <a href="/skins-content/{{$element->skin->id}}/{{$element->filename}}{{$element->ishd == 1 ? "@2x" : ""}}.{{$element->extension}}" class="fancybox element-filename">{{$element->filename}}</a>
+            <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" class="fancybox element-filename">{{$element->filename}}</a>
         </td>
         <td>
             <!-- attributions -->

@@ -34,9 +34,10 @@ class SkinsController extends BaseController{
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
         if (isset($skin)){
-            return View::make('view-skin')->with(array(
-                    "skin" => $skin
-                ));
+            $array = array();
+            $array['skin'] = $skin;
+            $skin->template != 1 ?: $array['groups'] = Group::all();
+            return View::make('view-skin')->with($array);
         }
         else
             return Redirect::route('Home');
@@ -266,6 +267,18 @@ class SkinsController extends BaseController{
         else
             return Response::json('fail');
 
+    }
+    function addElementToGroup(){
+
+    }
+    function addGroup(){
+        if (Auth::check() && Auth::user()->topaccess == 1)
+        {
+            $group = new Group;
+            $group->name = Input::get("groupName");
+            $group->save();
+            return Redirect::back();
+        }
     }
     function generateImage(){
         $image = Image::make(public_path().'/preview.jpg');
