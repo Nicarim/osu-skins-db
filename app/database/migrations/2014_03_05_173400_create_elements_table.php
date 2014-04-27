@@ -15,7 +15,7 @@ class CreateElementsTable extends Migration {
         Schema::create('elements', function(Blueprint $table) {
                 $table->increments('id');
                 $table->integer('group_id');
-                $table->integer('skinelement_id');
+                $table->integer('skin_element_id');
                 $table->string("element_name");
                 $table->timestamps();
         });

@@ -22,6 +22,11 @@
                     <span class='label label-danger'>User Overriden</span>
                 @endif
             @endif
+            @if ($element->group_id == -1 || $element->group_id == -2)
+            {{--<span class='label label-default'>Undefined</span>--}}
+            @else
+            <span class='label label-default'>{{$element->group->name}}</span>
+            @endif
 
         </td>
         <td>{{Helpers::formatSizeUnits($element->size)}}</td>

@@ -9,7 +9,7 @@
         <label for="groupsAvailable">
             Groups:
         </label>
-        <select id='groupsAvailable' class="form-control">
+        <select id='groupsAvailable' name="group_id" class="form-control">
             @foreach($groups as $group)
             <option value="{{$group->id}}">{{$group->name}}</option>
             @endforeach

@@ -12,4 +12,7 @@ class Group extends Eloquent {
     public function Element(){
         return $this->hasMany("Element");
     }
+    public function SkinElement(){
+        return $this->hasMany("SkinElement");
+    }
 } 

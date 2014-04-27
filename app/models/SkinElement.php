@@ -21,4 +21,7 @@ class SkinElement extends Eloquent {
         $isSequence = $this->sequence_frame != -1 ? $this->sequence_frame : "";
         return $this->filename.$isSequence;
     }
+    public function group(){
+        return $this->belongsTo("Group");
+    }
 } 

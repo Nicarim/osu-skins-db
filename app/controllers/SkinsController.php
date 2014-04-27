@@ -167,7 +167,7 @@ class SkinsController extends BaseController{
             $filename['shouldScaleDown'] = false;
         else
             $filename['shouldScaleDown'] = true;*/
-
+        $elementGroup = Element::where('element_name', '=', $filename['filename'])->first();
         if (in_array($filename['extension'], array("jpg","jpeg","png")))
         {
             if ($filename["ishd"] && $filename['shouldScaleDown'])
@@ -179,7 +179,7 @@ class SkinsController extends BaseController{
                         "ishd" => 1,
                         "sequence_frame" => $filename['frame']
                     ));
-                $hdSkinElement->element_id = -2;
+                $hdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
                 $hdSkinElement->size = $data['file']->getSize();
                 $data['file']->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->getFullname());
                 if ($filename['issequence'])
@@ -197,7 +197,7 @@ class SkinsController extends BaseController{
                         "ishd" => 0,
                         "sequence_frame" => $filename['frame']
                     ));
-                $sdSkinElement->element_id = -1;
+                $sdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
 
                 $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->getFullname());
                 $imageToResize->resize(ceil(floatval($imageToResize->width / 2)), null, true);
@@ -220,7 +220,7 @@ class SkinsController extends BaseController{
                         "ishd" => $filename['ishd'] ? 1 : 0,
                         "sequence_frame" => $filename['frame']
                     ));
-                $skinElement->element_id = -1;
+                $skinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
                 $skinElement->size = $data['file']->getSize();
                 if ($filename['issequence'])
                 {
@@ -242,7 +242,7 @@ class SkinsController extends BaseController{
                     "extension" => $filename['extension'],
                     "ishd" => $filename['ishd'] ? 1 : 0
                 ));
-            $skinElement->element_id = -1;
+            $skinElement->element_id = isset($elementGroup) ? $elementGroup->group_id : -1;
             $skinElement->size = $data['file']->getSize();
             $skinElement->save();
             $uploadedElements[] = $skinElement;
@@ -279,7 +279,28 @@ class SkinsController extends BaseController{
 
     }
     function addElementToGroup(){
-
+        if (Auth::check() && Auth::user()->topaccess == 1)
+        {
+            $array = Input::get("selectedItems");
+            $group_id = Input::get("group_id");
+            foreach ($array as $itemId)
+            {
+                $skinElement = SkinElement::find($itemId);
+                $element = Element::firstOrNew(array(
+                       "group_id" => $group_id,
+                       "skinelement_id" => $skinElement->id,
+                       "element_name" => $skinElement->filename
+                    ));
+                $element->save();
+                $elementsToRefresh = SkinElement::where('filename', '=', $element->element_name)->get();
+                foreach($elementsToRefresh as $refresh)
+                {
+                    $refresh->group_id = $element->group_id;
+                    $refresh->save();
+                }
+            }
+        }
+        return Redirect::back();
     }
     function addGroup(){
         if (Auth::check() && Auth::user()->topaccess == 1)
@@ -287,8 +308,8 @@ class SkinsController extends BaseController{
             $group = new Group;
             $group->name = Input::get("groupName");
             $group->save();
-            return Redirect::back();
         }
+        return Redirect::back();
     }
     function generateImage(){
         $image = Image::make(public_path().'/preview.jpg');
