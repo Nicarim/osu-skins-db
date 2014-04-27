@@ -40,6 +40,35 @@ $(document).ready(function() {
         ajax : {cache: false},
         preload : 0
     });
+    $("#missingElementsCheck").change(function(){
+        caller = this;
+        $("#fileslist > tbody > tr").each(function(index, value){
+            if (caller.checked)
+            {
+                if (index != 0)
+                    $(this).fadeOut();
+
+            }
+            else
+            {
+                if ($(this).data("typeofrow") == "missing")
+                {
+                    $(this).fadeOut(300, function(){
+                        $(this).remove();
+                    })
+                }
+                else if (index != 0)
+                    $(this).fadeIn();
+            }
+        })
+        if (caller.checked)
+        {
+            $.get("/skins/missing/2", function(data){
+                $("#fileslist > tbody > tr:first").after(data).fadeIn();
+            })
+        }
+
+    });
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id),function(data){
@@ -47,6 +76,5 @@ function deleteRow (item, id){
         if (data == "success")
             $(item).parent().parent().fadeOut();
     })
-
 }
 //skin preview options

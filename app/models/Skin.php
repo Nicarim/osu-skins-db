@@ -12,7 +12,7 @@ class Skin extends Eloquent {
     protected $table = 'skins';
     protected $guarded = array();
     public function SkinElement(){
-        return $this->hasMany("SkinElement")->orderBy('filename','asc')->orderBy('sequence_frame', 'asc');
+        return $this->hasMany("SkinElement")->orderBy('filename','asc')->orderBy('sequence_frame', 'asc')->orderBy('ishd', 'asc');
     }
     public function User(){
         return $this->belongsTo("User");

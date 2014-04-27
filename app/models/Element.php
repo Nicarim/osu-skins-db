@@ -13,6 +13,6 @@ class Element extends Eloquent {
         return $this->belongsTo("Group");
     }
     public function SkinElement(){
-        return $this->hasOne("SkinElement");
+        return $this->belongsTo("SkinElement");
     }
 } 

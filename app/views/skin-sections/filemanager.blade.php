@@ -25,6 +25,8 @@
     </form>
 </div>
 @endif
+<input id="missingElementsCheck" type="checkbox">
+<label for="missingElementsCheck">Check for missing elements</label>
 <table class="table table-bordered table-smaller" id="fileslist">
     <tr>
         {{$skin->template == 1 ? "<th style='width:10px;'>Se</th>": ""}}

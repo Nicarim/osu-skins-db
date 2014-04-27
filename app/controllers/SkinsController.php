@@ -154,19 +154,12 @@ class SkinsController extends BaseController{
         {
             foreach($DBskinElements as $DBskinElement)
             {
-                //if ($DBskinElement->ishd == 1 && !$filename['ishd'])
-                //    $filename['hashdelement'] = true;
                 if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 1)
                     $filename['shouldScaleDown'] = false;
                 if ($DBskinElement->ishd == 1)
                     $filename['hashdcountepart'] = true;
             }
         }
-        /*
-        if (isset($DBskinElement) && $DBskinElement->useroverriden == 1)
-            $filename['shouldScaleDown'] = false;
-        else
-            $filename['shouldScaleDown'] = true;*/
         $elementGroup = Element::where('element_name', '=', $filename['filename'])->first();
         if (in_array($filename['extension'], array("jpg","jpeg","png")))
         {
@@ -278,6 +271,34 @@ class SkinsController extends BaseController{
             return Response::json('fail');
 
     }
+    function getMissingElements($id, $group=null){
+        $compareArray = array();
+        $groupModel = null;
+        if ($group == null){
+            $groupModel = Element::all();
+        }
+        else{
+            $groupModel = Group::find($group)->element;
+        }
+        $skinElementModel = SkinElement::where('skin_id', '=', $id)->get();
+        foreach($groupModel as $model){
+            $flagFound = false;
+            foreach($skinElementModel as $elementModel){
+                if ($model->element_name == $elementModel->filename)
+                {
+                    $flagFound = true;
+                    break;
+                }
+            }
+            if (!$flagFound)
+                $compareArray[] = $model->skinelement;
+        }
+        return View::make('skin-sections/table-row')->with(array(
+                "elements" => $compareArray,
+                "missing" => true
+            ));
+
+    }
     function addElementToGroup(){
         if (Auth::check() && Auth::user()->topaccess == 1)
         {
@@ -288,7 +309,7 @@ class SkinsController extends BaseController{
                 $skinElement = SkinElement::find($itemId);
                 $element = Element::firstOrNew(array(
                        "group_id" => $group_id,
-                       "skinelement_id" => $skinElement->id,
+                       "skin_element_id" => $skinElement->id,
                        "element_name" => $skinElement->filename
                     ));
                 $element->save();
