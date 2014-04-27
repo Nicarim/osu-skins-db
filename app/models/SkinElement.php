@@ -14,6 +14,11 @@ class SkinElement extends Eloquent {
     }
     public function getFullname(){
         $ishd = $this->ishd == 1 ? "@2x." : ".";
-        return $this->filename.$ishd.$this->extension;
+        $isSequence = $this->sequence_frame != -1 ? $this->sequence_frame : "";
+        return $this->filename.$isSequence.$ishd.$this->extension;
+    }
+    public function getName(){
+        $isSequence = $this->sequence_frame != -1 ? $this->sequence_frame : "";
+        return $this->filename.$isSequence;
     }
 } 

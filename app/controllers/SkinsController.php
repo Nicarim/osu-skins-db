@@ -108,6 +108,7 @@ class SkinsController extends BaseController{
         $uploadedElements = array();
         $skin = Skin::find($id);
         $data = Input::all();
+        $oldanimationRegex = "/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/";
         if ($skin->user_id != Auth::user()->id)
             throw new AccessDeniedException;
         //check for extension
@@ -135,13 +136,19 @@ class SkinsController extends BaseController{
         }
         //pretty complex check if animatable element fits few ... things!
         $filename['issequence'] = (preg_match("/-\d/", $filename['filename']) === 1 ||
-                (preg_match("/\d/", $filename['filename']) === 1 && preg_match("/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/", $filename['filename']) === 1)) //check for old animatable format
+                (preg_match("/\d/", $filename['filename']) === 1 && preg_match($oldanimationRegex, $filename['filename']) === 1)) //check for old animatable format
             && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1; // don't mark score digits as animatable elements - they are obviously not.
+
         if ($filename["issequence"])
         {
-            $filename['frame'] = substr($filename['filename'], -1);
+            preg_match("/\d+$/", $filename['filename'], $sequenceMatches);
+            $filename['frame'] = $sequenceMatches[0];
+            $filename['filename'] = substr($filename['filename'], 0, -strlen((string) $filename['frame']));
         }
-
+        else
+        {
+            $filename['frame'] = -1;
+        }
         $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->get();
         if (isset($DBskinElements))
         {
@@ -170,6 +177,7 @@ class SkinsController extends BaseController{
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => 1,
+                        "sequence_frame" => $filename['frame']
                     ));
                 $hdSkinElement->element_id = -2;
                 $hdSkinElement->size = $data['file']->getSize();
@@ -186,7 +194,8 @@ class SkinsController extends BaseController{
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
-                        "ishd" => 0
+                        "ishd" => 0,
+                        "sequence_frame" => $filename['frame']
                     ));
                 $sdSkinElement->element_id = -1;
 
@@ -208,7 +217,8 @@ class SkinsController extends BaseController{
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
-                        "ishd" => $filename['ishd'] ? 1 : 0
+                        "ishd" => $filename['ishd'] ? 1 : 0,
+                        "sequence_frame" => $filename['frame']
                     ));
                 $skinElement->element_id = -1;
                 $skinElement->size = $data['file']->getSize();

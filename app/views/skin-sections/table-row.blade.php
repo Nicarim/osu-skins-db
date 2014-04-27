@@ -4,7 +4,7 @@
             <input class='markedItems' type='checkbox' name='selectedItems[]' value='$element->id' form='submit-form'/>
         </td>" : ""}}
         <td class="element-row">
-            <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" class="fancybox element-filename">{{$element->filename}}</a>
+            <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" class="fancybox element-filename">{{$element->getName()}}</a>
         </td>
         <td>
             <!-- attributions -->
@@ -26,7 +26,7 @@
         </td>
         <td>{{Helpers::formatSizeUnits($element->size)}}</td>
         @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
-            <td><a href="#" onclick="deleteRow(this,{{$element->id}})">Delete</a></td>
+            <td><a role="link" onclick="deleteRow(this,{{$element->id}})">Delete</a></td>
         @endif
     </tr>
 @endforeach
