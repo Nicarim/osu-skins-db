@@ -68,6 +68,9 @@ class SkinsController extends BaseController{
         $skin->user_id = Auth::user()->id;
         $skin->save();
         $skinRoot = 'skins-content/'.$skin->id.'/';
+        if (!is_dir('skins-content'))
+            mkdir('skins-content');
+        else {
         if (!is_dir($skinRoot))
             mkdir($skinRoot);
         else
@@ -78,7 +81,7 @@ class SkinsController extends BaseController{
                 if (is_file($file))
                     unlink($file);
             }
-        }
+        }}
 
         return Redirect::to('/skins/view/'.$skin->id);
     }
