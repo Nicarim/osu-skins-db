@@ -37,7 +37,6 @@
         <form role="form" name="preview-edit" method="post" action="#">
 
             <h2>Edit existing preview</h2>
-            <div id="canvas-container"></div>
 
             <label for="preview-select">Preview:</label>
             <select id="preview-select" name="preview-select" class="form-control">
