@@ -28,7 +28,7 @@
                 @if ($element->group_id == -1 || $element->group_id == -2)
                 {{--<span class='label label-default'>Undefined</span>--}}
                 @else
-                <span class='label label-default'>{{$element->group->name}}</span>
+                <span class='label label-default'>{{$element->groups->name}}</span>
                 @endif
             @else
                 <span class='label label-default'>MISSING</span>
