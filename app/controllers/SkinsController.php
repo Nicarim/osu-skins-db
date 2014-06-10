@@ -120,12 +120,14 @@ class SkinsController extends BaseController{
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
         //processing of skin metadata
+        $elementName = strtolower($data['file']->getClientOriginalName());
+        $elementExt = strtolower($data['file']->getClientOriginalExtension());
         $filename = array(
-            "fullname" => $data['file']->getClientOriginalName(),
-            "filename" => rtrim(basename($data['file']->getClientOriginalName(), $data['file']->getClientOriginalExtension()),"."),
-            "fullnameUntouched" => $data['file']->getClientOriginalName(),
-            "extension" => $data['file']->getClientOriginalExtension(),
-            "ishd" => strpos($data['file']->getClientOriginalName(), "@2x"),
+            "fullname" => $elementName,
+            "filename" => rtrim(basename($elementName, $elementExt),"."),
+            "fullnameUntouched" => $elementName,
+            "extension" => $elementExt,
+            "ishd" => strpos($elementName, "@2x"),
             "shouldScaleDown" => true,
             "hashdcounterpart" => false
         );
