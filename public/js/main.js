@@ -1,4 +1,5 @@
 Dropzone.options.myAwesomeDropzone = {
+    createImageThumbnails: false,
     success: function(file,response){
         var $jQueryObject = $($.parseHTML(response));
         var arrayFiles = [];
@@ -22,6 +23,7 @@ Dropzone.options.myAwesomeDropzone = {
         });
         $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
         //console.debug("---------endofsearch------------");
+        this.removeFile(file);
     }
 }
 $(function(){

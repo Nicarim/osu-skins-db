@@ -52,7 +52,7 @@
 .dropzone .dz-preview .dz-details,
 .dropzone-previews .dz-preview .dz-details {
   width: 100px;
-  height: 100px;
+  height: 40px;
   position: relative;
   background: #ebebeb;
   padding: 5px;
@@ -115,7 +115,7 @@
 .dropzone .dz-preview .dz-progress,
 .dropzone-previews .dz-preview .dz-progress {
   position: absolute;
-  top: 100px;
+  top: 40px;
   left: 6px;
   right: 6px;
   height: 6px;
