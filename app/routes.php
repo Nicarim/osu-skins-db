@@ -18,17 +18,20 @@ Route::get('/',array(
 Route::group(array("prefix" => "skins"), function(){
         Route::group(array("before" => "auth"), function(){
                 Route::post('/settings/{id}/', array(
-                        "uses" => "SkinsController@editSettings",
-                        "as" => "SkinSettings"
+                       "uses" => "SkinsController@editSettings",
+                       "as" => "SkinSettings"
                     ));
                 Route::get('/create', function(){
-                        return View::make('create');
+                       return View::make('create');
                     });
                 Route::post('/create', array(
-                        "uses" => "SkinsController@createSkin"
+                       "uses" => "SkinsController@createSkin"
                     ));
                 Route::get('/settings/{id}/markasdefault', array(
                        "uses" => "SkinsController@markAsDefault"
+                    ));
+                Route::get("/vote/{id}", array(
+                       "uses" => "SkinsController@starSkin"
                     ));
         });
         Route::group(array("before" => "auth", "prefix" => "groups"), function(){

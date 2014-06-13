@@ -36,11 +36,36 @@ class SkinsController extends BaseController{
         if (isset($skin)){
             $array = array();
             $array['skin'] = $skin;
+            if (Auth::check() && Auth::user()->id != $skin->user_id)
+                $array['vote'] = Vote::where("skin_id", $id)->where("user_id", Auth::user()->id)->first();
+
             $skin->template != 1 ?: $array['groups'] = Group::all();
+
             return View::make('view-skin')->with($array);
         }
         else
             return Redirect::route('Home');
+    }
+    function starSkin($id)
+    {
+        $skin = Skin::find($id);
+        $star = Vote::firstOrNew(array(
+               "user_id" => Auth::user()->id,
+               "skin_id" => $id
+            ));
+        $userstar = Vote::where("user_id", Auth::user()->id)->where("skin_id", $id)->first();
+        if (isset($userstar))
+        {
+            $userstar->delete();
+            $skin->votes -= 1;
+        }
+        else
+        {
+            $skin->votes += 1;
+            $star->save();
+        }
+        $skin->save();
+        return Response::json("success");
     }
     function editSettings($id){
         $data = Input::all();

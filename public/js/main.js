@@ -70,7 +70,14 @@ $(document).ready(function() {
                 $("#fileslist > tbody > tr:first").after(data).fadeIn();
             })
         }
-
+    });
+    $("#star-skin").click(function(){
+        var startext = $("#star-skin > .star-text");
+        startext.animate({opacity: 0}, 1000);
+        $.get("/skins/vote/"+$(this).data("skinid"), function(){
+            startext.text(startext.text() == "Star" ? "Unstar" : "Star");
+            startext.animate({opacity: 1}, 1000);
+        });
     });
 });
 function deleteRow (item, id){

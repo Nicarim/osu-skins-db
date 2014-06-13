@@ -3,12 +3,21 @@
 <div class="panel panel-success">
     <div class="panel-heading" style="overflow: hidden;">
         Skin Informations
-        <div class="btn-group pull-right">
-            <button type="button" class="btn btn-sm btn-default">
-                <span class="glyphicon glyphicon-star"></span>
-                Star
-            </button>
-        </div>
+        @if (isset($vote))
+            <div class="btn-group pull-right">
+                <button id="star-skin" data-skinId="{{$skin->id}}" type="button" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="star-text">Unstar</span>
+                </button>
+            </div>
+        @elseif (Auth::check() && Auth::user()->id != $skin->user_id)
+            <div class="btn-group pull-right">
+                <button id="star-skin" data-skinId="{{$skin->id}}" type="button" class="btn btn-sm btn-default">
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="star-text">Star</span>
+                </button>
+            </div>
+        @endif
     </div>
     <div class="panel-body">
         <ul class="list-unstyled">
@@ -17,6 +26,7 @@
             <li><b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}} elements </li>
             <li>{{$skin->template == 1 ? "<b class='glyphicon glyphicon glyphicon-camera'></b> Template Skin" : ""}}</li>
             <li><b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}} times</li>
+            <li><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}} times</li>
             <li><a href="/skins/download/{{$skin->id}}" role="button"><b class="glyphicon glyphicon-save"></b> Download</a></li>
         </ul>
     </div>
