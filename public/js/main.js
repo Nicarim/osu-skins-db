@@ -1,5 +1,6 @@
 Dropzone.options.myAwesomeDropzone = {
     createImageThumbnails: false,
+    uploadMultiple: true,
     success: function(file,response){
         var $jQueryObject = $($.parseHTML(response));
         var arrayFiles = [];

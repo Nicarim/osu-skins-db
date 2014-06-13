@@ -104,24 +104,20 @@ class SkinsController extends BaseController{
         return Response::download($zipname);
 
     }
-    function saveElement($id){
-        $uploadedElements = array();
-        $skin = Skin::find($id);
-        $data = Input::all();
+    private function processElement($skin, $file)
+    {
+        $processedElements = array();
         $oldanimationRegex = "/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/";
-        if ($skin->user_id != Auth::user()->id)
-            throw new AccessDeniedException;
-        //check for extension
         $rules = array(
             'file' => 'mimes:jpeg,png,mp3,wav,ogg'
         );
-        $validation = Validator::make($data, $rules);
+        $validation = Validator::make(array("file" => $file), $rules);
 
         if ($validation->fails())
             return Response::make($validation->errors->first(), 400);
         //processing of skin metadata
-        $elementName = strtolower($data['file']->getClientOriginalName());
-        $elementExt = strtolower($data['file']->getClientOriginalExtension());
+        $elementName = strtolower($file->getClientOriginalName());
+        $elementExt = strtolower($file->getClientOriginalExtension());
         $filename = array(
             "fullname" => $elementName,
             "filename" => rtrim(basename($elementName, $elementExt),"."),
@@ -152,10 +148,36 @@ class SkinsController extends BaseController{
             $filename['frame'] = -1;
         }
         $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->get();
+        /*if (isset($DBskinElements))
+        {
+            if($DBskinElements->locking == 1)
+            {
+                while(true)
+                {
+                    $checkForLock = SkinElement::find($DBskinElements->id)->locking == 1;
+                    if ($checkForLock)
+                        sleep(1);
+                    else
+                        break;
+                }
+            }
+        }*/
+
         if (isset($DBskinElements))
         {
             foreach($DBskinElements as $DBskinElement)
             {
+                /*if($DBskinElement->locking == 1)
+                {
+                    while(true)
+                    {
+                        $checkForLock = SkinElement::find($DBskinElement->id)->locking == 1;
+                        if ($checkForLock)
+                            sleep(1);
+                        else
+                            break;
+                    }
+                }*/
                 if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 1)
                     $filename['shouldScaleDown'] = false;
                 if ($DBskinElement->ishd == 1)
@@ -172,51 +194,107 @@ class SkinsController extends BaseController{
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => 1,
-                        "sequence_frame" => $filename['frame']
+                        "sequence_frame" => $filename['frame'],
                     ));
+
+                /*if ($hdSkinElement->exists)
+                {
+                    if($hdSkinElement->locking == 1)
+                    {
+                        while(true)
+                        {
+                            $checkForLock = SkinElement::find($hdSkinElement->id)->locking == 1;
+                            if ($checkForLock)
+                                sleep(1);
+                            else
+                                break;
+                        }
+                    }
+                    $hdSkinElement->locking = 1;
+                    $hdSkinElement->save();
+                }*/
+
                 $hdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
-                $hdSkinElement->size = $data['file']->getSize();
-                $data['file']->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->getFullname());
+                $hdSkinElement->size = $file->getSize();
+                $file->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->getFullname());
                 if ($filename['issequence'])
                 {
                     $hdSkinElement->issequence = 1;
                     $hdSkinElement->sequence_frame = $filename['frame'];
                 }
-                $hdSkinElement->save();
-                $uploadedElements[] = $hdSkinElement;
 
-                $sdSkinElement = SkinElement::firstOrNew(array(
+                $hdSkinElement->save();
+                $processedElements[] = $hdSkinElement;
+
+                $sdSkinElement = SkinElement::firstOrCreate(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => 0,
-                        "sequence_frame" => $filename['frame']
+                        "sequence_frame" => $filename['frame'],
                     ));
+
+                /*if ($sdSkinElement->exists)
+                {
+                    if($sdSkinElement->locking == 1)
+                    {
+                        while(true)
+                        {
+                            $checkForLock = SkinElement::find($sdSkinElement->id)->locking == 1;
+                            if ($checkForLock)
+                                sleep(1);
+                            else
+                                break;
+                        }
+                    }
+                    $sdSkinElement->locking = 1;
+                    $sdSkinElement->save();
+                }*/
+
                 $sdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
 
                 $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->getFullname());
                 $imageToResize->resize(ceil(floatval($imageToResize->width / 2)), null, true);
                 $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
+
                 $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
                 if ($filename['issequence'])
                 {
                     $sdSkinElement->issequence = 1;
                     $sdSkinElement->sequence_frame = $filename['frame'];
                 }
+
                 $sdSkinElement->save();
-                $uploadedElements[] = $sdSkinElement;
+                $processedElements[] = $sdSkinElement;
             }
             else
             {
-                $skinElement = SkinElement::firstOrNew(array(
+                $skinElement = SkinElement::firstOrCreate(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => $filename['ishd'] ? 1 : 0,
-                        "sequence_frame" => $filename['frame']
+                        "sequence_frame" => $filename['frame'],
                     ));
+
+                /*if ($skinElement->exists)
+                {
+                    if($skinElement->locking == 1)
+                    {
+                        while(true)
+                        {
+                            $checkForLock = SkinElement::find($skinElement->id)->locking == 1;
+                            if ($checkForLock)
+                                sleep(1);
+                            else
+                                break;
+                        }
+                    }
+                    $skinElement->locking = 1;
+                    $skinElement->save();
+                }*/
                 $skinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
-                $skinElement->size = $data['file']->getSize();
+                $skinElement->size = $file->getSize();
                 if ($filename['issequence'])
                 {
                     $skinElement->issequence = 1;
@@ -224,25 +302,38 @@ class SkinsController extends BaseController{
                 }
                 if (($skinElement->exists || !$filename['hashdcounterpart']) && $skinElement->ishd != 1)
                     $skinElement->useroverriden = 1;
+
                 $skinElement->save();
-                $uploadedElements[] = $skinElement;
-                $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
+                $processedElements[] = $skinElement;
+                $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
             }
         }
         else
         {
-            $skinElement = SkinElement::firstOrNew(array(
+            $skinElement = SkinElement::firstOrCreate(array(
                     "skin_id" => $skin->id,
                     "filename" => $filename['filename'],
                     "extension" => $filename['extension'],
                     "ishd" => $filename['ishd'] ? 1 : 0
                 ));
             $skinElement->element_id = isset($elementGroup) ? $elementGroup->group_id : -1;
-            $skinElement->size = $data['file']->getSize();
+            $skinElement->size = $file->getSize();
             $skinElement->save();
-            $uploadedElements[] = $skinElement;
-            $data['file']->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
+            $processedElements[] = $skinElement;
+            $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
         }
+        return $processedElements;
+    }
+    function saveElement($id){
+        $uploadedElements = array();
+        $skin = Skin::find($id);
+        $data = Input::file();
+        if ($skin->user_id != Auth::user()->id)
+            throw new AccessDeniedException;
+
+        foreach($data['file'] as $file)
+            $uploadedElements = array_merge($uploadedElements, (array)$this->processElement($skin, $file));
+
         //add skin size
         foreach($uploadedElements as $elementSize)
             $skin->size += $elementSize->size;
