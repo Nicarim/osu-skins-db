@@ -278,8 +278,8 @@ class SkinsController extends BaseController{
 
                 $sdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
 
-                $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->getFullname());
-                $imageToResize->resize(ceil(floatval($imageToResize->width / 2)), null, true);
+                $imageToResize = Image::make(public_path()."\\skins-content\\".$skin->id."\\".$hdSkinElement->getFullname());
+                $imageToResize->resize(ceil(floatval($imageToResize->width() / 2)), ceil(floatval($imageToResize->height() / 2)));
                 $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
 
                 $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
