@@ -4,27 +4,34 @@ Dropzone.options.myAwesomeDropzone = {
     success: function(file,response){
         var $jQueryObject = $($.parseHTML(response));
         var arrayFiles = [];
+        var countElements = true;
+        var ElementsCount = 0;
         $jQueryObject.find(".element-row").each(function(){
             arrayFiles.push($.trim($(this).html()));
             console.debug($.trim($(this).html()));
+            ElementsCount++;
         });
-        //console.debug("---------search------------");
         $("#fileslist > tbody > tr").each(function(index){
             if (index != 0)
             {
                 var $localDom = $(this);
                 var rowname = $.trim($localDom.find(".element-row").html());
-                //console.debug(rowname);
                 if ($.inArray(rowname, arrayFiles) != -1){
-                    //console.debug("----DELETED----");
-                    //console.debug(rowname);
                     $localDom.hide();
+                    countElements = false;
                 }
             }
         });
-        $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500));
-        //console.debug("---------endofsearch------------");
+        $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500))
+        if (countElements)
+        {
+            var count = parseInt($("#element-count").text());
+            $("#element-count").text((count + ElementsCount));
+        }
         this.removeFile(file);
+    },
+    queuecomplete: function(){
+        refreshSize();
     }
 }
 $(function(){
@@ -75,16 +82,46 @@ $(document).ready(function() {
         var startext = $("#star-skin > .star-text");
         startext.animate({opacity: 0}, 1000);
         $.get("/skins/vote/"+$(this).data("skinid"), function(){
-            startext.text(startext.text() == "Star" ? "Unstar" : "Star");
+            var typeOfStar = startext.text() == "Star";
+            startext.text(typeOfStar ? "Unstar" : "Star");
             startext.animate({opacity: 1}, 1000);
+            if(typeOfStar)
+                $("#vote-count").text(parseInt($("#vote-count").text()) - 1);
+            else
+                $("#vote-count").text(parseInt($("#vote-count").text()) + 1);
         });
     });
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id),function(data){
         console.debug(data);
-        if (data == "success")
-            $(item).parent().parent().fadeOut();
-    })
+        //if (data == "success")
+    });
+    $(item).parent().parent().fadeOut(200, function(){
+        $(this).remove();
+        refreshSize();
+    });
+    var count = parseInt($("#element-count").text());
+    $("#element-count").text((count - 1));
+}
+function refreshSize()
+{
+    var overallSize = 0;
+    $("#fileslist > tbody > tr").each(function(index){
+        if (index != 0)
+        {
+            var size = parseInt($(this).find(".element-size").data("elementsize"));
+            overallSize += size;
+        }
+    });
+    var sizeReadable = bytesToSize(overallSize, 2);
+    $("#skin-size").text(sizeReadable);
+}
+function bytesToSize(bytes, precision)
+{
+    var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes == 0) return 'n/a';
+    var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    return (bytes / Math.pow(1024, i)).toFixed(precision) + ' ' + sizes[i];
 }
 //skin preview options

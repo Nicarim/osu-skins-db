@@ -35,7 +35,7 @@
             @endif
 
         </td>
-        <td>{{Helpers::formatSizeUnits($element->size)}}</td>
+        <td class="element-size" data-elementsize="{{$element->size}}">{{Helpers::formatSizeUnits($element->size)}}</td>
         @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
             <td><a role="link" onclick="deleteRow(this,{{$element->id}})">Delete</a></td>
         @endif

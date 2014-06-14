@@ -22,12 +22,30 @@
     <div class="panel-body">
         <ul class="list-unstyled">
             <li>{{$skin->nsfw == 1 ? "<span style='color:red;'><b class='glyphicon glyphicon-flag'></b> NSFW</span>" : ""}}</li>
-            <li><b class="glyphicon glyphicon-cloud"></b> {{Helpers::formatSizeUnits($skin->size)}}</li>
-            <li><b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}} elements </li>
+            <li><b class="glyphicon glyphicon-cloud"></b>
+                <span id="skin-size">
+                    {{Helpers::formatSizeUnits($skin->size)}}
+                </span>
+            </li>
+            <li><b class="glyphicon glyphicon-list-alt"></b>
+                <span id="element-count">
+                    {{$skin->SkinElement->count()}}
+                </span> elements
+            </li>
             <li>{{$skin->template == 1 ? "<b class='glyphicon glyphicon glyphicon-camera'></b> Template Skin" : ""}}</li>
-            <li><b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}} times</li>
-            <li><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}} times</li>
-            <li><a href="/skins/download/{{$skin->id}}" role="button"><b class="glyphicon glyphicon-save"></b> Download</a></li>
+            <li><b class="glyphicon glyphicon-tag"></b>
+                <span id="download-count">
+                    {{$skin->download_count}}
+                </span> times</li>
+            <li><b class="glyphicon glyphicon-star-empty"></b>
+                <span id="votes-count">
+                    {{$skin->votes}}
+                </span> times
+            </li>
+            <li><a href="/skins/download/{{$skin->id}}" onclick="$('#download-count').text(parseInt($('#download-count').text()) + 1);" role="button">
+                    <b class="glyphicon glyphicon-save"></b> Download
+                </a>
+            </li>
         </ul>
     </div>
 </div>
