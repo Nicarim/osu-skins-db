@@ -139,7 +139,7 @@ class SkinsController extends BaseController{
         $validation = Validator::make(array("file" => $file), $rules);
 
         if ($validation->fails())
-            return Response::make($validation->errors->first(), 400);
+            return "error";
         //processing of skin metadata
         $elementName = strtolower($file->getClientOriginalName());
         $elementExt = strtolower($file->getClientOriginalExtension());
@@ -301,7 +301,14 @@ class SkinsController extends BaseController{
             throw new AccessDeniedException;
 
         foreach($data['file'] as $file)
-            $uploadedElements = array_merge($uploadedElements, (array)$this->processElement($skin, $file));
+        {
+            $response = $this->processElement($skin, $file);
+            if ($response != "error")
+                $uploadedElements = array_merge($uploadedElements, (array)$response);
+            else
+                return Response::make("Invalid file extension", 400);
+        }
+
         //add skin size
         /*foreach($uploadedElements as $elementSize)
             $skin->size += $elementSize->size;*/
