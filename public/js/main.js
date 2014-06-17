@@ -84,9 +84,9 @@ $(document).ready(function() {
             startext.text(typeOfStar ? "Unstar" : "Star");
             startext.animate({opacity: 1}, 1000);
             if(typeOfStar)
-                $("#votes-count").text(parseInt($("#votes-count").text()) - 1);
-            else
                 $("#votes-count").text(parseInt($("#votes-count").text()) + 1);
+            else
+                $("#votes-count").text(parseInt($("#votes-count").text()) - 1);
         });
     });
 });
