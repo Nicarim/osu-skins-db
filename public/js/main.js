@@ -8,7 +8,6 @@ Dropzone.options.myAwesomeDropzone = {
         var ElementsCount = 0;
         $jQueryObject.find(".element-row").each(function(){
             arrayFiles.push($.trim($(this).html()));
-            console.debug($.trim($(this).html()));
             ElementsCount++;
         });
         $("#fileslist > tbody > tr").each(function(index){
@@ -18,6 +17,7 @@ Dropzone.options.myAwesomeDropzone = {
                 var rowname = $.trim($localDom.find(".element-row").html());
                 if ($.inArray(rowname, arrayFiles) != -1){
                     $localDom.hide();
+                    $localDom.remove();
                     countElements = false;
                 }
             }
@@ -29,8 +29,6 @@ Dropzone.options.myAwesomeDropzone = {
             $("#element-count").text((count + ElementsCount));
         }
         this.removeFile(file);
-    },
-    queuecomplete: function(){
         refreshSize();
     }
 }
@@ -93,10 +91,7 @@ $(document).ready(function() {
     });
 });
 function deleteRow (item, id){
-    $.get(("/skins/delete-element/"+id),function(data){
-        console.debug(data);
-        //if (data == "success")
-    });
+    $.get(("/skins/delete-element/"+id));
     $(item).parent().parent().fadeOut(200, function(){
         $(this).remove();
         refreshSize();
@@ -107,15 +102,18 @@ function deleteRow (item, id){
 function refreshSize()
 {
     var overallSize = 0;
-    $("#fileslist > tbody > tr").each(function(index){
-        if (index != 0)
-        {
-            var size = parseInt($(this).find(".element-size").data("elementsize"));
+    if ($(".element-size").length != 0)
+    {
+        $(".element-size").each(function(index){
+            var size = parseInt($(this).data("elementsize"));
             overallSize += size;
-        }
-    });
-    var sizeReadable = bytesToSize(overallSize, 2);
-    $("#skin-size").text(sizeReadable);
+        });
+        var sizeReadable = bytesToSize(overallSize, 2);
+        $("#skin-size").text(sizeReadable);
+    }
+    else
+        $("#skin-size").text("0 bytes");
+
 }
 function bytesToSize(bytes, precision)
 {

@@ -152,6 +152,7 @@ class SkinsController extends BaseController{
             "shouldScaleDown" => true,
             "hashdcounterpart" => false
         );
+        $sizeDifference = 0;
         if ($filename['ishd'])
         {
             $filename['filename'] = substr($filename['filename'], 0, -3);
@@ -173,36 +174,11 @@ class SkinsController extends BaseController{
             $filename['frame'] = -1;
         }
         $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->get();
-        /*if (isset($DBskinElements))
-        {
-            if($DBskinElements->locking == 1)
-            {
-                while(true)
-                {
-                    $checkForLock = SkinElement::find($DBskinElements->id)->locking == 1;
-                    if ($checkForLock)
-                        sleep(1);
-                    else
-                        break;
-                }
-            }
-        }*/
 
         if (isset($DBskinElements))
         {
             foreach($DBskinElements as $DBskinElement)
             {
-                /*if($DBskinElement->locking == 1)
-                {
-                    while(true)
-                    {
-                        $checkForLock = SkinElement::find($DBskinElement->id)->locking == 1;
-                        if ($checkForLock)
-                            sleep(1);
-                        else
-                            break;
-                    }
-                }*/
                 if ($DBskinElement->ishd == 0 && $DBskinElement->useroverriden == 1)
                     $filename['shouldScaleDown'] = false;
                 if ($DBskinElement->ishd == 1)
@@ -221,25 +197,11 @@ class SkinsController extends BaseController{
                         "ishd" => 1,
                         "sequence_frame" => $filename['frame'],
                     ));
-
-                /*if ($hdSkinElement->exists)
-                {
-                    if($hdSkinElement->locking == 1)
-                    {
-                        while(true)
-                        {
-                            $checkForLock = SkinElement::find($hdSkinElement->id)->locking == 1;
-                            if ($checkForLock)
-                                sleep(1);
-                            else
-                                break;
-                        }
-                    }
-                    $hdSkinElement->locking = 1;
-                    $hdSkinElement->save();
-                }*/
-
                 $hdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
+
+                if ($hdSkinElement->exists)
+                    $sizeDifference += $hdSkinElement->size;
+
                 $hdSkinElement->size = $file->getSize();
                 $file->move(public_path()."/skins-content/".$skin->id, $hdSkinElement->getFullname());
                 if ($filename['issequence'])
@@ -247,40 +209,23 @@ class SkinsController extends BaseController{
                     $hdSkinElement->issequence = 1;
                     $hdSkinElement->sequence_frame = $filename['frame'];
                 }
-
                 $hdSkinElement->save();
                 $processedElements[] = $hdSkinElement;
 
-                $sdSkinElement = SkinElement::firstOrCreate(array(
+                $sdSkinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => 0,
                         "sequence_frame" => $filename['frame'],
                     ));
-
-                /*if ($sdSkinElement->exists)
-                {
-                    if($sdSkinElement->locking == 1)
-                    {
-                        while(true)
-                        {
-                            $checkForLock = SkinElement::find($sdSkinElement->id)->locking == 1;
-                            if ($checkForLock)
-                                sleep(1);
-                            else
-                                break;
-                        }
-                    }
-                    $sdSkinElement->locking = 1;
-                    $sdSkinElement->save();
-                }*/
-
                 $sdSkinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
 
                 $imageToResize = Image::make(public_path()."/skins-content/".$skin->id."/".$hdSkinElement->getFullname());
                 $imageToResize->resize(ceil(floatval($imageToResize->width() / 2)), ceil(floatval($imageToResize->height() / 2)));
                 $imageToResize->save(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
+                if ($sdSkinElement->exists)
+                    $sizeDifference += $sdSkinElement->size;
 
                 $sdSkinElement->size = filesize(public_path()."/skins-content/".$skin->id."/".$filename['fullname']);
                 if ($filename['issequence'])
@@ -288,38 +233,22 @@ class SkinsController extends BaseController{
                     $sdSkinElement->issequence = 1;
                     $sdSkinElement->sequence_frame = $filename['frame'];
                 }
-
                 $sdSkinElement->save();
                 $processedElements[] = $sdSkinElement;
             }
             else
             {
-                $skinElement = SkinElement::firstOrCreate(array(
+                $skinElement = SkinElement::firstOrNew(array(
                         "skin_id" => $skin->id,
                         "filename" => $filename['filename'],
                         "extension" => $filename['extension'],
                         "ishd" => $filename['ishd'] ? 1 : 0,
                         "sequence_frame" => $filename['frame'],
                     ));
-
-                /*if ($skinElement->exists)
-                {
-                    if($skinElement->locking == 1)
-                    {
-                        while(true)
-                        {
-                            $checkForLock = SkinElement::find($skinElement->id)->locking == 1;
-                            if ($checkForLock)
-                                sleep(1);
-                            else
-                                break;
-                        }
-                    }
-                    $skinElement->locking = 1;
-                    $skinElement->save();
-                }*/
                 $skinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
-                $skinElement->size = $file->getSize();
+                if ($skinElement->exists)
+                    $sizeDifference += $skinElement->size;
+
                 if ($filename['issequence'])
                 {
                     $skinElement->issequence = 1;
@@ -327,7 +256,6 @@ class SkinsController extends BaseController{
                 }
                 if (($skinElement->exists || !$filename['hashdcounterpart']) && $skinElement->ishd != 1)
                     $skinElement->useroverriden = 1;
-
                 $skinElement->save();
                 $processedElements[] = $skinElement;
                 $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
@@ -335,18 +263,34 @@ class SkinsController extends BaseController{
         }
         else
         {
-            $skinElement = SkinElement::firstOrCreate(array(
+            $skinElement = SkinElement::firstOrNew(array(
                     "skin_id" => $skin->id,
                     "filename" => $filename['filename'],
                     "extension" => $filename['extension'],
                     "ishd" => $filename['ishd'] ? 1 : 0
                 ));
             $skinElement->element_id = isset($elementGroup) ? $elementGroup->group_id : -1;
-            $skinElement->size = $file->getSize();
+
+            if ($skinElement->exists)
+                $sizeDifference += $skinElement->size;
+
             $skinElement->save();
             $processedElements[] = $skinElement;
             $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
         }
+
+        $elementsSize = 0;
+        foreach($processedElements as $element)
+            $elementsSize += $element->size;
+
+        if ($sizeDifference != 0)
+        {
+            $diff = $sizeDifference - $elementsSize;
+            $skin->size += $diff;
+        }
+        else
+            $skin->size += $elementsSize;
+        $skin->save();
         return $processedElements;
     }
     function saveElement($id){
@@ -358,13 +302,11 @@ class SkinsController extends BaseController{
 
         foreach($data['file'] as $file)
             $uploadedElements = array_merge($uploadedElements, (array)$this->processElement($skin, $file));
-
         //add skin size
-        foreach($uploadedElements as $elementSize)
-            $skin->size += $elementSize->size;
+        /*foreach($uploadedElements as $elementSize)
+            $skin->size += $elementSize->size;*/
         /*if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();*/
-        $skin->save();
         return View::make('skin-sections/table-row')->with(array(
             'elements' => $uploadedElements
         ));
@@ -381,8 +323,8 @@ class SkinsController extends BaseController{
             $filename = $element->filename.$hdPrefix.$element->extension;
             File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
             $skin->size -= $element->size;
-            $element->delete();
             $skin->save();
+            $element->delete();
             return Response::json('success');
         }
         else

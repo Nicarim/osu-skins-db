@@ -19,7 +19,8 @@ class SkinElement extends Eloquent {
     }
     public function getName(){
         $isSequence = $this->sequence_frame != -1 ? $this->sequence_frame : "";
-        return $this->filename.$isSequence;
+        $ishd = $this->ishd == 1 ? "@2x" : "";
+        return $this->filename.$isSequence.$ishd;
     }
     public function group(){
         return $this->belongsTo("Group");
