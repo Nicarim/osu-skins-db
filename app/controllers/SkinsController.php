@@ -134,10 +134,9 @@ class SkinsController extends BaseController{
         $processedElements = array();
         $oldanimationRegex = "/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/";
         $rules = array(
-            'file' => 'mimes:jpeg,png,mp3,wav,ogg'
+            'file' => 'mimes:jpeg,png,mp3,wav,ogg,txt'
         );
         $validation = Validator::make(array("file" => $file), $rules);
-
         if ($validation->fails())
             return "error";
         //processing of skin metadata
