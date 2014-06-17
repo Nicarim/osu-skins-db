@@ -33,7 +33,9 @@
         <th>Element Name</th>
         <th>Attributes</th>
         <th style="width:10%;">Size</th>
-        <th style="width:10%;">Options</th>
+        @if (Auth::check() && Auth::user()->id == $skin->user->id)
+            <th style="width:10%;">Options</th>
+        @endif
     </tr>
     @include('/skin-sections/table-row', array('elements' => $skin->SkinElement))
 </table>
