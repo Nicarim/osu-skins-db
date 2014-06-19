@@ -23,6 +23,7 @@ class CreateSkinsTable extends Migration {
                 $table->integer("size")->default(0);
                 $table->integer("download_count")->defalut(0);
                 $table->integer("votes")->default(0);
+                $table->integer("thumbnail")->default(0);
                 $table->timestamps();
         });
 	}

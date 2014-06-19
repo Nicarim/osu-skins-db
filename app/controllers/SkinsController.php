@@ -93,6 +93,10 @@ class SkinsController extends BaseController{
         $skin->user_id = Auth::user()->id;
         $skin->save();
         $skinRoot = 'skins-content/'.$skin->id.'/';
+        $previewRoot = 'previews-content/'.$skin->id.'/';
+        if (!is_dir($previewRoot))
+            mkdir($previewRoot);
+
         if (!is_dir($skinRoot))
             mkdir($skinRoot);
         else
@@ -104,7 +108,17 @@ class SkinsController extends BaseController{
                     unlink($file);
             }
         }
-
+        if (Input::hasFile("thumbnail"))
+        {
+            $path = public_path()."/".$previewRoot;
+            $skin->thumbnail = 1;
+            $skin->save();
+            $thumbnail = Input::file("thumbnail");
+            $thumbnail->move($path, "thumbnail.png");
+            $imageToResize = Image::make($path."thumbnail.png");
+            $imageToResize->resize(240,180);
+            $imageToResize->save($path."thumbnails.png");
+        }
         return Redirect::to('/skins/view/'.$skin->id);
     }
     function downloadSkin($id){

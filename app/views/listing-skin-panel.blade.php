@@ -2,7 +2,7 @@
     @foreach ($skins as $skin)
     <div class="col-sm-5 col-md-3">
         <div class="thumbnail">
-            <img src="/1389588-min.jpg" alt="...">
+            <img src="{{$skin->thumbnail == 1 ? '/previews-content/'.$skin->id.'/thumbnails.png' : '/previews-content/no-thumbnails.png'}}" alt="...">
             <div class="caption">
                 <h3>{{$skin->name}}</h3>
                 @if (!$private)
