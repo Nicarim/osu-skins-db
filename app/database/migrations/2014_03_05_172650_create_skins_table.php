@@ -15,8 +15,8 @@ class CreateSkinsTable extends Migration {
         Schema::create('skins', function(Blueprint $table) {
                 $table->increments('id');
                 $table->integer('user_id');
-                $table->integer('gamemodes');
-                $table->integer('nsfw');
+                $table->integer('gamemodes')->default(0);
+                $table->integer('nsfw')->default(0);
                 $table->integer('template')->default(0);
                 $table->string("name");
                 $table->text("description");
