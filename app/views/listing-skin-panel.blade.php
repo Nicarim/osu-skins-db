@@ -4,9 +4,9 @@
         <div class="thumbnail">
             <img src="{{$skin->thumbnail == 1 ? '/previews-content/'.$skin->id.'/thumbnails.png' : '/previews-content/no-thumbnails.png'}}" alt="...">
             <div class="caption">
-                <h3>{{$skin->name}}</h3>
+                <h4>{{$skin->name}}</h4>
                 @if (!$private)
-                    <h4>by {{$skin->user->name}}</h4>
+                    <h5>by {{$skin->user->name}}</h5>
                 @endif
                 <!--
                 <p class="text-center"><b class="taiko"></b><b class="osu"></b></p>
