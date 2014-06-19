@@ -55,22 +55,12 @@
         {{$skin->parsedDescription()}}
     </div>
 </div>
-<!--
 <h2>Screenshots</h2>
 <div class="jumbotron">
 
     <div class="row">
         <div class="col-xs-6 col-md-3">
-            <a class="fancybox thumbnail" rel="group" href="/previews-content/{{$skin->id}}/countdown.jpg?cache={{time()}}"><img src="/previews-content/{{$skin->id}}/countdown-preview.jpg" alt="" /></a>
-        </div>
-        <div class="col-xs-6 col-md-3">
-            <a class="fancybox thumbnail" rel="group" href="/1389588.jpg"><img src="/1389588-min.jpg" alt="" /></a>
-        </div>
-        <div class="col-xs-6 col-md-4">
-            <form action="/file-upload" class="dropzone dz-clickable dropzone-custom" id="my-awesome-dropzone">
-
-
-            </form>
+            <a class="fancybox thumbnail" rel="group" href="{{last_modified(/previews-content/$skin->id/thumbnail.png)"><img src="/previews-content/{{$skin->id}}/countdown-preview.jpg" alt="" /></a>
         </div>
     </div>
-</div>-->
+</div>
