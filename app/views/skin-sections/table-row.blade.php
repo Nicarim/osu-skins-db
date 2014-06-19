@@ -6,7 +6,7 @@
         </td>
         @endif
         <td class="element-row">
-            <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" class="fancybox element-filename">{{$element->getName()}}</a>
+            <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}" class="fancybox element-filename">{{$element->getName()}}</a>
         </td>
         <td>
             <!-- attributions -->
