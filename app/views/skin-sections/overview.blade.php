@@ -55,12 +55,14 @@
         {{$skin->parsedDescription()}}
     </div>
 </div>
+@if ($skin->thumbnail == 1)
 <h2>Screenshots</h2>
 <div class="jumbotron">
 
     <div class="row">
         <div class="col-xs-6 col-md-3">
-            <a class="fancybox thumbnail" rel="group" href="{{last_modified(/previews-content/$skin->id/thumbnail.png)"><img src="/previews-content/{{$skin->id}}/countdown-preview.jpg" alt="" /></a>
+            <a class="fancybox thumbnail" rel="group" href="{{last_modified(/previews-content/$skin->id/thumbnail.png)}}"><img src="{{last_modified(/previews-content/$skin->id/thumbnails.png)}}" alt="" /></a>
         </div>
     </div>
 </div>
+@endif
