@@ -61,7 +61,7 @@
 
     <div class="row">
         <div class="col-xs-6 col-md-3">
-            <a class="fancybox thumbnail" rel="group" href="{{last_modified(/previews-content/$skin->id/thumbnail.png)}}"><img src="{{last_modified(/previews-content/$skin->id/thumbnails.png)}}" alt="" /></a>
+            <a class="fancybox thumbnail" rel="group" href="{{last_modified('/previews-content/$skin->id/thumbnail.png')}}"><img src="{{last_modified('/previews-content/$skin->id/thumbnails.png')}}" alt="" /></a>
         </div>
     </div>
 </div>
