@@ -22,7 +22,7 @@ Route::group(array("prefix" => "skins"), function(){
                        "as" => "SkinSettings"
                     ));
                 Route::get('/create', function(){
-                       return View::make('create');
+                       return View::make('create')->with("url", "/skin/create");
                     });
                 Route::post('/create', array(
                        "uses" => "SkinsController@createSkin"

@@ -71,7 +71,7 @@ class SkinsController extends BaseController{
         $data = Input::all();
         $skin = Skin::find($id);
         $skin->description = $data['description'];
-
+        $skin->name = $data['title'];
         if (isset($data['warnnsfw']))
             $skin->nsfw = 1;
         else
