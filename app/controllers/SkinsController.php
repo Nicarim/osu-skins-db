@@ -127,7 +127,9 @@ class SkinsController extends BaseController{
     {
         $file->move($path, "thumbnail.png");
         $imageToResize = Image::make($path."thumbnail.png");
-        $imageToResize->resize(240,180);
+        $imageToResize->resize(200, null, function($constraint){
+                $constraint->aspectRatio();
+            });
         $imageToResize->save($path."thumbnails.png");
     }
     function downloadSkin($id){
