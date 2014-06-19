@@ -76,7 +76,13 @@ class SkinsController extends BaseController{
             $skin->nsfw = 1;
         else
             $skin->nsfw = 0;
-
+        if (Input::hasFile("thumbnail"))
+        {
+            $skin->thumbnail = 1;
+            $skin->save();
+            $path = public_path()."/previews-content/".$skin->id."/";
+            $this->processThumbnail(Input::file("thumbnail"), $path);
+        }
         $skin->save();
         return Redirect::back();
     }
@@ -110,16 +116,19 @@ class SkinsController extends BaseController{
         }
         if (Input::hasFile("thumbnail"))
         {
-            $path = public_path()."/".$previewRoot;
             $skin->thumbnail = 1;
             $skin->save();
-            $thumbnail = Input::file("thumbnail");
-            $thumbnail->move($path, "thumbnail.png");
-            $imageToResize = Image::make($path."thumbnail.png");
-            $imageToResize->resize(240,180);
-            $imageToResize->save($path."thumbnails.png");
+            $path = public_path()."/".$previewRoot;
+            $this->processThumbnail(Input::file("thumbnail"), $path);
         }
         return Redirect::to('/skins/view/'.$skin->id);
+    }
+    function processThumbnail($file, $path)
+    {
+        $file->move($path, "thumbnail.png");
+        $imageToResize = Image::make($path."thumbnail.png");
+        $imageToResize->resize(240,180);
+        $imageToResize->save($path."thumbnails.png");
     }
     function downloadSkin($id){
         $skin = Skin::find($id);
