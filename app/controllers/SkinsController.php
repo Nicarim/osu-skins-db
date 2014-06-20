@@ -272,7 +272,7 @@ class SkinsController extends BaseController{
                 $skinElement->group_id = isset($elementGroup) ? $elementGroup->group_id : -1;
                 if ($skinElement->exists)
                     $sizeDifference += $skinElement->size;
-
+                $skinElement->size = $file->getSize();
                 if ($filename['issequence'])
                 {
                     $skinElement->issequence = 1;
@@ -297,7 +297,7 @@ class SkinsController extends BaseController{
 
             if ($skinElement->exists)
                 $sizeDifference += $skinElement->size;
-
+            $skinElement->size = $file->getSize();
             $skinElement->save();
             $processedElements[] = $skinElement;
             $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
