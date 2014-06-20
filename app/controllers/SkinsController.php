@@ -197,7 +197,7 @@ class SkinsController extends BaseController{
         {
             $filename['frame'] = -1;
         }
-        $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->get();
+        $DBskinElements = SkinElement::where("filename", "=", $filename['filename'])->where("skin_id", "=", $skin->id)->get();
 
         if (isset($DBskinElements))
         {
