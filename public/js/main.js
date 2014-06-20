@@ -78,13 +78,16 @@ $(document).ready(function() {
     });
     $("#star-skin").click(function(){
         var startext = $("#star-skin > .star-text");
+        $("#star-skin").slideToggle();
         $.get("/skins/vote/"+$(this).data("skinid"), function(){
             var typeOfStar = startext.text() == "Star";
             startext.text(typeOfStar ? "Unstar" : "Star");
+            $("#star-skin").slideToggle();
             if(typeOfStar)
                 $("#votes-count").text(parseInt($("#votes-count").text()) + 1);
             else
                 $("#votes-count").text(parseInt($("#votes-count").text()) - 1);
+
         });
     });
 });
