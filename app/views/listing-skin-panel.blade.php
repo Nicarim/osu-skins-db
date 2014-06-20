@@ -4,7 +4,7 @@
         <div class="thumbnail">
             <img src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
             <div class="caption">
-                <h4>{{$skin->name}}</h4>
+                <h4>{{(strlen($skin->name) > 22) ? substr($skin->name,0,19).'...' : $skin->name}}</h4>
                 @if (!$private)
                     <h5>by {{$skin->user->name}}</h5>
                 @endif
