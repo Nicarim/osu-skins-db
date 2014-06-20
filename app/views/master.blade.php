@@ -20,7 +20,7 @@
         ga('create', 'UA-21965013-5', 'ppy.sh');
         ga('send', 'pageview');
     </script>
-    <script src="/js/main.js"></script>
+    <script src="{{last_modified('/js/main.js'}}"></script>
 </head>
 @include('navbar')
 <body style="padding-top: 80px;">
