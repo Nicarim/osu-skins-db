@@ -11,7 +11,24 @@ class SkinsController extends BaseController{
         return View::make('index');
     }
     function listOfSkins($sorting=null){
-        $skins = Skin::all();
+        $skins = null;
+        if ($sorting != null)
+        {
+            switch($sorting)
+            {
+                case "rating":
+                    $skins = Skin::orderBy("votes", "desc")->get();
+                    break;
+                case "downloads":
+                    $skins = Skin::orderBy("download_count", "desc")->get();
+                    break;
+                default:
+                    $skins = Skin::all();
+                    break;
+            }
+        }
+        else
+            $skins = Skin::all();
         return View::make('listing')->with(array(
                 "skins" => $skins,
                 "private" => false
