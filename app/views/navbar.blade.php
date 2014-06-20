@@ -9,8 +9,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
 
-                        <li><a class="red-highlight "href="/skins/list/rating"><b class="glyphicon glyphicon-thumbs-up"></b> Top Stars</a></li>
-                        <li><a class="green-highlight "href="/skins/list/downloads"><b class="glyphicon glyphicon-thumbs-up"></b> Most Downloads</a></li>
+                        <li><a class="red-highlight "href="/skins/list/rating"><b class="glyphicon glyphicon-star"></b> Top Stars</a></li>
+                        <li><a class="green-highlight "href="/skins/list/downloads"><b class="glyphicon glyphicon-cloud"></b> Most Downloads</a></li>
                         <div class="divider"></div>
                         <li><a class="blue-higlight" href="/skins/list"><b class="glyphicon glyphicon-certificate"></b> All</a></li>
                         <!--<li><a class="green-highlight" href="#"><b class="glyphicon glyphicon-heart"></b> Completed</a></li>
