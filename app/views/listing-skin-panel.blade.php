@@ -4,8 +4,9 @@
         <div class="thumbnail">
             <img style="height:155px;" src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
             <div class="caption">
-                <h3><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}</h3>
+
                 <h4>{{(strlen($skin->name) > 26) ? substr($skin->name,0,23).'...' : $skin->name}}</h4>
+                <h5><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}</h5>
                 @if (!$private)
                     <h5>by {{$skin->user->name}}</h5>
                 @endif
