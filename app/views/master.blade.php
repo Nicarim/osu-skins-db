@@ -10,7 +10,6 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/dropzone/dropzone.js"></script>
     <script src="/js/kinetic-v5.0.1.min.js"></script>
-    <script src="/js/blur.min.js"></script>
     <script type="text/javascript" src="/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
