@@ -17,7 +17,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-21965013-5', 'hiroto.eu');
+        ga('create', 'UA-21965013-5', 'ppy.sh');
         ga('send', 'pageview');
     </script>
     <script src="/js/main.js"></script>
