@@ -6,7 +6,11 @@
             <div class="caption">
 
                 <h4>{{(strlen($skin->name) > 26) ? substr($skin->name,0,23).'...' : $skin->name}}</h4>
-                <h5><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}</h5>
+                <h5>
+                    <b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}
+                    <b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}}
+                    <b class="glyphicon glyphicon-cloud"></b> {{$skin->SkinElement->count()}}
+                </h5>
                 @if (!$private)
                     <h5>by {{$skin->user->name}}</h5>
                 @endif
