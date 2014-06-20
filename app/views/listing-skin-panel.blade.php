@@ -9,7 +9,7 @@
                 <h5>
                     <b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}
                     <b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}}
-                    <b class="glyphicon glyphicon-cloud"></b> {{$skin->SkinElement->count()}}
+                    <b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}}
                 </h5>
                 @if (!$private)
                     <h5>by {{$skin->user->name}}</h5>
