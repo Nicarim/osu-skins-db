@@ -2,7 +2,7 @@
     @foreach ($skins as $skin)
     <div class="col-sm-5 col-md-3">
         <div class="thumbnail">
-            <img height="155" src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
+            <img style="height:155px;" src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
             <div class="caption">
                 <h4>{{(strlen($skin->name) > 26) ? substr($skin->name,0,23).'...' : $skin->name}}</h4>
                 @if (!$private)
