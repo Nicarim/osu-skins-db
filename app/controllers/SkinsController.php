@@ -62,6 +62,7 @@ class SkinsController extends BaseController{
     }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
+        $skin->load('element');
         if (isset($skin)){
             $array = array();
             $array['skin'] = $skin;
