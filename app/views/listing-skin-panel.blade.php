@@ -5,7 +5,7 @@
             <img style="height:155px;" src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
             <div class="caption">
 
-                <h4>{{(strlen($skin->name) > 26) ? substr($skin->name,0,23).'...' : $skin->name}}</h4>
+                <h4 style="height:40px;">{{(strlen($skin->name) > 36) ? substr($skin->name,0,33).'...' : $skin->name}}</h4>
                 <h5 style="text-align: center;">
                     <span class="pull-left"><b class="glyphicon glyphicon-star-empty"></b> {{$skin->votes}}</span>
                     <span><b class="glyphicon glyphicon-tag"></b> {{$skin->download_count}}</span>
