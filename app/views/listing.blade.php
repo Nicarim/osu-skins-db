@@ -25,11 +25,14 @@
         @else
             <li class="previous disabled"><a href="#">&larr; Previous Page</a></li>
         @endif
-
-        @if (Input::has("p") && Input::get("p") > 1)
-            <li class="next"><a href="{{'/'.Request::path().'?p='.(Input::get('p') + 1)}}">Next Page &rarr;</a></li>
+        @if ($canShowMore)
+            @if (Input::has("p") && Input::get("p") > 1)
+                <li class="next"><a href="{{'/'.Request::path().'?p='.(Input::get('p') + 1)}}">Next Page &rarr;</a></li>
+            @else
+                <li class="next"><a href="{{'/'.Request::path().'?p=2'}}">Next Page &rarr;</a></li>
+            @endif
         @else
-            <li class="next"><a href="{{'/'.Request::path().'?p=2'}}">Next Page &rarr;</a></li>
+            <li class="next disabled"><a href="#">Next Page &rarr;</a></li>
         @endif
 
     </ul>

@@ -13,7 +13,9 @@ class SkinsController extends BaseController{
     function listOfSkins($sorting=null){
         $skins = null;
         $isSorted = false;
+        $numberOfResults = 12;
         $currentPage = Input::has("p") ? Input::get("p") : 1;
+        $skipped = ($currentPage - 1) * $numberOfResults;
         if ($sorting != null)
         {
             switch($sorting)
@@ -33,14 +35,15 @@ class SkinsController extends BaseController{
             $isSorted = true;
 
         if ($isSorted)
-            $skins = Skin::skip(($currentPage - 1) * 12)->take(12);
+            $skins = Skin::skip($skipped)->take($numberOfResults);
         else
-            $skins->skip(($currentPage - 1) * 12)->take(12);
+            $skins->skip($skipped)->take($numberOfResults);
 
         $skins = $skins->get();
         return View::make('listing')->with(array(
                 "skins" => $skins,
-                "private" => false
+                "private" => false,
+                "canShowMore" => $skins->count() >= 12
             ));
     }
     function ownListOfSkins(){
