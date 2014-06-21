@@ -19,6 +19,20 @@
     @if($private)
         <h2>My skins</h2>
     @endif
+    <ul class="pager">
+        @if (Input::has("p") && Input::get("p") > 1)
+            <li class="previous"><a href="{{Request::path().'?p='.Input::get('p') - 1}}">&larr; Previous Page</a></li>
+        @else
+            <li class="previous disabled"><a href="#">&larr; Previous Page</a></li>
+        @endif
+
+        @if (Input::has("p") && Input::get("p") > 1)
+            <li class="next"><a href="{{Request::path().'?p='.Input::get('p') + 1}}">Next Page &rarr;</a></li>
+        @else
+            <li class="next"><a href="{{Request::path().'?p=2'}}">Next Page &rarr;</a></li>
+        @endif
+
+    </ul>
     @include('listing-skin-panel', array("skins" => $skins, "private" => $private))
 </div>
 @stop
