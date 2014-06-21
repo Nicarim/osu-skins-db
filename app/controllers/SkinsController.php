@@ -33,9 +33,9 @@ class SkinsController extends BaseController{
             $isSorted = true;
 
         if ($isSorted)
-            $skins = Skin::limitBy(($currentPage - 1) * 12, 12);
+            $skins = Skin::skip(($currentPage - 1) * 12)->take(12);
         else
-            $skins->limitBy(($currentPage - 1) * 12, 12);
+            $skins->skip(($currentPage - 1) * 12)->take(12);
 
         $skins = $skins->get();
         return View::make('listing')->with(array(
