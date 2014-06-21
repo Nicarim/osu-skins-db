@@ -37,5 +37,5 @@
             <th style="width:10%;">Options</th>
         @endif
     </tr>
-    @include('/skin-sections/table-row', array('elements' => $skin->SkinElement))
+    @include('/skin-sections/table-row', array('elements' => $elements))
 </table>

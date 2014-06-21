@@ -62,7 +62,7 @@ class SkinsController extends BaseController{
     }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
-        $skin->load('SkinElement');
+        $elements = SkinElement::where("skin_id", $id)->get();
         if (isset($skin)){
             $array = array();
             $array['skin'] = $skin;
@@ -70,7 +70,7 @@ class SkinsController extends BaseController{
                 $array['vote'] = Vote::where("skin_id", $id)->where("user_id", Auth::user()->id)->first();
 
             $skin->template != 1 ?: $array['groups'] = Group::all();
-
+            $array['elements'] = $elements;
             return View::make('view-skin')->with($array);
         }
         else
