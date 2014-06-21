@@ -12,23 +12,32 @@ class SkinsController extends BaseController{
     }
     function listOfSkins($sorting=null){
         $skins = null;
+        $isSorted = false;
+        $currentPage = Input::has("p") ? Input::get("p") : 1;
         if ($sorting != null)
         {
             switch($sorting)
             {
                 case "rating":
-                    $skins = Skin::orderBy("votes", "desc")->get();
+                    $skins = Skin::orderBy("votes", "desc");
                     break;
                 case "downloads":
-                    $skins = Skin::orderBy("download_count", "desc")->get();
+                    $skins = Skin::orderBy("download_count", "desc");
                     break;
                 default:
-                    $skins = Skin::all();
+                    $isSorted = true;
                     break;
             }
         }
         else
-            $skins = Skin::all();
+            $isSorted = true;
+
+        if ($isSorted)
+            $skins = Skin::limitBy(($currentPage - 1) * 12, 12);
+        else
+            $skins->limitBy(($currentPage - 1) * 12, 12);
+
+        $skins = $skins->get();
         return View::make('listing')->with(array(
                 "skins" => $skins,
                 "private" => false
