@@ -8,7 +8,7 @@
 
 class SkinsController extends BaseController{
     function index(){
-        return View::make('index');
+        return Redirect::to("/skins/list");
     }
     function listOfSkins($sorting=null){
         $skins = null;
