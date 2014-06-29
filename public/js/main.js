@@ -111,6 +111,7 @@ function clearSelection() {
     }
 }
 function playAudio(audio){
+    document.getElementById(audio).preventDefault();
     document.getElementById(audio).play();
 }
 function refreshSize()

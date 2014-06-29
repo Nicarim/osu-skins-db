@@ -25,4 +25,10 @@ class SkinElement extends Eloquent {
     public function group(){
         return $this->belongsTo("Group");
     }
+    public function isAudio(){
+        return in_array($this->extension, array("mp3","ogg","wav"));
+    }
+    public function isImage(){
+        return in_array($this->extension, array("jpg","jpeg","png"));
+    }
 } 
