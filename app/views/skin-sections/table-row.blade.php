@@ -7,8 +7,8 @@
                 <a role="link" onclick="deleteRow(this,{{$element->id}})">Delete</a>
             </span>
         @endif
-        @if (in_array($element->extension, array("mp3","ogg","wav"))
-        <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"></audio>
+        @if (in_array($element->extension, array("mp3","ogg","wav")))
+            <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"></audio>
         @endif
     </h4>
     <p class="list-group-item-text">
