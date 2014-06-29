@@ -1,5 +1,5 @@
 @foreach ($elements as $element)
-<a href="#" class="list-group-item">
+<div class="list-group-item">
     <h4 class="list-group-item-heading element-row">
         <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}" class="fancybox element-filename">{{$element->getName()}}</a>
     </h4>
@@ -32,5 +32,5 @@
             <b>Size:</b> {{Helpers::formatSizeUnits($element->size)}}
         </span>
     </p>
-</a>
+</div>
 @endforeach
