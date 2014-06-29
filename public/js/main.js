@@ -10,7 +10,7 @@ Dropzone.options.myAwesomeDropzone = {
             arrayFiles.push($.trim($(this).html()));
             ElementsCount++;
         });
-        $("#fileslist > tbody > tr").each(function(index){
+        $("#fileslist > .list-group-item").each(function(index){
             if (index != 0)
             {
                 var $localDom = $(this);
@@ -22,7 +22,7 @@ Dropzone.options.myAwesomeDropzone = {
                 }
             }
         });
-        $("#fileslist > tbody > tr:first").after($(response).hide().fadeIn(1500))
+        $("#fileslist > .list-group-item:first").before($(response).hide().fadeIn(1500))
         if (countElements)
         {
             var count = parseInt($("#element-count").text());

@@ -27,8 +27,9 @@
 @endif
 <!--<input id="missingElementsCheck" type="checkbox">
 <label for="missingElementsCheck">Check for missing elements</label>-->
-<table class="table table-bordered table-smaller" id="fileslist">
-    <tr>
+<div class="list-group" id="fileslist">
+    @include('/skin-sections/table-row', array('elements' => $elements))
+    <!--<tr>
         {{$skin->template == 1 ? "<th style='width:10px;'>Se</th>": ""}}
         <th>Element Name</th>
         <th>Attributes</th>
@@ -36,6 +37,5 @@
         @if (Auth::check() && Auth::user()->id == $skin->user->id)
             <th style="width:10%;">Options</th>
         @endif
-    </tr>
-    @include('/skin-sections/table-row', array('elements' => $elements))
-</table>
+    </tr>-->
+</div>
