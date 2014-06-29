@@ -372,8 +372,21 @@ class SkinsController extends BaseController{
             $skin->size += $elementSize->size;*/
         /*if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();*/
+
+        //let's perform some clearing
+        $duplicateArray = array();
+        $clearedUploadedElements = array();
+        foreach($uploadedElements as $el)
+        {
+            if (!in_array($el->getName(), $duplicateArray))
+            {
+                $duplicateArray[] = $el->getName();
+                $clearedUploadedElements[] = $el;
+            }
+        }
+
         return View::make('skin-sections/table-row')->with(array(
-            'elements' => $uploadedElements
+            'elements' => $clearedUploadedElements
         ));
     }
 
