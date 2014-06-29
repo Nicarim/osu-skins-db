@@ -92,7 +92,7 @@ $(document).ready(function() {
     });
     $(".audio-element").click(function(event){
         event.preventDefault();
-        document.getElementById(event.target.data("audiotag")).play();
+        document.getElementById($(event.target).data("audiotag")).play();
     })
 });
 function deleteRow (item, id){
