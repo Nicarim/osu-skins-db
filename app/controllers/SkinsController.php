@@ -62,7 +62,11 @@ class SkinsController extends BaseController{
     }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
-        $elements = SkinElement::where("skin_id", $id)->get();
+        $elements = SkinElement::where("skin_id", $id)
+            ->orderBy('filename','asc')
+            ->orderBy('sequence_frame', 'asc')
+            ->orderBy('ishd', 'asc')
+            ->get();
         if (isset($skin)){
             $array = array();
             $array['skin'] = $skin;
