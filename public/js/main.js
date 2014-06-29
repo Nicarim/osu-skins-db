@@ -6,7 +6,7 @@ Dropzone.options.myAwesomeDropzone = {
         var arrayFiles = [];
         var countElements = true;
         var ElementsCount = 0;
-        $jQueryObject.find(".element-row").each(function(){
+        $jQueryObject.find(".element-filename").each(function(){
             arrayFiles.push($.trim($(this).html()));
             ElementsCount++;
         });
@@ -14,7 +14,7 @@ Dropzone.options.myAwesomeDropzone = {
             if (index != 0)
             {
                 var $localDom = $(this);
-                var rowname = $.trim($localDom.find(".element-row").html());
+                var rowname = $.trim($localDom.find(".element-filename").html());
                 if ($.inArray(rowname, arrayFiles) != -1){
                     $localDom.hide();
                     $localDom.remove();
