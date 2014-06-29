@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <head>
 
     <link rel="stylesheet" href="/css/bootstrap.css" />
@@ -27,3 +28,4 @@
 <body style="padding-top: 80px;">
 @yield ('content')
 </body>
+</html>
