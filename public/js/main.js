@@ -11,15 +11,12 @@ Dropzone.options.myAwesomeDropzone = {
             ElementsCount++;
         });
         $("#fileslist > .list-group-item").each(function(index){
-            if (index != 0)
-            {
-                var $localDom = $(this);
-                var rowname = $.trim($localDom.find(".element-filename").html());
-                if ($.inArray(rowname, arrayFiles) != -1){
-                    $localDom.hide();
-                    $localDom.remove();
-                    countElements = false;
-                }
+            var $localDom = $(this);
+            var rowname = $.trim($localDom.find(".element-filename").html());
+            if ($.inArray(rowname, arrayFiles) != -1){
+                $localDom.hide();
+                $localDom.remove();
+                countElements = false;
             }
         });
         $("#fileslist").prepend($(response).hide().fadeIn(1500));
