@@ -93,12 +93,22 @@ $(document).ready(function() {
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id));
+    clearSelection();
     $(item).parent().parent().parent().fadeOut(200, function(){
         $(this).remove();
         refreshSize();
+        clearSelection();
     });
     var count = parseInt($("#element-count").text());
     $("#element-count").text((count - 1));
+}
+function clearSelection() {
+    if(document.selection && document.selection.empty) {
+        document.selection.empty();
+    } else if(window.getSelection) {
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+    }
 }
 function refreshSize()
 {
