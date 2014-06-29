@@ -22,7 +22,7 @@ Dropzone.options.myAwesomeDropzone = {
                 }
             }
         });
-        $("#fileslist").prepend($(response).hide().fadeIn(1500))
+        $("#fileslist").prepend($(response).hide().fadeIn(1500));
         if (countElements)
         {
             var count = parseInt($("#element-count").text());
