@@ -1,11 +1,14 @@
 @foreach ($elements as $element)
 <div class="list-group-item">
     <h4 class="list-group-item-heading element-row">
-        <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}" class="fancybox element-filename">{{$element->getName()}}</a>
+        <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}" onclick="playAudio({{$element->id.'-audio'}})" rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}" class="fancybox element-filename">{{$element->getName()}}</a>
         @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
             <span style="float:right;">
                 <a role="link" onclick="deleteRow(this,{{$element->id}})">Delete</a>
             </span>
+        @endif
+        @if (in_array($element->extension, array("mp3","ogg","wav"))
+        <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"></audio>
         @endif
     </h4>
     <p class="list-group-item-text">

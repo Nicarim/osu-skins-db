@@ -110,6 +110,9 @@ function clearSelection() {
         sel.removeAllRanges();
     }
 }
+function playAudio(audio){
+    document.getElementById(audio).play();
+}
 function refreshSize()
 {
     var overallSize = 0;
