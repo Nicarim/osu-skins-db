@@ -90,10 +90,10 @@ $(document).ready(function() {
 
         });
     });
-    $(".audio-element").click(function(event){
+    $(document).on('click', '.audio-element', function(event){
         event.preventDefault();
         document.getElementById($(event.target).data("audiotag")).play();
-    })
+    });
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id));
