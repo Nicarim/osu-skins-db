@@ -90,6 +90,10 @@ $(document).ready(function() {
 
         });
     });
+    $(".audio-element").click(function(event){
+        event.preventDefault();
+        document.getElementById(this.data("audiotag")).play();
+    })
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id));
@@ -109,10 +113,6 @@ function clearSelection() {
         var sel = window.getSelection();
         sel.removeAllRanges();
     }
-}
-function playAudio(audio){
-    document.getElementById(audio).preventDefault();
-    document.getElementById(audio).play();
 }
 function refreshSize()
 {
