@@ -93,7 +93,7 @@ $(document).ready(function() {
 });
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id));
-    $(item).parent().parent().fadeOut(200, function(){
+    $(item).parent().parent().parent().fadeOut(200, function(){
         $(this).remove();
         refreshSize();
     });
