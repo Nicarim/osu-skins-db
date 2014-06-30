@@ -14,7 +14,7 @@
         </div>
     </div>
 </div>-->
-
+<title>Skins Listing - page {{Input::has('p') ? Input::get('p') : 1}}</title>
 <div class="container">
     @if($private)
         <h2>My skins</h2>
