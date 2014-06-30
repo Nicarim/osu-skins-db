@@ -3,8 +3,10 @@
     <h4 class="list-group-item-heading element-row">
         <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
-           class="element-filename {{$element->isAudio() ? 'audio-element' : 'fancybox'}}"
-           {{$element->isAudio() ? ' data-audiotag="'.$element->id.'-audio"' : ''}}>
+           class="element-filename
+           {{$element->isAudio() ? 'audio-element' : ''}}
+           {{$element->isImage() ? 'fancybox' : ''}}
+           {{$element->isConfig() ? 'config-element' : ''}}" data-elementid="{{$element->id}}">
             {{$element->getName()}}
         </a>
         @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
@@ -16,6 +18,11 @@
             <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"></audio>
         @endif
     </h4>
+    @if ($element->isConfig())
+    <pre style="display:none;" id="{{$element->id}}-config">
+
+    </pre>
+    @endif
     <p class="list-group-item-text">
         <b>Attributes:</b>
         @if (!isset($missing))

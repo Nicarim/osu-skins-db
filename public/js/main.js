@@ -89,7 +89,17 @@ $(document).ready(function() {
     });
     $(document).on('click', '.audio-element', function(event){
         event.preventDefault();
-        document.getElementById($(event.target).data("audiotag")).play();
+        document.getElementById($(event.target).data("elementid").toString() + "-audio").play();
+    });
+    $(document).on('click', '.config-element', function(event){
+        event.preventDefault();
+        var url = $(event.target).attr("href");
+        $.get(url, function(data){
+            var preObject = "#" + $(event.target).data("elementid").toString() + "-config";
+            $(preObject).text(data);
+            $(preObject).slideDown();
+        });
+
     });
 });
 function deleteRow (item, id){
