@@ -30,17 +30,17 @@
 <div id="filters" class="btn-group btn-group-lg btn-group-justified" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="btn-group">
         <button type="button" class="btn btn-danger filter-files" data-type="picture">
-            <b class="glyphicon glyphicon-picture"></b>
+            <b class="glyphicon glyphicon-picture"></b> Sprites
         </button>
     </div>
     <div class="btn-group">
         <button type="button" class="btn btn-primary filter-files" data-type="sound">
-            <b class="glyphicon glyphicon-volume-up"></b>
+            <b class="glyphicon glyphicon-volume-up"></b> Sounds
         </button>
     </div>
     <div class="btn-group">
         <button type="button" class="btn btn-success filter-files" data-type="text">
-            <b class="glyphicon glyphicon-file"></b>
+            <b class="glyphicon glyphicon-file"></b> Configs
         </button>
     </div>
 </div>
