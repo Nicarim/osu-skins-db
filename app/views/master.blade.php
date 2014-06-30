@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/bootstrap-theme.css" />
     <link rel="stylesheet" href="/dropzone/basic.css" />
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="{{last_modified('/css/main.css')}}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
