@@ -187,3 +187,15 @@ b.mania{
 .table-smaller > thead > tr > th, .table-smaller > tbody > tr > th, .table-smaller > tfoot > tr > th, .table-smaller > thead > tr > td, .table-smaller > tbody > tr > td, .table-smaller > tfoot > tr > td{
     padding: 4px;
 }
+.filter-files{
+    margin-right: 15px;
+}
+#filters > .green-highlight{
+    color: #68d000;
+}
+#filters > .red-highlight{
+    color:red;
+}
+#filters > .blue-higlight{
+    background-color:deepskyblue;
+}

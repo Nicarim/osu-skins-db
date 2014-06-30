@@ -27,12 +27,20 @@
 @endif
 <!--<input id="missingElementsCheck" type="checkbox">
 <label for="missingElementsCheck">Check for missing elements</label>-->
-<div id="filters">
-    <span>Filters: </span>
-    <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
-    <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
-    <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
+<div class="btn-group btn-group-lg btn-group-justified">
+    <button type="button" class="btn btn-default">
+        <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
+    </button>
+    <button type="button" class="btn btn-default">
+        <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
+    </button>
+    <button type="button" class="btn btn-default">
+        <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
+    </button>
 </div>
+
+
+
 <div class="list-group" id="fileslist">
     @include('/skin-sections/table-row', array('elements' => $elements))
 </div>
