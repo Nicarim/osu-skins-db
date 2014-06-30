@@ -193,7 +193,7 @@ class SkinsController extends BaseController{
         $processedElements = array();
         $oldanimationRegex = "/sliderb\d|pippidonclear\d|pippidonfail\d|pippidonidle\d|pippidonkiai\d/";
         $rules = array(
-            'file' => 'mimes:jpeg,png,txt|audio'
+            'file' => 'skin-mimes'
         );
         $validation = Validator::make(array("file" => $file), $rules);
         if ($validation->fails())
