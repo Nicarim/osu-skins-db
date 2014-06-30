@@ -195,9 +195,12 @@ class SkinsController extends BaseController{
         $rules = array(
             'file' => 'skinmimes'
         );
-        $validation = Validator::make(array("file" => $file), $rules);
-        if ($validation->fails())
-            return "error";
+        if (!$file->getMimeType() == "text/plain")
+        {
+            $validation = Validator::make(array("file" => $file), $rules);
+            if ($validation->fails())
+                return "error";
+        }
         //processing of skin metadata
         $elementName = strtolower($file->getClientOriginalName());
         $elementExt = strtolower($file->getClientOriginalExtension());
