@@ -112,12 +112,21 @@ $(document).ready(function() {
             var $localDom = $(this);
             var element = $localDom.find("b:first");
             if (element.data("type").toString() == type)
-                $localDom.toggle();
+                $localDom.parent().fadeToggle();
         });
-        $(event.target).animate({
-            "opacity": 0.50
-        }, 500);
-    })
+        if ($(event.target).css("opacity") == 0.50)
+        {
+            $(event.target).animate({
+                "opacity": 1
+            }, 500);
+        }
+        else
+        {
+            $(event.target).animate({
+                "opacity": 0.50
+            }, 500);
+        }
+    });
 });
 function isEmpty (el){
     return !$.trim(el.html())
