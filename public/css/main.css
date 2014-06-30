@@ -188,6 +188,6 @@ b.mania{
 .table-smaller > thead > tr > th, .table-smaller > tbody > tr > th, .table-smaller > tfoot > tr > th, .table-smaller > thead > tr > td, .table-smaller > tbody > tr > td, .table-smaller > tfoot > tr > td{
     padding: 4px;
 }
-#filters > .fadedout{
+#filters > .btn-group > .fadedout{
     opacity: 0.50;
 }
