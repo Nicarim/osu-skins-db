@@ -92,16 +92,24 @@ $(document).ready(function() {
         document.getElementById($(event.target).data("elementid").toString() + "-audio").play();
     });
     $(document).on('click', '.config-element', function(event){
+        var preObject = "#" + $(event.target).data("elementid").toString() + "-config";
         event.preventDefault();
-        var url = $(event.target).attr("href");
-        $.get(url, function(data){
-            var preObject = "#" + $(event.target).data("elementid").toString() + "-config";
-            $(preObject).text(data);
-            $(preObject).slideDown();
-        });
+        if (isEmpty($(preObject)))
+        {
+            var url = $(event.target).attr("href");
+            $.get(url, function(data){
 
+                $(preObject).text(data);
+                $(preObject).slideToggle();
+            });
+        }
+        else
+            $(preObject).slideToggle();
     });
 });
+function isEmpty (el){
+    return !$.trim(el.html())
+}
 function deleteRow (item, id){
     $.get(("/skins/delete-element/"+id));
     clearSelection();
