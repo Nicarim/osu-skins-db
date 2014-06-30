@@ -28,15 +28,21 @@
 <!--<input id="missingElementsCheck" type="checkbox">
 <label for="missingElementsCheck">Check for missing elements</label>-->
 <div class="btn-group btn-group-lg btn-group-justified">
-    <button type="button" class="btn btn-default">
-        <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
-    </button>
-    <button type="button" class="btn btn-default">
-        <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
-    </button>
-    <button type="button" class="btn btn-default">
-        <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
-    </button>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">
+            <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
+        </button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">
+            <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
+        </button>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default">
+            <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
+        </button>
+    </div>
 </div>
 
 
