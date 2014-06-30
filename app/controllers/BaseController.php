@@ -4,7 +4,7 @@ class BaseController extends Controller {
 
     public function __construct()
     {
-        Validator::extend('skin-mimes', function($attribute, $value, $parameters)
+        Validator::extend('skinmimes', function($attribute, $value, $parameters)
             {
                 $allowed = array('audio/mpeg', 'image/jpeg', 'application/ogg', 'audio/wave', 'audio/aiff', 'image/png', 'text/plain');
                 $mime = new MimeReader($value->getRealPath());
