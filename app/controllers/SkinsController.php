@@ -224,7 +224,7 @@ class SkinsController extends BaseController{
                 (preg_match("/\d/", $filename['filename']) === 1 && preg_match($oldanimationRegex, $filename['filename']) === 1)) //check for old animatable format
             && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1; // don't mark score digits as animatable elements - they are obviously not.
 
-        if ($filename["issequence"])
+        if ($filename["issequence"] && !in_array($filename['extension'], array("mp3", "ogg", "wav")))
         {
             preg_match("/\d+$/", $filename['filename'], $sequenceMatches);
             $filename['frame'] = $sequenceMatches[0];
