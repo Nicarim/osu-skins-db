@@ -23,6 +23,8 @@
                 <span class="label label-success label-margin">Sprite</span>
             @elseif($element->isAudio())
                 <span class="label label-evenmoresuccess label-margin">Sound</span>
+            @elseif($element->isConfig())
+                <span class="label label-evenlesssuccess label-margin">Configuration</span>
             @endif
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}

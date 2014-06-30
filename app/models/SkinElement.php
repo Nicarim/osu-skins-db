@@ -31,4 +31,7 @@ class SkinElement extends Eloquent {
     public function isImage(){
         return in_array($this->extension, array("jpg","jpeg","png"));
     }
+    public function isConfig(){
+        return in_array($this->extension, array("txt", "ini"));
+    }
 } 
