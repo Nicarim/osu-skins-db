@@ -46,9 +46,6 @@
             @else
                 {{--<span class='label label-default'>{{$element->group->name}}</span>--}}
             @endif
-        @else
-            <span class='label label-default'>MISSING</span>
-        @endif
         <span style="float:right;" class="element-size" data-elementsize="{{$element->size}}">
             <b>Size:</b> {{Helpers::formatSizeUnits($element->size)}}
         </span>
