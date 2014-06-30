@@ -27,20 +27,20 @@
 @endif
 <!--<input id="missingElementsCheck" type="checkbox">
 <label for="missingElementsCheck">Check for missing elements</label>-->
-<div class="btn-group btn-group-lg btn-group-justified">
+<div id="filters" class="btn-group btn-group-lg btn-group-justified" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="btn-group">
-        <button type="button" class="btn btn-default">
-            <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
+        <button type="button" class="btn btn-danger filter-files">
+            <b class="glyphicon glyphicon-picture" data-type="picture"></b>
         </button>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-default">
-            <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
+        <button type="button" class="btn btn-primary filter-files">
+            <b class="glyphicon glyphicon-volume-up" data-type="sound"></b>
         </button>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-default">
-            <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
+        <button type="button" class="btn btn-success filter-files">
+            <b class="glyphicon glyphicon-file" data-type="text"></b>
         </button>
     </div>
 </div>

@@ -134,8 +134,9 @@ b.mania{
 .dropzone-custom{
     cursor: pointer;
     background-color: gray;
-    text-align: center  ;
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 #canvas-container{
     max-width:600px;
@@ -187,15 +188,6 @@ b.mania{
 .table-smaller > thead > tr > th, .table-smaller > tbody > tr > th, .table-smaller > tfoot > tr > th, .table-smaller > thead > tr > td, .table-smaller > tbody > tr > td, .table-smaller > tfoot > tr > td{
     padding: 4px;
 }
-.filter-files{
-    margin-right: 15px;
-}
-#filters > .green-highlight{
-    color: #68d000;
-}
-#filters > .red-highlight{
-    color:red;
-}
-#filters > .blue-higlight{
-    background-color:deepskyblue;
+#filters > .fadedout{
+    opacity: 0.50;
 }
