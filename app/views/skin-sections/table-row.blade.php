@@ -1,6 +1,13 @@
 @foreach ($elements as $element)
 <div class="list-group-item">
     <h4 class="list-group-item-heading element-row">
+        @if($element->isImage())
+            <b class="glyphicon glyphicon-picture"></b>
+        @elseif($element->isAudio())
+            <b class="glyphicon glyphicon-volume-up"></b>
+        @elseif($element->isConfig())
+            <b class="glyphicon glyphicon-file"></b>
+        @endif
         <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
            class="element-filename
@@ -25,14 +32,6 @@
     @endif
     <p class="list-group-item-text">
         <b>Attributes:</b>
-        @if (!isset($missing))
-            @if($element->isImage())
-                <span class="label label-success label-margin">Sprite</span>
-            @elseif($element->isAudio())
-                <span class="label label-evenmoresuccess label-margin">Sound</span>
-            @elseif($element->isConfig())
-                <span class="label label-evenlesssuccess label-margin">Configuration</span>
-            @endif
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
             @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
