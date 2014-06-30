@@ -1,6 +1,6 @@
 @foreach ($elements as $element)
 <div class="list-group-item">
-    <h3 class="list-group-item-heading element-row">
+    <h4 class="list-group-item-heading element-row">
         @if($element->isImage())
             <b class="glyphicon glyphicon-picture"></b>
         @elseif($element->isAudio())
@@ -24,7 +24,7 @@
         @if ($element->isAudio())
             <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"></audio>
         @endif
-    </h3>
+    </h4>
     @if ($element->isConfig())
     <pre style="display:none;" id="{{$element->id}}-config">
 
