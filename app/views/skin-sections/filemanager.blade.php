@@ -29,18 +29,18 @@
 <label for="missingElementsCheck">Check for missing elements</label>-->
 <div id="filters" class="btn-group btn-group-lg btn-group-justified" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="btn-group">
-        <button type="button" class="btn btn-danger filter-files">
-            <b class="glyphicon glyphicon-picture" data-type="picture"></b>
+        <button type="button" class="btn btn-danger filter-files" data-type="picture">
+            <b class="glyphicon glyphicon-picture"></b>
         </button>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-primary filter-files">
-            <b class="glyphicon glyphicon-volume-up" data-type="sound"></b>
+        <button type="button" class="btn btn-primary filter-files" data-type="sound">
+            <b class="glyphicon glyphicon-volume-up"></b>
         </button>
     </div>
     <div class="btn-group">
-        <button type="button" class="btn btn-success filter-files">
-            <b class="glyphicon glyphicon-file" data-type="text"></b>
+        <button type="button" class="btn btn-success filter-files" data-type="text">
+            <b class="glyphicon glyphicon-file"></b>
         </button>
     </div>
 </div>

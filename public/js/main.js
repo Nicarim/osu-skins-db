@@ -106,6 +106,18 @@ $(document).ready(function() {
         else
             $(preObject).slideToggle();
     });
+    $(document).on('click', '.filter-files', function(event){
+        var type = $(event.target).data("type").toString();
+        $(".element-row").each(function(){
+            var $localDom = $(this);
+            var element = $localDom.find("b:first");
+            if (element.data("type").toString() == type)
+                $localDom.toggle();
+        });
+        $(event.target).animate({
+            "opacity": 0.50
+        }, 500);
+    })
 });
 function isEmpty (el){
     return !$.trim(el.html())
