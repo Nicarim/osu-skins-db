@@ -27,15 +27,12 @@
 @endif
 <!--<input id="missingElementsCheck" type="checkbox">
 <label for="missingElementsCheck">Check for missing elements</label>-->
+<div id="filters">
+    <span>Filters: </span>
+    <b class="glyphicon glyphicon-picture filter-files" data-type="picture"></b>
+    <b class="glyphicon glyphicon-volume-up filter-files" data-type="sound"></b>
+    <b class="glyphicon glyphicon-file filter-files" data-type="text"></b>
+</div>
 <div class="list-group" id="fileslist">
     @include('/skin-sections/table-row', array('elements' => $elements))
-    <!--<tr>
-        {{$skin->template == 1 ? "<th style='width:10px;'>Se</th>": ""}}
-        <th>Element Name</th>
-        <th>Attributes</th>
-        <th style="width:10%;">Size</th>
-        @if (Auth::check() && Auth::user()->id == $skin->user->id)
-            <th style="width:10%;">Options</th>
-        @endif
-    </tr>-->
 </div>

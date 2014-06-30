@@ -2,11 +2,11 @@
 <div class="list-group-item">
     <h4 class="list-group-item-heading element-row">
         @if($element->isImage())
-            <b class="glyphicon glyphicon-picture"></b>
+            <b class="glyphicon glyphicon-picture" data-type="picture"></b>
         @elseif($element->isAudio())
-            <b class="glyphicon glyphicon-volume-up"></b>
+            <b class="glyphicon glyphicon-volume-up" data-type="sound"></b>
         @elseif($element->isConfig())
-            <b class="glyphicon glyphicon-file"></b>
+            <b class="glyphicon glyphicon-file" data-type="text"></b>
         @endif
         <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
