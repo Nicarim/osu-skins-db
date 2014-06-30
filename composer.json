@@ -20,6 +20,7 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
             "app/facades",
+            "app/libraries",
             "app/facades/helpersServiceProvider.php"
 		]
 	},
