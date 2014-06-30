@@ -31,7 +31,7 @@
     </pre>
     @endif
     <p class="list-group-item-text">
-        <b>Attributes:</b>
+        <!--<b>Attributes:</b>
             {{$element->issequence == 1 ? "<span class='label label-warning'>Animation</span>" : ""}}
             {{$element->ishd == 1 ? "<span class='label label-info'>HD</span>" : ""}}
             @if (Auth::check() && Auth::user()->id == $element->skin->user->id)
@@ -45,7 +45,7 @@
                 {{--<span class='label label-default'>Undefined</span>--}}
             @else
                 {{--<span class='label label-default'>{{$element->group->name}}</span>--}}
-            @endif
+            @endif-->
         <span style="float:right;" class="element-size" data-elementsize="{{$element->size}}">
             <b>Size:</b> {{Helpers::formatSizeUnits($element->size)}}
         </span>
