@@ -31,6 +31,7 @@ Dropzone.options.myAwesomeDropzone = {
 };
 $(function(){
     var hash = window.location.hash;
+    console.log(hash);
     if (hash == "filesmanager")
         populateFilemanager($("#filesmanager-link"));
     hash && $('ul.nav a[href="' + hash + '"]').tab('show');
