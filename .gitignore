@@ -8,3 +8,7 @@ composer.lock
 Thumbs.db
 /.idea
 .idea
+/public/previews-content/*
+/public/skins-content/*
+/public/js/blur.min.js
+/app/config/*
