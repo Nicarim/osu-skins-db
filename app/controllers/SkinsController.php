@@ -198,7 +198,7 @@ class SkinsController extends BaseController{
         $rules = array(
             'file' => 'skinmimes'
         );
-        if ($file->getMimeType() != "text/plain")
+        if (!in_array(array("application/x-font-ttf", "text/plain"),$file->getMimeType()))
         {
             $validation = Validator::make(array("file" => $file), $rules);
             if ($validation->fails())
