@@ -38,13 +38,12 @@ class SkinsController extends BaseController{
         }
         else
             $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
-
-        $skins->skip($skipped)->take($numberOfResults);
+        $skins->skip($skipped)->take($numberOfResults + 1);
         $skins = $skins->get();
         return View::make('listing')->with(array(
                 "skins" => $skins,
                 "private" => false,
-                "canShowMore" => $skins->count() >= 12
+                "canShowMore" => $skins->count() > 12
             ));
     }
     function ownListOfSkins(){
