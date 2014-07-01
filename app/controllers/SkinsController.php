@@ -20,25 +20,25 @@ class SkinsController extends BaseController{
             switch($sorting)
             {
                 case "rating":
-                    $skins->where("current_version", "!=", 0)->orderBy("votes", "desc");
+                    $skins = $skins->where("current_version", "!=", 0)->orderBy("votes", "desc");
                     break;
                 case "downloads":
-                    $skins->where("current_version", "!=", 0)->orderBy("download_count", "desc");
+                    $skins = $skins->where("current_version", "!=", 0)->orderBy("download_count", "desc");
                     break;
                 case "completed":
-                    $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
+                    $skins = $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
                     break;
                 case "wip":
-                    $skins->where("current_version", "=", 0)->orderBy("created_at", "desc");
+                    $skins = $skins->where("current_version", "=", 0)->orderBy("created_at", "desc");
                     break;
                 case "all":
-                    $skins->orderBy("created_at","desc");
+                    $skins = $skins->orderBy("created_at","desc");
                     break;
             }
         }
         else
-            $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
-        $skins->skip($skipped)->take($numberOfResults + 1);
+            $skins = $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
+        $skins = $skins->skip($skipped)->take($numberOfResults + 1);
         $skins = $skins->get();
         return View::make('listing')->with(array(
                 "skins" => $skins,
