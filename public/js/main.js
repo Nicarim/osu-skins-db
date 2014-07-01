@@ -32,7 +32,8 @@ Dropzone.options.myAwesomeDropzone = {
 $(function(){
     var hash = window.location.hash;
     hash && $('ul.nav a[href="' + hash + '"]').tab('show');
-
+    if (hash == "filesmanager")
+        populateFilemanager($("#filesmanager-link"));
     $('.nav-tabs a').click(function (e) {
         $(this).tab('show');
         var scrollmem = $('body').scrollTop();
@@ -128,17 +129,20 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', '#filesmanager-link', function(event){
-        var wasEmpty = isEmpty($("#fileslist"));
+        populateFilemanager(event.target);
+    });
+});
+function populateFilemanager(target){
+    var wasEmpty = isEmpty($("#fileslist"));
         
         if (wasEmpty)
         {
             $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
-            $.get("/skins/view/" + $(event.target).data("skinid") + "/filemanager", function(data){
+            $.get("/skins/view/" + $(target).data("skinid") + "/filemanager", function(data){
                 $("#fileslist").html(data);
             });
         }
-    });
-});
+}
 function isEmpty (el){
     return !$.trim(el.html())
 }
