@@ -11,8 +11,7 @@ class SkinsController extends BaseController{
         return Redirect::to("/skins/list");
     }
     function listOfSkins($sorting=null){
-        $skins = null;
-        $isSorted = false;
+        $skins = new Skin;
         $numberOfResults = 12;
         $currentPage = Input::has("p") ? Input::get("p") : 1;
         $skipped = ($currentPage - 1) * $numberOfResults;
@@ -21,24 +20,14 @@ class SkinsController extends BaseController{
             switch($sorting)
             {
                 case "rating":
-                    $skins = Skin::orderBy("votes", "desc");
+                    $skins->orderBy("votes", "desc");
                     break;
                 case "downloads":
-                    $skins = Skin::orderBy("download_count", "desc");
-                    break;
-                default:
-                    $isSorted = true;
+                    $skins->orderBy("download_count", "desc");
                     break;
             }
         }
-        else
-            $isSorted = true;
-
-        if ($isSorted)
-            $skins = Skin::skip($skipped)->take($numberOfResults);
-        else
-            $skins->skip($skipped)->take($numberOfResults);
-
+        $skins->skip($skipped)->take($numberOfResults);
         $skins = $skins->get();
         return View::make('listing')->with(array(
                 "skins" => $skins,
