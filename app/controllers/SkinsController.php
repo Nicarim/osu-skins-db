@@ -72,7 +72,7 @@ class SkinsController extends BaseController{
                     ->orderBy('sequence_frame', 'asc')
                     ->orderBy('ishd', 'asc')
                     ->get();
-                return View::make("skin-sections/filemanager")->with(array("skin" => $skin, "elements" => $elements));
+                return View::make("table-row")->with(array("skin" => $skin, "elements" => $elements, "ownerId" => $skin->user_id));
             }
         }
         if (isset($skin)){
@@ -82,6 +82,7 @@ class SkinsController extends BaseController{
                 $array['vote'] = Vote::where("skin_id", $id)->where("user_id", Auth::user()->id)->first();
 
             $skin->template != 1 ?: $array['groups'] = Group::all();
+            $array['ownerId'] = $skin->user_id;
             return View::make('view-skin')->with($array);
         }
         else
@@ -386,7 +387,8 @@ class SkinsController extends BaseController{
         /*if ($filename == "go.png" || $filename == "count1.png" || $filename == "count2.png" || $filename == "count3.png") //generate image based on existence in any dynamic image
             $this->generateImage();*/
         return View::make('skin-sections/table-row')->with(array(
-            'elements' => $uploadedElements
+            'elements' => $uploadedElements,
+            'ownerId' => $skin->user_id
         ));
     }
 

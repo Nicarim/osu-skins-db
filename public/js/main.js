@@ -128,10 +128,13 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', '#filesmanager-link', function(event){
-        if (isEmpty($("#filesmanager")))
+        var wasEmpty = isEmpty($("#fileslist"));
+        
+        if (wasEmpty)
         {
+            $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
             $.get("/skins/view/" + $(event.target).data("skinid") + "/filemanager", function(data){
-                $("#filesmanager").html(data);
+                $("#fileslist").html(data);
             });
         }
     });

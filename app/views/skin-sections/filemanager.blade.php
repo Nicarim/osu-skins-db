@@ -44,9 +44,5 @@
         </button>
     </div>
 </div>
-
-
-
 <div class="list-group" id="fileslist">
-    @include('/skin-sections/table-row', array('elements' => $elements))
 </div>
