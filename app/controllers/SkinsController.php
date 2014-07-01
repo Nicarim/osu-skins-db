@@ -120,7 +120,10 @@ class SkinsController extends BaseController{
         $skin->save();
         return Redirect::back();
     }
-    function createSkin(){
+    function getCreateSkin(){
+        return View::make('create')->with("url", "/skin/create");
+    }
+    function postCreateSkin(){
         $skin = new Skin;
         $data = Input::all();
         if (isset($data['warnnsfw']))

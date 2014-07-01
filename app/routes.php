@@ -21,11 +21,12 @@ Route::group(array("prefix" => "skins"), function(){
                        "uses" => "SkinsController@editSettings",
                        "as" => "SkinSettings"
                     ));
-                Route::get('/create', function(){
-                       return View::make('create')->with("url", "/skin/create");
-                    });
+                Route::get('/create', array(
+                        "uses" => "SkinsController@getCreateSkin",
+                        "as" => "CreateSkin"
+                    ));
                 Route::post('/create', array(
-                       "uses" => "SkinsController@createSkin"
+                       "uses" => "SkinsController@postCreateSkin"
                     ));
                 Route::get('/settings/{id}/markasdefault', array(
                        "uses" => "SkinsController@markAsDefault"

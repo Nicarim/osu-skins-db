@@ -8,9 +8,8 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Skins <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-
-                        <li><a class="red-highlight "href="/skins/list/rating"><b class="glyphicon glyphicon-star"></b> Top Stars</a></li>
-                        <li><a class="green-highlight "href="/skins/list/downloads"><b class="glyphicon glyphicon-cloud"></b> Most Downloads</a></li>
+                        <li><a class="red-highlight" href="/skins/list/rating"><b class="glyphicon glyphicon-star"></b> Top Stars</a></li>
+                        <li><a class="green-highlight" href="/skins/list/downloads"><b class="glyphicon glyphicon-cloud"></b> Most Downloads</a></li>
                         <div class="divider"></div>
                         <li><a class="blue-higlight" href="/skins/list"><b class="glyphicon glyphicon-certificate"></b> All</a></li>
                         <!--<li><a class="green-highlight" href="#"><b class="glyphicon glyphicon-heart"></b> Completed</a></li>
@@ -36,7 +35,7 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown">{{Auth::user()->email}} (Google)<b class="caret"></b></a>
                         <ul class="dropdown-menu fullsize-dropdown">
-                            <li><a href="/skins/create">Create Skin</a></li>
+                            <li><a href="{{URL::route('CreateSkin')}}">Create Skin</a></li>
                             <li><a href="{{URL::route('ownSkins')}}">My Skins</a></li>
                             <!--<li><a href="#">Users List</a></li>-->
                             <div class="divider"></div>
