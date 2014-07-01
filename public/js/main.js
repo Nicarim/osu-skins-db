@@ -127,8 +127,13 @@ $(document).ready(function() {
             }, 500);
         }
     });
-    $(document).on('click', '#filesmanager', function(event){
-        $("#filesmanager").html($.get("/skins/view/" + $(event.target).data("skinid") + "/filesmanager"));
+    $(document).on('click', '#filesmanager-link', function(event){
+        if (isEmpty("#filesmanager"))
+        {
+            $.get("/skins/view/" + $(event.target).data("skinid") + "/filesmanager", function(data){
+                $("#filesmanager").html(data);
+            });
+        }
     });
 });
 function isEmpty (el){
