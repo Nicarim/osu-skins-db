@@ -1,6 +1,6 @@
 <div class="row">
     @foreach ($skins as $key => $skin)
-        @if ($key != 13)
+        @if ($key < 12)
         <div class="col-sm-5 col-md-3">
             <div class="thumbnail">
                 <img style="height:155px;" src="{{$skin->thumbnail == 1 ? last_modified('/previews-content/'.$skin->id.'/thumbnails.png') : last_modified('/previews-content/no-thumbnails.png')}}" alt="...">
