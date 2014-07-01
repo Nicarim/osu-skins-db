@@ -28,7 +28,7 @@
                             <b class="glyphicon glyphicon-search pull-left"></b>
                             View Skin</a>
                     </p>
-                    @if (!$private)
+                    @if (!$private && $skin->current_version > 0)
                         <p>
                             <a href="/skins/download/{{$skin->id}}" class="btn btn-danger" style="width:100%;" role="button">
                                 <b class="glyphicon glyphicon-save pull-left"></b>
