@@ -127,6 +127,9 @@ $(document).ready(function() {
             }, 500);
         }
     });
+    $(document).on('click', '#filesmanager', function(event){
+        $("#filesmanager").html($.get("/skins/view/" + $(event.target).data("skinid") + "/filesmanager"));
+    });
 });
 function isEmpty (el){
     return !$.trim(el.html())

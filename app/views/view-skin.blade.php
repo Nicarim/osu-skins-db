@@ -17,8 +17,7 @@
         <div class="tab-pane fade in active" id="overview">
             @include('skin-sections/overview')
         </div>
-        <div class="tab-pane fade" id="filesmanager">
-            @include('skin-sections/filemanager')
+        <div class="tab-pane fade" id="filesmanager" data-skinid="{{$skin->id}}">
         </div>
         @if (Auth::check() && Auth::user()->id == $skin->user->id)
             <div class="tab-pane fade" id="settings">

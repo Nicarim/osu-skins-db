@@ -62,11 +62,19 @@ class SkinsController extends BaseController{
     }
     function viewSkin($id, $section=null){
         $skin = Skin::find($id);
-        $elements = SkinElement::where("skin_id", $id)
-            ->orderBy('filename','asc')
-            ->orderBy('sequence_frame', 'asc')
-            ->orderBy('ishd', 'asc')
-            ->get();
+        if ($section != null)
+        {
+            switch($section)
+            {
+                case "filemanager":
+                $elements = SkinElement::where("skin_id", $id)
+                    ->orderBy('filename','asc')
+                    ->orderBy('sequence_frame', 'asc')
+                    ->orderBy('ishd', 'asc')
+                    ->get();
+                return View::make("skin-sections/filemanager")->with(array("skin" => $skin, "elements" => $elements));
+            }
+        }
         if (isset($skin)){
             $array = array();
             $array['skin'] = $skin;
@@ -74,7 +82,6 @@ class SkinsController extends BaseController{
                 $array['vote'] = Vote::where("skin_id", $id)->where("user_id", Auth::user()->id)->first();
 
             $skin->template != 1 ?: $array['groups'] = Group::all();
-            $array['elements'] = $elements;
             return View::make('view-skin')->with($array);
         }
         else

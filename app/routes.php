@@ -51,7 +51,7 @@ Route::group(array("prefix" => "skins"), function(){
                 "uses" => "SkinsController@getMissingElements",
                 "as" => "MissingElements"
             ));
-        Route::get('/view/{id}', array(
+        Route::get('/view/{id}/{section}', array(
                 "uses" => "SkinsController@viewSkin",
                 "as" => "SkinIndex"
             ));
