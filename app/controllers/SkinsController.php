@@ -20,13 +20,25 @@ class SkinsController extends BaseController{
             switch($sorting)
             {
                 case "rating":
-                    $skins->orderBy("votes", "desc");
+                    $skins->where("current_version", "!=", 0)->orderBy("votes", "desc");
                     break;
                 case "downloads":
-                    $skins->orderBy("download_count", "desc");
+                    $skins->where("current_version", "!=", 0)->orderBy("download_count", "desc");
+                    break;
+                case "completed":
+                    $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
+                    break;
+                case "wip":
+                    $skins->where("current_version", "=", 0)->orderBy("created_at", "desc");
+                    break;
+                case "all":
+                    $skins->orderBy("created_at","desc");
                     break;
             }
         }
+        else
+            $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
+
         $skins->skip($skipped)->take($numberOfResults);
         $skins = $skins->get();
         return View::make('listing')->with(array(

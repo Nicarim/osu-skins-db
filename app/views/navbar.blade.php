@@ -12,9 +12,10 @@
                         <li><a class="green-highlight" href="/skins/list/downloads"><b class="glyphicon glyphicon-cloud"></b> Most Downloads</a></li>
                         <div class="divider"></div>
                         <li><a class="blue-higlight" href="/skins/list"><b class="glyphicon glyphicon-certificate"></b> All</a></li>
-                        <!--<li><a class="green-highlight" href="#"><b class="glyphicon glyphicon-heart"></b> Completed</a></li>
-                        <li><a class="red-highlight" href="#"><b class="glyphicon glyphicon-edit"></b> Work in Progress</a></li>
-                        <li><a class="blue-higlight" href="#"><b class="glyphicon glyphicon-picture"></b> All</a></li>-->
+                        <div class="divider"></div>
+                        <li><a class="green-highlight" href="/skins/list/completed"><b class="glyphicon glyphicon-heart"></b> Completed</a></li>
+                        <li><a class="red-highlight" href="/skins/list/wip"><b class="glyphicon glyphicon-edit"></b> Work in Progress</a></li>
+                        <li><a class="blue-higlight" href="/skins/list/all"><b class="glyphicon glyphicon-picture"></b> All</a></li>
                     </ul>
 
                 </li>
