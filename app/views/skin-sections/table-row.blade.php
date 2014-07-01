@@ -7,6 +7,8 @@
             <b class="glyphicon glyphicon-volume-up" data-type="sound"></b>
         @elseif($element->isConfig())
             <b class="glyphicon glyphicon-file" data-type="text"></b>
+        @else
+            <b class="glyphicon glyphicon-file" data-type="other"></b>
         @endif
         <a href="/skins-content/{{$element->skin->id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
