@@ -128,7 +128,7 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', '#filesmanager-link', function(event){
-        if (isEmpty("#filesmanager"))
+        if (isEmpty($("#filesmanager")))
         {
             $.get("/skins/view/" + $(event.target).data("skinid") + "/filesmanager", function(data){
                 $("#filesmanager").html(data);
