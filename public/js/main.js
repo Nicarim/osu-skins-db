@@ -130,7 +130,7 @@ $(document).ready(function() {
     $(document).on('click', '#filesmanager-link', function(event){
         if (isEmpty($("#filesmanager")))
         {
-            $.get("/skins/view/" + $(event.target).data("skinid") + "/filesmanager", function(data){
+            $.get("/skins/view/" + $(event.target).data("skinid") + "/filemanager", function(data){
                 $("#filesmanager").html(data);
             });
         }
