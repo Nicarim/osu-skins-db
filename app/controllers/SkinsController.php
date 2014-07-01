@@ -72,7 +72,12 @@ class SkinsController extends BaseController{
                     ->orderBy('sequence_frame', 'asc')
                     ->orderBy('ishd', 'asc')
                     ->get();
-                return View::make("skin-sections/table-row")->with(array("skin" => $skin, "elements" => $elements, "ownerId" => $skin->user_id));
+                return View::make("skin-sections/table-row")->with(
+                    array(
+                        "skin" => $skin, 
+                        "elements" => $elements, 
+                        "ownerId" => $skin->user_id
+                    ));
             }
         }
         if (isset($skin)){
