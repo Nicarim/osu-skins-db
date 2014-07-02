@@ -91,7 +91,10 @@ $(document).ready(function() {
     });
     $(document).on('click', '.audio-element', function(event){
         event.preventDefault();
-        document.getElementById($(event.target).data("elementid").toString() + "-audio").play();
+        var audioTag = document.getElementById($(event.target).data("elementid").toString() + "-audio");
+        audioTag.play = function () {alert("started playing!")};
+        audioTag.paused = function () {alert("paused!")};
+        audioTag.play();
     });
     $(document).on('click', '.config-element', function(event){
         var preObject = "#" + $(event.target).data("elementid").toString() + "-config";
