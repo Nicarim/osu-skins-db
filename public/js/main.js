@@ -94,13 +94,13 @@ $(document).ready(function() {
         var audioTag = document.getElementById($(event.target).data("elementid").toString() + "-audio");
         audioTag.play();
     });
-    $(document).on("ended", 'audio', function(event){
-        var parentTag = $(event.target).parent();
+    $("audio").bind("ended", function(){
+        var parentTag = $(this).parent();
         var picture = parentTag.find("a:first");
         picture.removeClass("green-highlight-always");
     });
-    $(document).on("play", "audio", function(event){
-        var parentTag = $(event.target).parent();
+    $("audio").bind("play", function(){
+        var parentTag = $(this).parent();
         var picture = parentTag.find("a:first");
         picture.addClass("green-highlight-always");
     });
