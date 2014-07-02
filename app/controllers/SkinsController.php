@@ -187,7 +187,8 @@ class SkinsController extends BaseController{
         if ($skin->SkinElement->count() == 0)
             return "Skin is empty, nothing to download";
         $zip = new ZipArchive();
-        $zipname = public_path()."/".$skin->name.".osk";
+        $zipIntendedName = $skin->name.".osk";
+        $zipname = public_path()."/".$skin->name.".osk.".time();
         $zip->open($zipname, ZipArchive::OVERWRITE);
         $files = glob(public_path()."/skins-content/".$skin->id."/*");
         foreach($files as $file){
@@ -201,7 +202,7 @@ class SkinsController extends BaseController{
             });
         $skin->download_count += 1;
         $skin->save();
-        return Response::download($zipname);
+        return Response::download($zipname, $zipIntendedName);
 
     }
     private function processElement($skin, $file)
