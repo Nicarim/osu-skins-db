@@ -7,6 +7,9 @@
 .blue-higlight:hover>b{
     color:deepskyblue;
 }
+.green-highlight-always{
+    color:#68d000;
+}
 b.taiko{
     display: inline-block;
     background-image:url("../osu-icons/taiko.gif");
