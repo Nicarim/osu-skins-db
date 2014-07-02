@@ -148,9 +148,6 @@ function populateFilemanager(target){
                         picture.removeClass("green-highlight-always");
                     });
                     $("audio").bind("play", function(){
-                        $("audio").each(function(){
-                            this.pause();
-                        })
                         var parentTag = $(this).parent();
                         var picture = parentTag.find("b:first");
                         picture.addClass("green-highlight-always");
