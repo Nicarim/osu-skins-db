@@ -94,16 +94,6 @@ $(document).ready(function() {
         var audioTag = document.getElementById($(event.target).data("elementid").toString() + "-audio");
         audioTag.play();
     });
-    $("audio").bind("ended", function(){
-        var parentTag = $(this).parent();
-        var picture = parentTag.find("a:first");
-        picture.removeClass("green-highlight-always");
-    });
-    $("audio").bind("play", function(){
-        var parentTag = $(this).parent();
-        var picture = parentTag.find("a:first");
-        picture.addClass("green-highlight-always");
-    });
     $(document).on('click', '.config-element', function(event){
         var preObject = "#" + $(event.target).data("elementid").toString() + "-config";
         event.preventDefault();
@@ -152,6 +142,16 @@ function populateFilemanager(target){
             $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
             $.get("/skins/view/" + $(target).data("skinid") + "/filemanager", function(data){
                 $("#fileslist").html(data);
+                    $("audio").bind("ended", function(){
+                        var parentTag = $(this).parent();
+                        var picture = parentTag.find("b:first");
+                        picture.removeClass("green-highlight-always");
+                    });
+                    $("audio").bind("play", function(){
+                        var parentTag = $(this).parent();
+                        var picture = parentTag.find("b:first");
+                        picture.addClass("green-highlight-always");
+                    });
             });
         }
 }
