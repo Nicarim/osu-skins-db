@@ -51,7 +51,8 @@ $(document).ready(function() {
         ajax : {cache: false},
         preload : 0,
         beforeClose: function(){
-            window.animationTimer.stop();
+            if (window.animationTimer != null)
+                window.animationTimer.stop();
         }
     });
     $("#missingElementsCheck").change(function(){
