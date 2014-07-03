@@ -380,7 +380,7 @@ class SkinsController extends BaseController{
 
         foreach($data['file'] as $file)
         {
-            if (strlen($file->getClientOriginalName()) > 30)
+            if (strlen($file->getClientOriginalName()) > 40)
                 return Response::make("filename too long", 400);
             $response = $this->processElement($skin, $file);
             if ($response != "error")
