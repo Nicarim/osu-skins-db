@@ -151,8 +151,10 @@ $(document).ready(function() {
         });
         $(".fancybox-inner").append("<div id='fancybox-loader-info' style='width:100px;'>Loading Images...</div>");
         $("#fancybox-loader-info").append("<b id='loadednow'></b>/<b id='toload'></b>");
-        $(".fancybox-image").hide();
         $.preload(listOfAnimations,{
+            onRequest: function(data){
+                $(".fancybox-image").hide();
+            }
             onComplete: function(data){
                 $("#fancybox-loader-info > #loadednow").text(data.done);
                 $("#fancybox-loader-info > #toload").text(data.total);
