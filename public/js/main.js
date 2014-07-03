@@ -175,11 +175,11 @@ function populateAnimatable(target){
     var wasEmpty = isEmpty(el);
     var contentLink = '/skins/view/' + $("#filesmanager-link").data('skinid') + "/animations?f=" + $(target).data('filename') + "&hd=" + $(target).data('ishd');
     if (wasEmpty){
-        $.get(contentLink, funciton(data){
+        $.get(contentLink, function(data){
             el.html(data);
         });
     }
-    playAnimations(target,true);
+    playAnimations(target, true);
 }
 function playAnimations(elementCalling, withOpeningFancybox = false){
     if (window.animationTimer != null)
@@ -197,7 +197,9 @@ function playAnimations(elementCalling, withOpeningFancybox = false){
     });
 
     if(withOpeningFancybox)
-        $.fancybox.open({href: el.attr("href")});
+        $.fancybox.open({
+            href: el.attr("href")
+        });
 
     $(".fancybox-inner").append("<div id='fancybox-loader-info' style='width:100px;'>Loading Images...</div>");
     $("#fancybox-loader-info").append("<b id='loadednow'></b>/<b id='toload'></b>");
