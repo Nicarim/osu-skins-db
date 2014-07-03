@@ -152,7 +152,7 @@ $(document).ready(function() {
         animationTimer = $.timer(function(){
             if (iAnimation >= listOfAnimations.length)
                 iAnimation = 0;
-            $('.fancybox-image').attr("src") = listOfAnimations[iAnimation];
+            $('.fancybox-image').attr("src",listOfAnimations[iAnimation]);
             iAnimation++;
         });
         animationTimer.set({ time: 1000, autostart: true});
