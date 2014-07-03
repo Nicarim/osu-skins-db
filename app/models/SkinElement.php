@@ -22,6 +22,11 @@ class SkinElement extends Eloquent {
         $ishd = $this->ishd == 1 ? "@2x" : "";
         return $this->filename.$isSequence.$ishd;
     }
+    public function getVisibleName(){
+        $name = $this->sequence_frame != -1 ? substr($this->filename, 0, -1) : $this->filename;
+        $ishd = $this->ishd == 1 ? "@2x" : "";
+        return $name.$ishd;
+    }
     public function group(){
         return $this->belongsTo("Group");
     }
@@ -41,12 +46,17 @@ class SkinElement extends Eloquent {
         $ishd = $this->ishd == 1 ? "2x" : "";
         return $this->filename.$ishd;
     }
-    public function getClasses(){
+    public function getClasses($asGroup = true, $openFancybox = true){
         $string = "";
         $string .= $this->isAudio() ? ' audio-element ' : '';
-        $string .= $this->isImage() ? 'fancybox ' : '';
         $string .= $this->isConfig() ? 'config-element ' : '';
-        $string .= $this->isAnimation() ? 'animatable-element ' : '';
+        if (!$asGroup)
+            $string .= $this->isAnimation() ? 'animatable-element ' : '';
+        else
+            $string .= $this->isAnimation() ? 'animatable-group' : '';
+        
+        if ($openFancybox)
+            $string .= $this->isImage() ? 'fancybox ' : '';
         return $string;
     }
 } 

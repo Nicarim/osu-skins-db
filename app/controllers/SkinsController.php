@@ -68,16 +68,40 @@ class SkinsController extends BaseController{
             {
                 case "filemanager":
                 $elements = SkinElement::where("skin_id", $id)
+                    ->where('issequence', '0')
                     ->orderBy('filename','asc')
                     ->orderBy('sequence_frame', 'asc')
                     ->orderBy('ishd', 'asc')
                     ->get();
+
+                $elementsAnimatable = SkinElement:where('skin_id', $id)
+                    ->where('sequence_frame', '!=', -1)
+                    ->groupBy('issequence','filename','ishd')
+                    ->get();
+
+                $elements = $elements->merge($elementsAnimatable);
                 return View::make("skin-sections/table-row")->with(
                     array(
                         "skin" => $skin, 
                         "elements" => $elements, 
                         "ownerId" => $skin->user_id
                     ));
+                case "animations":
+                if($element != null)
+                {
+                    $filename = Input::get('f');
+                    $hdfied = Input::get('hd');
+                    $elementsAnimatable = SkinElement::where("skin_id", $id)->
+                        ->where('filename', $filename)
+                        ->where('ishd', $hdfied)
+                        ->get();
+                    return View::make('skin-sections/animation-row')->with(
+                        array(
+                            "skin" => $skin,
+                            "elements" => $elementsAnimatable,
+                            "ownerId" => $skin->user_id
+                        ));
+                }
             }
         }
         if (isset($skin)){

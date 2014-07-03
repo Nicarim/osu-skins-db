@@ -139,40 +139,11 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', '.animatable-element', function(event){
-        if (window.animationTimer != null)
-            animationTimer.stop();
-        var el = $(this);
-        var nameOfSequence = el.data("sequencename");
-        var listOfAnimations = [];
-        $(".element-filename").each(function(index, value){
-            var thisSequenceName = $(value).data("sequencename");
-            if(thisSequenceName == nameOfSequence)
-                listOfAnimations.push($(value).attr("href"));
-        });
-        $(".fancybox-inner").append("<div id='fancybox-loader-info' style='width:100px;'>Loading Images...</div>");
-        $("#fancybox-loader-info").append("<b id='loadednow'></b>/<b id='toload'></b>");
-        $.preload(listOfAnimations,{
-            onRequest: function(data){
-                $(".fancybox-image").hide();
-            },
-            onComplete: function(data){
-                $("#fancybox-loader-info > #loadednow").text(data.done);
-                $("#fancybox-loader-info > #toload").text(data.total);
-            },
-            onFinish: function(data){
-                $("#fancybox-loader-info").hide();
-                $('.fancybox-image').show();
-                var iAnimation = 0;
-                animationTimer = $.timer(function(){
-                    if (iAnimation >= listOfAnimations.length)
-                        iAnimation = 0;
-                    $('.fancybox-image').attr("src",listOfAnimations[iAnimation]);
-                    iAnimation++;
-                });
-                animationTimer.set({ time: 60, autostart: true});
-            }
-        });
-        
+        playAnimations(this);
+    })
+    $(document).on('click', '.animatable-group', function(event){
+        event.preventDefault();
+        populateAnimatable(this);
     })
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
@@ -180,25 +151,77 @@ $(document).ready(function() {
 });
 function populateFilemanager(target){
     var wasEmpty = isEmpty($("#fileslist"));
-        
-        if (wasEmpty)
-        {
-            $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
-            $.get("/skins/view/" + $(target).data("skinid") + "/filemanager", function(data){
-                $("#fileslist").html(data);
+    if (wasEmpty)
+    {
+        $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
+        $.get("/skins/view/" + $(target).data("skinid") + "/filemanager", function(data){
+            $("#fileslist").html(data);
 
-                $("audio").bind("ended", function(){
-                    var parentTag = $(this).parent();
-                    var picture = parentTag.find("b:first");
-                    picture.removeClass("green-highlight-always");
-                });
-                $("audio").bind("play", function(){
-                    var parentTag = $(this).parent();
-                    var picture = parentTag.find("b:first");
-                    picture.addClass("green-highlight-always");
-                });
+            $("audio").bind("ended", function(){
+                var parentTag = $(this).parent();
+                var picture = parentTag.find("b:first");
+                picture.removeClass("green-highlight-always");
             });
+            $("audio").bind("play", function(){
+                var parentTag = $(this).parent();
+                var picture = parentTag.find("b:first");
+                picture.addClass("green-highlight-always");
+            });
+        });
+    }
+}
+function populateAnimatable(target){
+    var el = $(target).find(".nested-manager:first");
+    var wasEmpty = isEmpty(el);
+    var contentLink = '/skins/view/' + $("#filesmanager-link").data('skinid')) + "/animations?f=" + $(target).data('filename') + "&hd=" + $(target).data('ishd');
+    if (wasEmpty){
+        $.get(contentLink, funciton(data){
+            el.html(data);
         }
+    }
+    playAnimations(target,true);
+}
+function playAnimations(elementCalling, withOpeningFancybox = false){
+    if (window.animationTimer != null)
+    {
+        animationTimer.stop();
+        animationTimer = null;
+    }
+    var el = $(elementCalling);
+    var nameOfSequence = el.data("sequencename");
+    var listOfAnimations = [];
+    $(".element-filename").each(function(index, value){
+        var thisSequenceName = $(value).data("sequencename");
+        if(thisSequenceName == nameOfSequence)
+            listOfAnimations.push($(value).attr("href"));
+    });
+
+    if(withOpeningFancybox)
+        $.fancybox.open({href: el.attr("href")});
+    
+    $(".fancybox-inner").append("<div id='fancybox-loader-info' style='width:100px;'>Loading Images...</div>");
+    $("#fancybox-loader-info").append("<b id='loadednow'></b>/<b id='toload'></b>");
+    $.preload(listOfAnimations,{
+        onRequest: function(data){
+            $(".fancybox-image").hide();
+        },
+        onComplete: function(data){
+            $("#fancybox-loader-info > #loadednow").text(data.done);
+            $("#fancybox-loader-info > #toload").text(data.total);
+        },
+        onFinish: function(data){
+            $("#fancybox-loader-info").hide();
+            $('.fancybox-image').show();
+            var iAnimation = 0;
+            animationTimer = $.timer(function(){
+                if (iAnimation >= listOfAnimations.length)
+                    iAnimation = 0;
+                $('.fancybox-image').attr("src",listOfAnimations[iAnimation]);
+                iAnimation++;
+            });
+            animationTimer.set({ time: 60, autostart: true});
+        }
+    });  
 }
 function isEmpty (el){
     return !$.trim(el.html())
