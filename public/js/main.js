@@ -52,7 +52,6 @@ $(document).ready(function() {
         preload : 0,
         beforeClose: function(){
             window.animationTimer.stop();
-            window.animationTimer = null;
         }
     });
     $("#missingElementsCheck").change(function(){
