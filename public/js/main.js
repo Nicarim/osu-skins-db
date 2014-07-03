@@ -147,7 +147,6 @@ $(document).ready(function() {
             if(thisSequenceName == nameOfSequence)
                 listOfAnimations.push($(value).attr("href"));
         });
-        listOfAnimations.sort();
         var iAnimation = 0;
         animationTimer = $.timer(function(){
             if (iAnimation >= listOfAnimations.length)
@@ -155,7 +154,7 @@ $(document).ready(function() {
             $('.fancybox-image').attr("src",listOfAnimations[iAnimation]);
             iAnimation++;
         });
-        animationTimer.set({ time: 1000, autostart: true});
+        animationTimer.set({ time: 100, autostart: true});
     })
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
