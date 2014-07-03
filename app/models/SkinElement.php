@@ -34,4 +34,19 @@ class SkinElement extends Eloquent {
     public function isConfig(){
         return in_array($this->extension, array("txt", "ini"));
     }
+    public function isAnimation(){
+        return $this->issequence == 1;
+    }
+    public function className(){
+        $ishd = $this->ishd == 1 ? "2x" : "";
+        return $this->filename.$ishd;
+    }
+    public function getClasses(){
+        $string = "";
+        $string .= $this->isAudio() ? ' audio-element ' : '';
+        $string .= $this->isImage() ? 'fancybox ' : '';
+        $string .= $this->isConfig() ? 'config-element ' : '';
+        $string .= $element->isAnimation() ? 'animatable-element ' : '';
+        return $string;
+    }
 } 

@@ -12,10 +12,10 @@
         @endif
         <a href="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
-           class="element-filename
-           {{$element->isAudio() ? 'audio-element' : ''}}
-           {{$element->isImage() ? 'fancybox' : ''}}
-           {{$element->isConfig() ? 'config-element' : ''}}" data-elementid="{{$element->id}}">
+           class="element-filename {{$element->getClasses()}}" 
+           data-elementframe="{{$element->sequence_frame}}"
+           data-sequencename="{{$element->className()}}"
+           data-elementid="{{$element->id}}">
             {{$element->getName()}}
         </a>
         @if (Auth::check() && Auth::user()->id == $ownerId)

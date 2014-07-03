@@ -130,6 +130,17 @@ $(document).ready(function() {
             }, 500);
         }
     });
+    $(document).on('click', '.animatable-element', function(event){
+        var el = $(this);
+        var nameOfSequence = el.data("sequencename");
+        var listOfAnimations = [];
+        $(".element-filename").each(function(index, value){
+            var thisSequenceName = $(value).data("sequencename");
+            if(thisSequenceName == nameOfSequence)
+                listOfAnimations.push($(value).attr("href"));
+        });
+        console.log(listOfAnimations);
+    })
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
     });
@@ -142,16 +153,17 @@ function populateFilemanager(target){
             $("#fileslist").html("<center><img src='/fancybox/fancybox_loading.gif' /></center>")
             $.get("/skins/view/" + $(target).data("skinid") + "/filemanager", function(data){
                 $("#fileslist").html(data);
-                    $("audio").bind("ended", function(){
-                        var parentTag = $(this).parent();
-                        var picture = parentTag.find("b:first");
-                        picture.removeClass("green-highlight-always");
-                    });
-                    $("audio").bind("play", function(){
-                        var parentTag = $(this).parent();
-                        var picture = parentTag.find("b:first");
-                        picture.addClass("green-highlight-always");
-                    });
+
+                $("audio").bind("ended", function(){
+                    var parentTag = $(this).parent();
+                    var picture = parentTag.find("b:first");
+                    picture.removeClass("green-highlight-always");
+                });
+                $("audio").bind("play", function(){
+                    var parentTag = $(this).parent();
+                    var picture = parentTag.find("b:first");
+                    picture.addClass("green-highlight-always");
+                });
             });
         }
 }
