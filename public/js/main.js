@@ -154,7 +154,7 @@ $(document).ready(function() {
         $.preload(listOfAnimations,{
             onRequest: function(data){
                 $(".fancybox-image").hide();
-            }
+            },
             onComplete: function(data){
                 $("#fancybox-loader-info > #loadednow").text(data.done);
                 $("#fancybox-loader-info > #toload").text(data.total);
