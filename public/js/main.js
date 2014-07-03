@@ -149,7 +149,7 @@ $(document).ready(function() {
         });
         listOfAnimations.sort();
         var iAnimation = 0;
-        animationTimer = $.timer(function(listOfAnimations){
+        animationTimer = $.timer(function(){
             if (iAnimation >= listOfAnimations.length)
                 iAnimation = 0;
             $('.fancybox-image').attr("src") = listOfAnimations[iAnimation];
