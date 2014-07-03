@@ -16,7 +16,7 @@
            data-elementframe="{{$element->sequence_frame}}"
            data-sequencename="{{$element->className()}}"
            data-elementid="{{$element->id}}">
-            {{$element->getName()}}
+            {{{$element->getName()}}}
         </a>
         @if (Auth::check() && Auth::user()->id == $ownerId)
             <span style="float:right;">
