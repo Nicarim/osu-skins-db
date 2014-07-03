@@ -148,7 +148,7 @@ $(document).ready(function() {
                 listOfAnimations.push($(value).attr("href"));
         });
         $.preload(listOfAnimations,{
-            onComplete: function(data){
+            onFinish: function(data){
                 var iAnimation = 0;
                 animationTimer = $.timer(function(){
                     if (iAnimation >= listOfAnimations.length)
