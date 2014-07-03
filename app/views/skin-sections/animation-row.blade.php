@@ -23,7 +23,7 @@
 
     </pre>
     @endif
-    <p style="min-height:10px;" class="list-group-item-text">
+    <p style="min-height:10px;font-size:14px;" class="list-group-item-text">
         <span style="float:right;" class="element-size" data-elementsize="{{$element->size}}">
             <b>Size:</b> {{Helpers::formatSizeUnits($element->size)}}
         </span>
