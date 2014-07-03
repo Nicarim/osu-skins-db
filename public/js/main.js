@@ -149,8 +149,17 @@ $(document).ready(function() {
             if(thisSequenceName == nameOfSequence)
                 listOfAnimations.push($(value).attr("href"));
         });
+        $(".fancybox-inner").append("<div id='fancybox-loader-info' style='width:100px;'>Loading Images...</div>");
+        $("#fancybox-loader-info").append("<b id='loadednow'></b>/<b id='toload'></b>");
+        $(".fancybox-image").hide();
         $.preload(listOfAnimations,{
+            onComplete: function(data){
+                $("#fancybox-loader-info > #loadednow").text(data.done);
+                $("#fancybox-loader-info > #toload").text(data.total);
+            },
             onFinish: function(data){
+                $("#fancybox-loader-info").hide();
+                $('.fancybox-image').show();
                 var iAnimation = 0;
                 animationTimer = $.timer(function(){
                     if (iAnimation >= listOfAnimations.length)
