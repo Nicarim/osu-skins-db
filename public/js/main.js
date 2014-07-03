@@ -196,7 +196,7 @@ function playAnimations(elementCalling, withOpeningFancybox){
     var listOfAnimations = [];
     $(".element-filename").each(function(index, value){
         var thisSequenceName = $(value).data("sequencename");
-        if(thisSequenceName == nameOfSequence)
+        if(thisSequenceName == nameOfSequence && !$(value).hasClass('animatable-group'))
             listOfAnimations.push($(value).attr("href"));
     });
 
