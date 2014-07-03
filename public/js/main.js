@@ -177,9 +177,12 @@ function populateAnimatable(target){
     if (wasEmpty){
         $.get(contentLink, function(data){
             el.html(data);
+            playAnimations(target, true);
         });
     }
-    playAnimations(target, true);
+    else
+        playAnimations(target, true);
+    
 }
 function playAnimations(elementCalling, withOpeningFancybox){
     withOpeningFancybox = typeof withOpeningFancybox !== 'undefined' ? withOpeningFancybox : false;
