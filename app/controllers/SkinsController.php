@@ -380,6 +380,8 @@ class SkinsController extends BaseController{
 
         foreach($data['file'] as $file)
         {
+            if (strlen($file->getClientOriginalName()) > 30)
+                return Response::make("filename too long", 400);
             $response = $this->processElement($skin, $file);
             if ($response != "error")
                 $uploadedElements = array_merge($uploadedElements, (array)$response);
