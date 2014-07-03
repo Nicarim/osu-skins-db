@@ -23,6 +23,9 @@
            data-elementid="{{$element->id}}">
             {{{$element->getVisibleName()}}}
         </a>
+        @if ($element->isAnimation())
+            <a href="#" class="glyphicon glyphicon-arrow-down expand-nested-manager"></a>
+        @endif
         @if (Auth::check() && Auth::user()->id == $ownerId)
             <span style="float:right;">
             @if ($element->isAnimation())

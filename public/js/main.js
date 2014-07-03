@@ -148,6 +148,13 @@ $(document).ready(function() {
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
     });
+    $(document).on('click', '.expand-nested-manager', function(event){
+        event.preventDefault();
+        var manager = $(event.target).parent().find(".nested-manager");
+        manager.slideToggle();
+        $(event.target).removeClass("glyphicon-arrow-down");
+        $(event.target).addClass("glyphicon-arrow-up");
+    })
 });
 function populateFilemanager(target){
     var wasEmpty = isEmpty($("#fileslist"));
