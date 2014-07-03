@@ -46,7 +46,7 @@ class SkinElement extends Eloquent {
         $string .= $this->isAudio() ? ' audio-element ' : '';
         $string .= $this->isImage() ? 'fancybox ' : '';
         $string .= $this->isConfig() ? 'config-element ' : '';
-        $string .= $element->isAnimation() ? 'animatable-element ' : '';
+        $string .= $this->isAnimation() ? 'animatable-element ' : '';
         return $string;
     }
 } 
