@@ -140,11 +140,11 @@ $(document).ready(function() {
     });
     $(document).on('click', '.animatable-element', function(event){
         playAnimations(this);
-    })
+    });
     $(document).on('click', '.animatable-group', function(event){
         event.preventDefault();
         populateAnimatable(this);
-    })
+    });
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
     });
