@@ -143,7 +143,7 @@ $(document).ready(function() {
     });
     $(document).on('click', '.animatable-group', function(event){
         event.preventDefault();
-        populateAnimatable(this);
+        populateAnimatable(this, true);
     });
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
@@ -152,8 +152,11 @@ $(document).ready(function() {
         event.preventDefault();
         var manager = $(event.target).parent().find(".nested-manager");
         manager.slideToggle();
-        $(event.target).removeClass("glyphicon-arrow-down");
-        $(event.target).addClass("glyphicon-arrow-up");
+        $(event.target).toggleClass("glyphicon-arrow-down");
+        $(event.target).toggleClass("glyphicon-arrow-up");
+        if (isEmpty(manager))
+            populateAnimatable(this, false);
+
     })
 });
 function populateFilemanager(target){
@@ -177,18 +180,18 @@ function populateFilemanager(target){
         });
     }
 }
-function populateAnimatable(target){
+function populateAnimatable(target, play){
     var el = $(target).parent().find(".nested-manager:first");
     var wasEmpty = isEmpty(el);
     var contentLink = '/skins/view/' + $("#filesmanager-link").data('skinid') + "/animations?f=" + $(target).data('filename') + "&hd=" + $(target).data('ishd');
     if (wasEmpty){
         $.get(contentLink, function(data){
             el.html(data);
-            playAnimations(target, true);
+            if (play) playAnimations(target, true);
         });
     }
     else
-        playAnimations(target, true);
+        if (play) playAnimations(target, true);
     
 }
 function playAnimations(elementCalling, withOpeningFancybox){
