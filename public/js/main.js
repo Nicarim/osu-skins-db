@@ -153,7 +153,8 @@ $(document).ready(function() {
         var manager = $(event.target).parent().find(".nested-manager");
         $(event.target).toggleClass("glyphicon-arrow-down");
         $(event.target).toggleClass("glyphicon-arrow-up");
-        populateAnimatable(event.target, false);
+        var properTarget = $(event.target).parent().find("a:first");
+        populateAnimatable(properTarget, false);
 
     })
 });
