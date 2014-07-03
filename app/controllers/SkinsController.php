@@ -76,6 +76,7 @@ class SkinsController extends BaseController{
 
                 $elementsAnimatable = SkinElement::where('skin_id', $id)
                     ->where('sequence_frame', '!=', -1)
+                    ->orderBy('sequence_frame', 'asc')
                     ->groupBy('issequence','filename','ishd')
                     ->get();
 
@@ -92,6 +93,7 @@ class SkinsController extends BaseController{
                     $elementsAnimatable = SkinElement::where("skin_id", $id)
                         ->where('filename', $filename)
                         ->where('ishd', $hdfied)
+                        ->orderBy('sequence_frame', 'asc')
                         ->get();
                     return View::make('skin-sections/animation-row')->with(
                         array(

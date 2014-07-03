@@ -18,7 +18,7 @@
            data-filename="{{$element->filename}}"
            data-ishd="{{$element->ishd}}"
            data-elementid="{{$element->id}}">
-            {{{$element->getName()}}}
+            {{{$element->getVisibleName()}}}
         </a>
         @if (Auth::check() && Auth::user()->id == $ownerId)
             <span style="float:right;">
