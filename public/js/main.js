@@ -151,11 +151,9 @@ $(document).ready(function() {
     $(document).on('click', '.expand-nested-manager', function(event){
         event.preventDefault();
         var manager = $(event.target).parent().find(".nested-manager");
-        manager.slideToggle();
         $(event.target).toggleClass("glyphicon-arrow-down");
         $(event.target).toggleClass("glyphicon-arrow-up");
-        if (isEmpty(manager))
-            populateAnimatable(this, false);
+        populateAnimatable(this, false);
 
     })
 });
@@ -187,11 +185,19 @@ function populateAnimatable(target, play){
     if (wasEmpty){
         $.get(contentLink, function(data){
             el.html(data);
-            if (play) playAnimations(target, true);
+            if (play) 
+                playAnimations(target, true);
+            else
+                el.slideToggle();
         });
     }
-    else
-        if (play) playAnimations(target, true);
+    else{
+        if (play)
+            playAnimations(target, true);
+        else 
+            el.slideToggle();
+    }
+        
     
 }
 function playAnimations(elementCalling, withOpeningFancybox){
