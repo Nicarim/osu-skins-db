@@ -181,7 +181,8 @@ function populateAnimatable(target){
     }
     playAnimations(target, true);
 }
-function playAnimations(elementCalling, withOpeningFancybox = false){
+function playAnimations(elementCalling, withOpeningFancybox){
+    withOpeningFancybox = typeof withOpeningFancybox !== 'undefined' ? withOpeningFancybox : false;
     if (window.animationTimer != null)
     {
         animationTimer.stop();
