@@ -156,7 +156,7 @@ $(document).ready(function() {
                     $('.fancybox-image').attr("src",listOfAnimations[iAnimation]);
                     iAnimation++;
                 });
-                animationTimer.set({ time: 100, autostart: true});
+                animationTimer.set({ time: 60, autostart: true});
             }
         });
         
