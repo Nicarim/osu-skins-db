@@ -49,7 +49,7 @@ $(function(){
 $(document).ready(function() {
     $(".fancybox").fancybox({
         ajax : {cache: false},
-        preload : 0
+        preload : 0,
         beforeClose: function(){
             window.animationTimer.stop();
             window.animationTimer = null;
