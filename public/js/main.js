@@ -1,3 +1,7 @@
+//global variables
+var animationTimer;
+
+
 Dropzone.options.myAwesomeDropzone = {
     createImageThumbnails: false,
     uploadMultiple: true,
@@ -46,6 +50,10 @@ $(document).ready(function() {
     $(".fancybox").fancybox({
         ajax : {cache: false},
         preload : 0
+        beforeClose: function(){
+            window.animationTimer.stop();
+            window.animationTimer = null;
+        }
     });
     $("#missingElementsCheck").change(function(){
         caller = this;
@@ -139,7 +147,15 @@ $(document).ready(function() {
             if(thisSequenceName == nameOfSequence)
                 listOfAnimations.push($(value).attr("href"));
         });
-        console.log(listOfAnimations);
+        listOfAnimations.sort();
+        var iAnimation = 0;
+        animationTimer = $.timer(function(listOfAnimations){
+            if (iAnimation >= listOfAnimations.length)
+                iAnimation = 0;
+            $('.fancybox-image').attr("src") = listOfAnimations[iAnimation];
+            iAnimation++;
+        });
+        animationTimer.set({ time: 1000, autostart: true});
     })
     $(document).on('click', '#filesmanager-link', function(event){
         populateFilemanager(event.target);
