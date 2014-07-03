@@ -23,7 +23,7 @@ class SkinElement extends Eloquent {
         return $this->filename.$isSequence.$ishd;
     }
     public function getVisibleName(){
-        $name = $this->sequence_frame != -1 ? substr($this->filename, 0, -1) : $this->filename;
+        $name = $this->sequence_frame != -1 ? rtrim($this->filename, "-") : $this->filename;
         $ishd = $this->ishd == 1 ? "@2x" : "";
         return $name.$ishd;
     }

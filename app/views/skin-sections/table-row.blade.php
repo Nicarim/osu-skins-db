@@ -10,6 +10,9 @@
         @else
             <b class="glyphicon glyphicon-file" data-type="other"></b>
         @endif
+        @if ($element->isAnimation())
+            <b class="glyphicon glyphicon-film"></b>
+        @endif
         <a href="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
            class="element-filename {{$element->getClasses(false, $element->issequence == 0)}}" 
