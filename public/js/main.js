@@ -139,6 +139,8 @@ $(document).ready(function() {
         }
     });
     $(document).on('click', '.animatable-element', function(event){
+        if (window.animationTimer != null)
+            animationTimer.stop();
         var el = $(this);
         var nameOfSequence = el.data("sequencename");
         var listOfAnimations = [];
