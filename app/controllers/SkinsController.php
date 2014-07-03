@@ -74,7 +74,7 @@ class SkinsController extends BaseController{
                     ->orderBy('ishd', 'asc')
                     ->get();
 
-                $elementsAnimatable = SkinElement:where('skin_id', $id)
+                $elementsAnimatable = SkinElement::where('skin_id', $id)
                     ->where('sequence_frame', '!=', -1)
                     ->groupBy('issequence','filename','ishd')
                     ->get();
