@@ -87,21 +87,21 @@ class SkinsController extends BaseController{
                         "ownerId" => $skin->user_id
                     ));
                 case "animations":
-                if($element != null)
-                {
-                    $filename = Input::get('f');
-                    $hdfied = Input::get('hd');
-                    $elementsAnimatable = SkinElement::where("skin_id", $id)->
-                        ->where('filename', $filename)
-                        ->where('ishd', $hdfied)
-                        ->get();
-                    return View::make('skin-sections/animation-row')->with(
-                        array(
-                            "skin" => $skin,
-                            "elements" => $elementsAnimatable,
-                            "ownerId" => $skin->user_id
-                        ));
-                }
+                    if($element != null)
+                    {
+                        $filename = Input::get('f');
+                        $hdfied = Input::get('hd');
+                        $elementsAnimatable = SkinElement::where("skin_id", $id)
+                            ->where('filename', $filename)
+                            ->where('ishd', $hdfied)
+                            ->get();
+                        return View::make('skin-sections/animation-row')->with(
+                            array(
+                                "skin" => $skin,
+                                "elements" => $elementsAnimatable,
+                                "ownerId" => $skin->user_id
+                            ));
+                    }
             }
         }
         if (isset($skin)){
