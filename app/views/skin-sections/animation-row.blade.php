@@ -2,7 +2,7 @@
 <div class="list-group-item">
     <h4 class="list-group-item-heading element-row">
         <b class="glyphicon glyphicon-picture" data-type="picture"></b>
-        <a href="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}"
+        <a href="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}?{{time()}}"
            class="element-filename {{$element->getClasses(false)}}" 
            data-elementframe="{{$element->sequence_frame}}"
            data-sequencename="{{$element->className()}}"
