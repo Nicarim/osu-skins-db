@@ -36,7 +36,7 @@
             </span>
         @endif
         @if($element->isAnimation())
-            <div class='nested-manager list-group' style='display:none;'></div>
+            <div class='nested-manager list-group' style='display:none; padding-top: 20px;'></div>
         @endif
         @if ($element->isAudio())
             <audio id="{{$element->id}}-audio" src="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}"></audio>
