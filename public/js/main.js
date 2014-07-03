@@ -171,7 +171,7 @@ function populateFilemanager(target){
     }
 }
 function populateAnimatable(target){
-    var el = $(target).find(".nested-manager:first");
+    var el = $(target).parent().find(".nested-manager:first");
     var wasEmpty = isEmpty(el);
     var contentLink = '/skins/view/' + $("#filesmanager-link").data('skinid') + "/animations?f=" + $(target).data('filename') + "&hd=" + $(target).data('ishd');
     if (wasEmpty){
