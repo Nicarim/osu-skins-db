@@ -449,11 +449,11 @@ class SkinsController extends BaseController{
         $baseElement = SkinElement::find($id);
         $skin = Skin::find($baseElement->skin_id);
 
-        if (Auth::user()->id != $element->skin->user_id)
-            throw new AccessDeniedException;
-
-        if (isset($element))
+        if (isset($baseElement))
             return Response::json('fail');
+
+        if (Auth::user()->id != $skin->user_id)
+            throw new AccessDeniedException;
 
         if ($wholeTree == "true")
         {
