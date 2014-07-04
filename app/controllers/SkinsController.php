@@ -411,7 +411,29 @@ class SkinsController extends BaseController{
             else
                 return Response::make("Invalid file extension", 400);
         }
-
+        $oldUploadedElements = $uploadedElements;
+        $newUploadedElements = array(); 
+        foreach($oldUploadedElements as $index => $el)
+        {
+            //exclude duplicates in animation upload
+            if ($index == 0)
+                $newUploadedElements[] = $el;
+            else
+            {
+                $flagFoundDuplicate = false;
+                foreach($newUploadedElements as $el2)
+                {
+                    if ($el->isAnimation() && $el->filename == $el2->filename)
+                    {
+                        $flagFoundDuplicate = true;
+                        break;
+                    }
+                }
+                if (!$flagFoundDuplicate)
+                    $newUploadedElements[] = $el;
+            }
+        }
+        $uploadedElements = $newUploadedElements;
         //add skin size
         /*foreach($uploadedElements as $elementSize)
             $skin->size += $elementSize->size;*/

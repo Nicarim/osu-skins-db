@@ -16,7 +16,8 @@ Dropzone.options.myAwesomeDropzone = {
         });
         $("#fileslist > .list-group-item").each(function(index){
             var $localDom = $(this);
-            var rowname = $.trim($localDom.find(".element-filename").html());
+            var $aLink = $localDom.find(".element-filename");
+            var rowname = $.trim($aLink.html());
             if ($.inArray(rowname, arrayFiles) != -1){
                 $localDom.hide();
                 $localDom.remove();
