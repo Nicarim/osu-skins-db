@@ -444,25 +444,47 @@ class SkinsController extends BaseController{
             'ownerId' => $skin->user_id
         ));
     }
-
     function deleteElement($id){
-        $element = SkinElement::find($id);
+        $wholeTree = Input::get("wt");
+        $baseElement = SkinElement::find($id);
         $skin = Skin::find($element->skin_id);
+
         if (Auth::user()->id != $element->skin->user_id)
             throw new AccessDeniedException;
+
         if (isset($element))
+            return Response::json('fail');
+
+        if ($wholeTree == "true")
         {
+            $elementsToRemove = SkinElement::where("skin_id", $id)
+                ->where("filename", $baseElement->filename)
+                ->where("ishd", $baseElement->ishd)
+                ->get();
+
+            foreach($elementsToRemove as $el)
+            {
+                $element = $el;
+                $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
+                $filename = $element->filename.$hdPrefix.$element->extension;
+                File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
+                $skin->size -= $element->size;
+                $element->delete();
+            }
+            $skin->save();
+            return Response::json('success');
+        }
+        else
+        {
+            $element = $baseElement;
             $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
             $filename = $element->filename.$hdPrefix.$element->extension;
             File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
             $skin->size -= $element->size;
             $skin->save();
             $element->delete();
-            return Response::json('success');
+            return Response::json('success');  
         }
-        else
-            return Response::json('fail');
-
     }
     function getMissingElements($id, $group=null){
         $compareArray = array();

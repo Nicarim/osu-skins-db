@@ -250,8 +250,8 @@ function playAnimations(elementCalling, withOpeningFancybox){
 function isEmpty (el){
     return !$.trim(el.html())
 }
-function deleteRow (item, id){
-    $.get(("/skins/delete-element/"+id));
+function deleteRow (item, id, wholeTree){
+    $.get(("/skins/delete-element/"+id+"?wt="+wholeTree.toString()));
     clearSelection();
     $(item).parent().parent().parent().fadeOut(200, function(){
         $(this).remove();
