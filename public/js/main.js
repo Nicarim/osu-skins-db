@@ -265,10 +265,12 @@ function deleteRow (item, id, wholeTree){
                     $thisElement.remove();
                 });
             }
+            else
+                $thisElement.remove();
         }
         else
             $thisElement.remove();
-        
+
         refreshSize();
         clearSelection();
         
