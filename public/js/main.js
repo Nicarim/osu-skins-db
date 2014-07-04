@@ -258,14 +258,15 @@ function deleteRow (item, id, wholeTree){
         $(this).remove();
         refreshSize();
         clearSelection();
-    });
-    if(aLink.hasClass("animatable-element")){
+        if(aLink.hasClass("animatable-element")){
         var nestedManager = aLink.parent().parent().parent();
         if (isEmpty(nestedManager))
             nestedManager.parent().parent().fadeOut(200, function(){
                 $(this).remove();
             });
-    }
+        }
+    });
+
     var count = parseInt($("#element-count").text());
     $("#element-count").text((count - 1));
 }
