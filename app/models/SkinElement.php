@@ -50,8 +50,8 @@ class SkinElement extends Eloquent {
         $string = "";
         $string .= $this->isAudio() ? ' audio-element ' : '';
         $string .= $this->isConfig() ? 'config-element ' : '';
-        if (!$asGroup)
-            $string .= $this->isAnimation() ? 'animatable-group' : '';
+        if ($asGroup)
+            $string .= $this->isAnimation() ? 'animatable-group ' : '';
         else
             $string .= $this->isAnimation() ? 'animatable-element ' : '';
 
