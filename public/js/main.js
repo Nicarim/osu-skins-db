@@ -261,15 +261,6 @@ function deleteRow (item, id){
     var count = parseInt($("#element-count").text());
     $("#element-count").text((count - 1));
 }
-function deleteGroupRow(item){
-    var elementsToDelete = $(item).parent().parent().find(".nested-manager:first > .list-group-item > h4 > a");
-    elementsToDelete.each(function(index, value){
-        $(value).click();
-    });
-    $(item).fadeOut(200, function(){
-        $(this).remove();
-    })
-}
 function clearSelection() {
     if(document.selection && document.selection.empty) {
         document.selection.empty();
