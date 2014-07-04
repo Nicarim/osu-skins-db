@@ -457,7 +457,7 @@ class SkinsController extends BaseController{
 
         if ($wholeTree == "true")
         {
-            $elementsToRemove = SkinElement::where("skin_id", $id)
+            $elementsToRemove = SkinElement::where("skin_id", $skin->id)
                 ->where("filename", $baseElement->filename)
                 ->where("ishd", $baseElement->ishd)
                 ->get();
