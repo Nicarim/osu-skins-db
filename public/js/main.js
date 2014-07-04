@@ -254,23 +254,21 @@ function deleteRow (item, id, wholeTree){
     $.get(("/skins/delete-element/"+id+"?wt="+wholeTree.toString()));
     clearSelection();
     var aLink = $(item).parent().parent().find("a:first");
+    var nestedManager = aLink.parent().parent().parent();
+    var actualListItem = nestedManager.parent().parent();
     $(item).parent().parent().parent().fadeOut(200, function(){
         $thisElement = $(this);
         if(aLink.hasClass("animatable-element")){
-            var nestedManager = aLink.parent().parent().parent();
+            $thisElement.remove();
             if (isEmpty(nestedManager))
             {
-                nestedManager.parent().parent().fadeOut(200, function(){
+                actualListItem.fadeOut(200, function(){
                     $(this).remove();
-                    $thisElement.remove();
                 });
             }
-            else
-                $thisElement.remove();
         }
         else
             $thisElement.remove();
-
         refreshSize();
         clearSelection();
         
