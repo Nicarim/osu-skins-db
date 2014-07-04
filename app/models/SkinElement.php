@@ -53,7 +53,7 @@ class SkinElement extends Eloquent {
         if (!$asGroup)
             $string .= $this->isAnimation() ? 'animatable-group' : '';
         else
-            $string .= $this->isAnimation() ? 'animatable-element' : '';
+            $string .= $this->isAnimation() ? 'animatable-element ' : '';
 
         if ($openFancybox)
             $string .= $this->isImage() ? 'fancybox ' : '';
