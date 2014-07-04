@@ -255,16 +255,20 @@ function deleteRow (item, id, wholeTree){
     clearSelection();
     var aLink = $(item).parent().parent().find("a:first");
     $(item).parent().parent().parent().fadeOut(200, function(){
-        $(this).remove();
+        $thisElement = $(this);
+        if(aLink.hasClass("animatable-element")){
+            var nestedManager = aLink.parent().parent().parent();
+            if (isEmpty(nestedManager))
+                nestedManager.parent().parent().fadeOut(200, function(){
+                    $thisElement.remove();
+                    $(this).remove();
+                });
+        }
+        else
+        $thisElement.remove();
         refreshSize();
         clearSelection();
-        if(aLink.hasClass("animatable-element")){
-        var nestedManager = aLink.parent().parent().parent();
-        if (isEmpty(nestedManager))
-            nestedManager.parent().parent().fadeOut(200, function(){
-                $(this).remove();
-            });
-        }
+        
     });
 
     var count = parseInt($("#element-count").text());
