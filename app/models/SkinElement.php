@@ -59,4 +59,10 @@ class SkinElement extends Eloquent {
             $string .= $this->isImage() ? 'fancybox ' : '';
         return $string;
     }
+    public function getJsDeletor($asGruop = true){
+        if ($asGroup)
+            return "deleteGroupRow(this)";
+        else
+            return "deleteRow(this,$this->id)";
+    }
 } 
