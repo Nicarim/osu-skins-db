@@ -423,7 +423,7 @@ class SkinsController extends BaseController{
                 $flagFoundDuplicate = false;
                 foreach($newUploadedElements as $el2)
                 {
-                    if ($el->isAnimation() && $el->filename == $el2->filename)
+                    if ($el->isAnimation() && $el->getVisibleName() == $el2->getVisibleName())
                     {
                         $flagFoundDuplicate = true;
                         break;
