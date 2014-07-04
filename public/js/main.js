@@ -266,7 +266,7 @@ function deleteGroupRow(item){
     elementsToDelete.each(function(index, value){
         $(value).click();
     });
-    item.fadeOut(200, function(){
+    $(item).fadeOut(200, function(){
         $(this).remove();
     })
 }
