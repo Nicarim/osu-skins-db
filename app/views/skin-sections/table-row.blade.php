@@ -15,7 +15,7 @@
         @endif
         <a href="/skins-content/{{$element->skin_id}}/{{$element->getFullname()}}"
            rel="skin-element{{$element->ishd == 1 ? '2x' : ''}}"
-           class="element-filename {{$element->getClasses(false, $element->issequence == 0)}}" 
+           class="element-filename {{$element->getClasses(true, $element->issequence == 0)}}" 
            data-elementframe="{{$element->sequence_frame}}"
            data-sequencename="{{$element->className()}}"
            data-filename="{{$element->filename}}"
