@@ -464,25 +464,19 @@ class SkinsController extends BaseController{
 
             foreach($elementsToRemove as $el)
             {
-                $element = $el;
-                $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
-                $filename = $element->filename.$hdPrefix.$element->extension;
-                File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
-                $skin->size -= $element->size;
-                $element->delete();
+                File::delete(public_path()."/skins-content/".$el->skin->id."/".$el->getFullname());
+                $skin->size -= $el->size;
+                $el->delete();
             }
             $skin->save();
             return Response::json('success');
         }
         else
         {
-            $element = $baseElement;
-            $hdPrefix = $element->ishd == 1 ? "@2x." : ".";
-            $filename = $element->filename.$hdPrefix.$element->extension;
-            File::delete(public_path()."/skins-content/".$element->skin->id."/".$filename);
-            $skin->size -= $element->size;
+            File::delete(public_path()."/skins-content/".$baseElement->skin->id."/".$baseElement->getFullname());
+            $skin->size -= $baseElement->size;
             $skin->save();
-            $element->delete();
+            $baseElement->delete();
             return Response::json('success');  
         }
     }
