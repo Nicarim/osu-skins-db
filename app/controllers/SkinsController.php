@@ -447,7 +447,7 @@ class SkinsController extends BaseController{
     function deleteElement($id){
         $wholeTree = Input::get("wt");
         $baseElement = SkinElement::find($id);
-        $skin = Skin::find($element->skin_id);
+        $skin = Skin::find($baseElement->skin_id);
 
         if (Auth::user()->id != $element->skin->user_id)
             throw new AccessDeniedException;
