@@ -259,13 +259,16 @@ function deleteRow (item, id, wholeTree){
         if(aLink.hasClass("animatable-element")){
             var nestedManager = aLink.parent().parent().parent();
             if (isEmpty(nestedManager))
+            {
                 nestedManager.parent().parent().fadeOut(200, function(){
-                    $thisElement.remove();
                     $(this).remove();
+                    $thisElement.remove();
                 });
+            }
         }
         else
-        $thisElement.remove();
+            $thisElement.remove();
+        
         refreshSize();
         clearSelection();
         
