@@ -449,7 +449,7 @@ class SkinsController extends BaseController{
         $baseElement = SkinElement::find($id);
         $skin = Skin::find($baseElement->skin_id);
 
-        if (isset($baseElement))
+        if (!isset($baseElement))
             return Response::json('fail');
 
         if (Auth::user()->id != $skin->user_id)
