@@ -198,6 +198,26 @@ class SkinsController extends BaseController{
         }
         return Redirect::to('/skins/view/'.$skin->id);
     }
+    function deleteSkin($id){
+        $skin = Skin::find($id);
+        if (Auth::user()->id == $skin->user_id)
+        {
+            $elements = SkinElement::where("skin_id", $skin_id)->get();
+            foreach ($elements as $el)
+                $el->delete();
+            $skin->delete();
+            $skinFiles = glob(public_path().'/skins-content/'.$skin->id.'/*');
+            foreach($skinFiles as $file)
+            {
+                if (is_file($file))
+                    unlink($file);
+            }
+            return "done";
+        }
+        else
+            return "invalid user";
+
+    }
     function processThumbnail($file, $path)
     {
         $file->move($path, "thumbnail.png");

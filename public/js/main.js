@@ -156,8 +156,16 @@ $(document).ready(function() {
         $(event.target).toggleClass("glyphicon-arrow-up");
         var properTarget = $(event.target).parent().find("a:first");
         populateAnimatable(properTarget, false);
-
-    })
+    });
+    $(document).on('click', '#removeskin', function(event){
+        var confirmed = confirm("Are you really sure you want to remove this skin? You won't be able to access it ever again.");
+        if (r == true)
+        {
+            $.get("/skins/delete/" + $(event.target).data("skinid"), function(data){
+                window.location.replace("http://skins.ppy.sh/skins/list");
+            });
+        }
+    });
 });
 function populateFilemanager(target){
     var wasEmpty = isEmpty($("#fileslist"));

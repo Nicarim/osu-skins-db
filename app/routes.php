@@ -28,6 +28,9 @@ Route::group(array("prefix" => "skins"), function(){
                 Route::post('/create', array(
                        "uses" => "SkinsController@postCreateSkin"
                     ));
+                Route::get("/delete/{id}", array(
+                        "uses" => "SkinsController@deleteSkin"
+                    ));
                 Route::get('/settings/{id}/markasdefault', array(
                        "uses" => "SkinsController@markAsDefault"
                     ));

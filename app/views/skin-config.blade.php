@@ -25,6 +25,9 @@
             </div>
 
             <button class="btn btn-danger" type="submit">Save Changes</button>
+            @if (isset($skin))
+                <button class="btn btn-danger" id="removeskin" data-skinid="{{$skin->id}}">Remove Skin</button>
+            @endif
         </form>
     </div>
 </div>
