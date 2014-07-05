@@ -76,6 +76,8 @@ class SkinsController extends BaseController{
 
                 $elementsAnimatable = SkinElement::where('skin_id', $id)
                     ->where('sequence_frame', '!=', -1)
+                    ->orderBy('filename','asc')
+                    ->orderBy('ishd', 'asc')
                     ->orderBy('sequence_frame', 'asc')
                     ->groupBy('issequence','filename','ishd')
                     ->get();
@@ -262,7 +264,7 @@ class SkinsController extends BaseController{
         //pretty complex check if animatable element fits few ... things!
         $filename['issequence'] = (preg_match("/-\d/", $filename['filename']) === 1 ||
                 (preg_match("/\d/", $filename['filename']) === 1 && preg_match($oldanimationRegex, $filename['filename']) === 1)) //check for old animatable format
-            && preg_match("/score-\d|default-\d/", $filename['filename']) !== 1; // don't mark score digits as animatable elements - they are obviously not.
+            && preg_match("/score-\d|default-\d|comboburst-\d/", $filename['filename']) !== 1; // don't mark score digits as animatable elements - they are obviously not.
 
         if ($filename["issequence"] && !in_array($filename['extension'], array("mp3", "ogg", "wav")))
         {
