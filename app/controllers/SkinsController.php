@@ -20,10 +20,10 @@ class SkinsController extends BaseController{
             switch($sorting)
             {
                 case "rating":
-                    $skins = $skins->where("current_version", "!=", 0)->orderBy("votes", "desc");
+                    $skins = $skins/*->where("current_version", "!=", 0)*/->orderBy("votes", "desc");
                     break;
                 case "downloads":
-                    $skins = $skins->where("current_version", "!=", 0)->orderBy("download_count", "desc");
+                    $skins = $skins/*->where("current_version", "!=", 0)*/->orderBy("download_count", "desc");
                     break;
                 case "completed":
                     $skins = $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
