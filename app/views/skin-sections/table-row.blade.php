@@ -8,7 +8,7 @@
         @elseif($element->isConfig())
             <b class="glyphicon glyphicon-file" data-type="text"></b>
         @else
-            <b class="glyphicon glyphicon-file" data-type="other"></b>
+            <b class="glyphicon glyphicon-file" data-type="text"></b>
         @endif
         @if ($element->isAnimation())
             <b class="glyphicon glyphicon-film"></b>
