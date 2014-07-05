@@ -240,8 +240,12 @@ class SkinsController extends BaseController{
             $zip->addFile($file, basename($file));
         }
         $zip->close();
-
-
+        $counter = DownloadsLog::firstOrNew(array(
+            "skin_id" => $id,
+            "ip" => Request::getClientIp();
+            ));
+        $counter->count += 1;
+        $counter->save();
         App::finish(function ($request, $response) use ($zipname){
                 unlink($zipname);
             });
