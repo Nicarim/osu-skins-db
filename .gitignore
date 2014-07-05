@@ -12,3 +12,5 @@ Thumbs.db
 /public/skins-content/*
 /public/js/blur.min.js
 /app/config/*
+app/start/global.php
+app/start/global.php

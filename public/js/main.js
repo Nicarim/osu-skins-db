@@ -11,13 +11,15 @@ Dropzone.options.myAwesomeDropzone = {
         var countElements = true;
         var ElementsCount = 0;
         $jQueryObject.find(".element-filename").each(function(){
+            var filenameWithHd = $(this).data("filename") + ($(this).data("ishd") == "1" ? "@2x" : "");
             arrayFiles.push($.trim($(this).data("filename")));
             ElementsCount++;
         });
         $("#fileslist > .list-group-item").each(function(index){
             var $localDom = $(this);
             var $aLink = $localDom.find(".element-filename");
-            var rowname = $.trim($aLink.data("filename"));
+            var filenameWithHd = $aLink.data("filename") + ($aLink.data("ishd") == "1" ? "@2x" : "");
+            var rowname = $.trim();
             if ($.inArray(rowname, arrayFiles) != -1){
                 $localDom.hide();
                 $localDom.remove();
