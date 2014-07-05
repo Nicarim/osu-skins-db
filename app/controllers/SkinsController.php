@@ -202,7 +202,7 @@ class SkinsController extends BaseController{
         $skin = Skin::find($id);
         if (Auth::user()->id == $skin->user_id)
         {
-            $elements = SkinElement::where("skin_id", $skin_id)->get();
+            $elements = SkinElement::where("skin_id", $skin->id)->get();
             foreach ($elements as $el)
                 $el->delete();
             $skin->delete();
