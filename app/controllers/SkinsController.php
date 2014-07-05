@@ -242,7 +242,7 @@ class SkinsController extends BaseController{
         $zip->close();
         $counter = DownloadsLog::firstOrNew(array(
             "skin_id" => $id,
-            "ip" => Request::getClientIp();
+            "ip" => Request::getClientIp()
             ));
         $counter->count += 1;
         $counter->save();
