@@ -158,8 +158,9 @@ $(document).ready(function() {
         populateAnimatable(properTarget, false);
     });
     $(document).on('click', '#removeskin', function(event){
+        event.preventDefault();
         var confirmed = confirm("Are you really sure you want to remove this skin? You won't be able to access it ever again.");
-        if (r == true)
+        if (confirmed == true)
         {
             $.get("/skins/delete/" + $(event.target).data("skinid"), function(data){
                 window.location.replace("http://skins.ppy.sh/skins/list");
