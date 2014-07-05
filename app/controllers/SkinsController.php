@@ -37,7 +37,7 @@ class SkinsController extends BaseController{
             }
         }
         else
-            $skins = $skins->where("current_version", "!=", 0)->orderBy("created_at", "desc");
+            $skins = $skins/*->where("current_version", "!=", 0)*/->orderBy("created_at", "desc");
         $skins = $skins->skip($skipped)->take($numberOfResults + 1);
         $skins = $skins->get();
         return View::make('listing')->with(array(
