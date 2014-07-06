@@ -240,7 +240,7 @@ class SkinsController extends BaseController{
             return "Skin is empty, nothing to download";
         $zip = new ZipArchive();
         $zipIntendedName = $skin->name.".osk";
-        $zipname = public_path()."/".$skin->name.".osk.".time();
+        $zipname = public_path()."/".md5($skin->name).".osk.".time();
         $zip->open($zipname, ZipArchive::OVERWRITE);
         $files = glob(public_path()."/skins-content/".$skin->id."/*");
         foreach($files as $file){
