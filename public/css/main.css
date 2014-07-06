@@ -194,3 +194,6 @@ b.mania{
 #filters > .btn-group > .fadedout{
     opacity: 0.50;
 }
+.add-cursor{
+    cursor: pointer;
+}

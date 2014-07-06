@@ -29,9 +29,9 @@
         @if (Auth::check() && Auth::user()->id == $ownerId)
             <span style="float:right;">
             @if ($element->isAnimation())
-                <a role="link" onclick="deleteRow(this,{{$element->id}},true)">Delete All</a>
+                <a role="link" class="add-cursor" onclick="deleteRow(this,{{$element->id}},true)">Delete All</a>
             @else
-                <a role="link" onclick="deleteRow(this,{{$element->id}},false)">Delete</a>
+                <a role="link" class="add-cursor" onclick="deleteRow(this,{{$element->id}},false)">Delete</a>
             @endif
             </span>
         @endif

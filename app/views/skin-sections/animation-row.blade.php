@@ -11,7 +11,7 @@
         </a>
         @if (Auth::check() && Auth::user()->id == $ownerId)
             <span style="float:right;">
-                <a role="link" onclick="deleteRow(this,{{$element->id}}, false)">Delete</a>
+                <a role="link" class="add-cursor" onclick="deleteRow(this,{{$element->id}}, false)">Delete</a>
             </span>
         @endif
         @if ($element->isAudio())
