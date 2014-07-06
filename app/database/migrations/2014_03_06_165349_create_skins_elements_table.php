@@ -20,6 +20,8 @@ class CreateSkinsElementsTable extends Migration {
             $table->string("filename");
             $table->string("extension");
             $table->integer("ishd");
+            $table->integer("storage_version")->default(0);
+            $table->integer("release_Version")->default(0);
             $table->integer("useroverriden")->default(0);
             $table->integer("issequence")->default(0);
             $table->integer("sequence_frame")->default(-1);

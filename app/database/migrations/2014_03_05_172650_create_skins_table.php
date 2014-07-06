@@ -18,6 +18,7 @@ class CreateSkinsTable extends Migration {
                 $table->integer('gamemodes')->default(0);
                 $table->integer('nsfw')->default(0);
                 $table->integer('template')->default(0);
+                $table->integer("current_version")->default(0);
                 $table->string("name");
                 $table->text("description");
                 $table->integer("size")->default(0);
