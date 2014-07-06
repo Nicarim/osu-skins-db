@@ -20,7 +20,7 @@ Dropzone.options.myAwesomeDropzone = {
             var $aLink = $localDom.find(".element-filename");
             var filenameWithHd = $aLink.data("filename") + ($aLink.data("ishd") == "1" ? "@2x" : "");
             var rowname = $.trim();
-            if ($.inArray(rowname, arrayFiles) != -1){
+            if ($.inArray(filenameWithHd, arrayFiles) != -1){
                 $localDom.hide();
                 $localDom.remove();
                 countElements = false;
