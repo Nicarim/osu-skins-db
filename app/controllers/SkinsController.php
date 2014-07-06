@@ -169,6 +169,9 @@ class SkinsController extends BaseController{
         else
             $skin->nsfw = 0;
 
+        if (strlen($data['title']) <= 3)
+            return "Title too short.";
+        
         $skin->description = $data['description'];
         $skin->name = $data['title'];
         $skin->user_id = Auth::user()->id;
