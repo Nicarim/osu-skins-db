@@ -228,6 +228,10 @@ class SkinsController extends BaseController{
         $imageToResize->save($path."thumbnails.png");
     }
     function downloadSkin($id){
+
+        $DOWNLOAD_LIMIT = 7;
+        $TIME_LENIENCY = 90;
+
         $skin = Skin::find($id);
         if ($skin->SkinElement->count() == 0)
             return "Skin is empty, nothing to download";
@@ -240,14 +244,24 @@ class SkinsController extends BaseController{
             $zip->addFile($file, basename($file));
         }
         $zip->close();
-        $counter = DownloadsLog::firstOrNew(array(
+        $counter = DownloadsLog::firstOrCreate(array(
             "skin_id" => $id,
             "ip" => Request::getClientIp()
             ));
+        $delta = abs(strtotime($counter->updated_at) - time());
+
+        if ($counter->exists())
+        {
+            if ($delta > $TIME_LENIENCY)
+                $counter->count = 0;
+            else if ($delta < $TIME_LENIENCY && $counter->count >= $DOWNLOAD_LIMIT)
+                return "yooo are downloading too fast, calm down a bit. \n you can download this skin again in ".(abs($delta - $TIME_LENIENCY))." seconds";
+        }
+        //if ((strtotime($counter->updated_at) - time()) > )
         $counter->count += 1;
         $counter->save();
         App::finish(function ($request, $response) use ($zipname){
-                unlink($zipname);
+                File::delete($zipname);
             });
         $skin->download_count += 1;
         $skin->save();
