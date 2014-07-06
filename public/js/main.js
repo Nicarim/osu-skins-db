@@ -12,7 +12,7 @@ Dropzone.options.myAwesomeDropzone = {
         var ElementsCount = 0;
         $jQueryObject.find(".element-filename").each(function(){
             var filenameWithHd = $(this).data("filename") + ($(this).data("ishd") == "1" ? "@2x" : "");
-            arrayFiles.push($.trim($(this).data("filename")));
+            arrayFiles.push($.trim(filenameWithHd));
             ElementsCount++;
         });
         $("#fileslist > .list-group-item").each(function(index){
