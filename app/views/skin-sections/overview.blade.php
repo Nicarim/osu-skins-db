@@ -2,7 +2,7 @@
 <h2>{{$skin->name}} created by {{$skin->user->name}}</h2>
 <div class="panel panel-success">
     <div class="panel-heading" style="overflow: hidden;">
-        Skin Informations
+        Skin Information
         @if (isset($vote))
             <div class="btn-group pull-right">
                 <button id="star-skin" data-skinId="{{$skin->id}}" type="button" class="btn btn-sm btn-default">

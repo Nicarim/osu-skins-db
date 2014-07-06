@@ -8,7 +8,7 @@
 <div class="container">
     <ul class="nav nav-tabs nav-justified">
         <li class="active"><a href="#overview" data-toggle="tab">Overview</a></li>
-        <li><a href="#filesmanager" id="filesmanager-link" data-toggle="tab" data-skinid="{{$skin->id}}">Files Manager</a></li>
+        <li><a href="#filesmanager" id="filesmanager-link" data-toggle="tab" data-skinid="{{$skin->id}}">File Manager</a></li>
         @if (Auth::check() && Auth::user()->id == $skin->user->id)
             <li><a href="#settings" data-toggle="tab">Settings</a></li>
         @endif

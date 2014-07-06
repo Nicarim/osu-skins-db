@@ -1,1 +1,1 @@
-@include('skin-config', array('url' => '/skins/settings/'.$skin->id,"header" => "Settings of your skin"))
+@include('skin-config', array('url' => '/skins/settings/'.$skin->id,"header" => "Skin Settings"))
