@@ -83,6 +83,10 @@ class SkinsController extends BaseController{
                     ->get();
 
                 $elements = $elements->merge($elementsAnimatable);
+                $elements->sortBy(function($el){
+                    return $el->filename.($el->ishd == 1 ? "@2x" : "");
+                });
+
                 return View::make("skin-sections/table-row")->with(
                     array(
                         "skin" => $skin, 
