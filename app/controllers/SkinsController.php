@@ -244,8 +244,11 @@ class SkinsController extends BaseController{
             return "Skin is empty, nothing to download";
         $zip = new ZipArchive();
         $zipIntendedName = $skin->name.".osk";
-        $zipname = public_path()."/".md5($skin->name).".osk.".time();
+        $zipname = public_path()."/tmp-osk/".md5($skin->name).".osk.".time();
         $zip->open($zipname, ZipArchive::OVERWRITE);
+        App::finish(function ($request, $response) use ($zipname){
+                File::delete($zipname);
+            });
         $files = glob(public_path()."/skins-content/".$skin->id."/*");
         foreach($files as $file){
             $zip->addFile($file, basename($file));
@@ -267,9 +270,6 @@ class SkinsController extends BaseController{
         //if ((strtotime($counter->updated_at) - time()) > )
         $counter->count += 1;
         $counter->save();
-        App::finish(function ($request, $response) use ($zipname){
-                File::delete($zipname);
-            });
         $skin->download_count += 1;
         $skin->save();
         return Response::download($zipname, $zipIntendedName);
