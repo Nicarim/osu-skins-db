@@ -13,7 +13,7 @@
                         <span class="pull-right"><b class="glyphicon glyphicon-list-alt"></b> {{$skin->SkinElement->count()}}</span>
                     </h5>
                     @if (!$private)
-                        <h5>by {{$skin->user->name}}</h5>
+                        <h5 style="height: 30px;">by {{(strlen($skin->user->name) > 36) ? substr($skin->user->name, 0, 33)."..." : $skin->user->name}}</h5>
                     @endif
                     <!--
                     <p class="text-center"><b class="taiko"></b><b class="osu"></b></p>
