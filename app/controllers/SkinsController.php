@@ -234,26 +234,31 @@ class SkinsController extends BaseController{
             });
         $imageToResize->save($path."thumbnails.png");
     }
+    function packSkin($skin){
+        $zip = new ZipArchive();
+        $zipname = public_path()."/tmp-osk/".md5($skin->name).".osk.".strtotime($skin->updated_at);
+        $zip->open($zipname, ZipArchive::OVERWRITE);
+        $files = glob(public_path()."/skins-content/".$skin->id."/*");
+        foreach($files as $file){
+            $zip->addFile($file, basename($file));
+        }
+        $zip->close();
+        return $zipname;
+    }
     function downloadSkin($id){
 
         $DOWNLOAD_LIMIT = 7;
         $TIME_LENIENCY = 90;
 
         $skin = Skin::find($id);
+        $zipIntendedName = $skin->name.".osk";
         if ($skin->SkinElement->count() == 0)
             return "Skin is empty, nothing to download";
-        $zip = new ZipArchive();
-        $zipIntendedName = $skin->name.".osk";
-        $zipname = public_path()."/tmp-osk/".md5($skin->name).".osk.".time();
-        $zip->open($zipname, ZipArchive::OVERWRITE);
-        App::finish(function ($request, $response) use ($zipname){
-                File::delete($zipname);
-            });
-        $files = glob(public_path()."/skins-content/".$skin->id."/*");
-        foreach($files as $file){
-            $zip->addFile($file, basename($file));
-        }
-        $zip->close();
+
+        $zipname = public_path()."/tmp-osk/".md5($skin->name).".osk.".strtotime($skin->updated_at);
+        if (!File::isFile($zipname))
+            $zipname = $this->packSkin($skin);
+
         $counter = DownloadsLog::firstOrCreate(array(
             "skin_id" => $id,
             "ip" => Request::getClientIp()
@@ -271,6 +276,7 @@ class SkinsController extends BaseController{
         $counter->count += 1;
         $counter->save();
         $skin->download_count += 1;
+        $skin->timestamps = false;
         $skin->save();
         return Response::download($zipname, $zipIntendedName);
 
