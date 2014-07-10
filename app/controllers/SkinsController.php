@@ -5,6 +5,8 @@
  * Date: 05.03.14
  * Time: 18:59
  */
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class SkinsController extends BaseController{
     function index(){
@@ -288,12 +290,20 @@ class SkinsController extends BaseController{
         $rules = array(
             'file' => 'skinmimes'
         );
+        $manualMove = false;
+        if ($file->getSize() < 10 && in_array($file->getClientOriginalExtension(), array("mp3", "wav", "ogg")))
+        {
+            $file = new UploadedFile(public_path()."\blank.wav", $file->getClientOriginalName());
+            $manualMove = true;
+        } 
+
         if (!in_array($file->getMimeType(), array("application/x-font-ttf", "text/plain")))
         {
             $validation = Validator::make(array("file" => $file), $rules);
             if ($validation->fails())
                 return "error";
         }
+
         //processing of skin metadata
         $elementName = strtolower($file->getClientOriginalName());
         $elementExt = strtolower($file->getClientOriginalExtension());
@@ -430,7 +440,8 @@ class SkinsController extends BaseController{
             $skinElement->size = $file->getSize();
             $skinElement->save();
             $processedElements[] = $skinElement;
-            $file->move(public_path()."/skins-content/".$skin->id, $filename['fullnameUntouched']);
+            $pathToCopy = public_path()."/skins-content/".$skin->id;
+            $manualMove ? copy(public_path()."/blank.wav", $pathToCopy."/".$filename['fullnameUntouched']) : $file->move($pathToCopy, $filename['fullnameUntouched']);
         }
 
         $elementsSize = 0;
