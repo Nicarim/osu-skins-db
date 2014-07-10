@@ -293,7 +293,7 @@ class SkinsController extends BaseController{
         $manualMove = false;
         if ($file->getSize() < 10 && in_array($file->getClientOriginalExtension(), array("mp3", "wav", "ogg")))
         {
-            $file = new UploadedFile(public_path()."\blank.wav", $file->getClientOriginalName());
+            $file = new UploadedFile(public_path()."/blank.wav", $file->getClientOriginalName());
             $manualMove = true;
         } 
 
