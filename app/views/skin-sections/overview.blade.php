@@ -7,14 +7,14 @@
             <div class="btn-group pull-right">
                 <button id="star-skin" data-skinId="{{$skin->id}}" type="button" class="btn btn-sm btn-default">
                     <span class="glyphicon glyphicon-star"></span>
-                    <span class="star-text">Unstar</span>
+                    <span class="star-text">Unfavorite</span>
                 </button>
             </div>
         @elseif (Auth::check() && Auth::user()->id != $skin->user_id)
             <div class="btn-group pull-right">
                 <button id="star-skin" data-skinId="{{$skin->id}}" type="button" class="btn btn-sm btn-default">
                     <span class="glyphicon glyphicon-star"></span>
-                    <span class="star-text">Star</span>
+                    <span class="star-text">Favorite</span>
                 </button>
             </div>
         @endif
