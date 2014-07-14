@@ -258,7 +258,7 @@ class SkinsController extends BaseController{
             return "Skin is empty, nothing to download";
 
         $zipname = public_path()."/tmp-osk/".md5($skin->name).".osk.".strtotime($skin->updated_at);
-        if (!File::isFile($zipname))
+        if (!is_file($zipname))
             $zipname = $this->packSkin($skin);
 
         $counter = DownloadsLog::firstOrCreate(array(
