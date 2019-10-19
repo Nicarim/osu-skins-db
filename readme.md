@@ -1,6 +1,6 @@
 ## osu!'s official skins database and release tool.
 
-Here you can see repository of the tool which you will probably use in future. If you want to contribute you can shoot PM to me on [osu! profile](http://osu.ppy.sh/u/Marcin)
+Here you can see repository of the tool which you will probably use in future. If you want to contribute you can shoot a PM to me on [osu! profile](http://osu.ppy.sh/u/Marcin)
 ### Features:
 
 - Audio playback
